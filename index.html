@@ -6,56 +6,79 @@
     <title>Babcia Halina - Rękodzieło Handmade</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <!-- Snipcart CSS -->
+    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Babcia Halina</h1>
-            <p>Rękodzieło handmade z pasją</p>
+            <p>Unikalne rękodzieło handmade</p>
         </div>
     </header>
 
     <nav>
         <div class="container">
+            <a href="#sklep">Sklep</a>
             <a href="#o-mnie">O mnie</a>
-            <a href="#produkty">Produkty</a>
             <a href="#kontakt">Kontakt</a>
+            <!-- Koszyk Snipcart -->
+            <button class="snipcart-checkout">Koszyk (<span class="snipcart-items-count">0</span>)</button>
         </div>
     </nav>
 
-    <section id="o-mnie" class="section">
+    <section id="sklep" class="section">
         <div class="container">
-            <h2>O mnie</h2>
-            <p>Cześć! Jestem Halina i od lat tworzę unikalne rękodzieło. Szyję torby, robótki ręczne, decoupage i wiele więcej. Każdy produkt jest wykonany z miłością i dbałością o detale.</p>
-        </div>
-    </section>
-
-    <section id="produkty" class="section">
-        <div class="container">
-            <h2>Moje produkty</h2>
+            <h2>Sklep</h2>
             <div class="produkty-grid">
-                <!-- Przykładowe produkty (możesz dodać więcej) -->
+                <!-- Przykładowy produkt 1 -->
                 <div class="produkt">
-                    <img src="assets/produkty/torba.jpg" alt="Torba handmade">
+                    <img src="assets/produkty/torba.jpg" alt="Torba lniana handmade">
                     <h3>Torba lniana</h3>
                     <p>50 zł</p>
+                    <button class="snipcart-add-item"
+                        data-item-id="torba-lniana"
+                        data-item-price="50.00"
+                        data-item-url="/"
+                        data-item-description="Ręcznie szyta torba lniana."
+                        data-item-image="assets/produkty/torba.jpg"
+                        data-item-name="Torba lniana">
+                        Dodaj do koszyka
+                    </button>
                 </div>
+
+                <!-- Przykładowy produkt 2 -->
                 <div class="produkt">
-                    <img src="assets/produkty/szal.jpg" alt="Szal ręcznie robiony">
+                    <img src="assets/produkty/szal.jpg" alt="Szal wełniany">
                     <h3>Szal wełniany</h3>
                     <p>80 zł</p>
+                    <button class="snipcart-add-item"
+                        data-item-id="szal-welniany"
+                        data-item-price="80.00"
+                        data-item-url="/"
+                        data-item-description="Ręcznie robiony szal z wełny."
+                        data-item-image="assets/produkty/szal.jpg"
+                        data-item-name="Szal wełniany">
+                        Dodaj do koszyka
+                    </button>
                 </div>
                 <!-- Dodaj więcej produktów -->
             </div>
         </div>
     </section>
 
+    <section id="o-mnie" class="section">
+        <div class="container">
+            <h2>O mnie</h2>
+            <p>Witaj! Jestem Halina i od lat tworzę unikalne rękodzieło. Każdy produkt jest wykonany z pasją i dbałością o detale.</p>
+        </div>
+    </section>
+
     <section id="kontakt" class="section">
         <div class="container">
-            <h2>Kontakt i zamówienia</h2>
-            <p>Chcesz coś zamówić lub masz pytania? Napisz do mnie!</p>
-            <p>📧 Email: <a href="mailto:halina@babciahalina.com">halina@babciahalina.com</a></p>
-            <p>📞 Telefon: +48 123 456 789</p>
+            <h2>Kontakt</h2>
+            <p>Email: <a href="mailto:halina@babciahalina.com">halina@babciahalina.com</a></p>
+            <p>Telefon: +48 123 456 789</p>
         </div>
     </section>
 
@@ -64,5 +87,9 @@
             <p>© 2024 Babcia Halina | Wszelkie prawa zastrzeżone</p>
         </div>
     </footer>
+
+    <!-- Snipcart JS -->
+    <script async src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+    <div hidden id="snipcart" data-api-key="YOUR_API_KEY" data-config-modal-style="side"></div>
 </body>
 </html>
