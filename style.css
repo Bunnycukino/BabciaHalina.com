@@ -24,11 +24,15 @@ nav {
     padding: 1rem 0;
 }
 
-nav a {
+nav a, .snipcart-checkout {
     color: white;
     text-decoration: none;
     margin: 0 1rem;
     font-weight: 300;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 .section {
@@ -55,6 +59,15 @@ nav a {
 .produkt img {
     max-width: 100%;
     height: auto;
+}
+
+button.snipcart-add-item {
+    background: #5a3921;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    margin-top: 1rem;
 }
 
 footer {
