@@ -1,6 +1,6 @@
 // Product data - prices are in PLN
 const products = [
-    { id: 1, name: "Torba lniana", price: 50, image: "assets/produkty/torba.jpg" },
+    { id: 1, name: "one.jpg", price: 50, image: "assets/produkty/torba.jpg" },
     { id: 2, name: "Szal wełniany", price: 80, image: "assets/produkty/szal.jpg" },
     // Add more products here as needed
     // Format: { id: 3, name: "Serwetka", price: 25, image: "assets/produkty/serwetka.jpg" }
