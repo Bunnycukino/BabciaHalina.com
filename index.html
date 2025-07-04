@@ -3,67 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Babcia Halina - Sklep Rękodzieła</title>
+    <title>Babcia Halina - Rękodzieło Handmade</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <!-- Snipcart -->
-    <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Babcia Halina</h1>
             <p>Rękodzieło handmade z pasją</p>
-            <button class="snipcart-checkout cart-btn">
-                🛒 Koszyk (<span class="snipcart-items-count">0</span>)
-            </button>
         </div>
     </header>
 
     <nav>
         <div class="container">
-            <a href="#sklep">Sklep</a>
             <a href="#o-mnie">O mnie</a>
+            <a href="#produkty">Produkty</a>
             <a href="#kontakt">Kontakt</a>
         </div>
     </nav>
 
-    <main>
-        <section id="sklep" class="section">
-            <div class="container">
-                <h2>Nasze Produkty</h2>
-                <div class="product-grid" id="products">
-                    <!-- Products load here automatically -->
+    <section id="o-mnie" class="section">
+        <div class="container">
+            <h2>O mnie</h2>
+            <p>Cześć! Jestem Halina i od lat tworzę unikalne rękodzieło. Szyję torby, robótki ręczne, decoupage i wiele więcej. Każdy produkt jest wykonany z miłością i dbałością o detale.</p>
+        </div>
+    </section>
+
+    <section id="produkty" class="section">
+        <div class="container">
+            <h2>Moje produkty</h2>
+            <div class="produkty-grid">
+                <!-- Przykładowe produkty (możesz dodać więcej) -->
+                <div class="produkt">
+                    <img src="assets/produkty/torba.jpg" alt="Torba handmade">
+                    <h3>Torba lniana</h3>
+                    <p>50 zł</p>
                 </div>
+                <div class="produkt">
+                    <img src="assets/produkty/szal.jpg" alt="Szal ręcznie robiony">
+                    <h3>Szal wełniany</h3>
+                    <p>80 zł</p>
+                </div>
+                <!-- Dodaj więcej produktów -->
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="o-mnie" class="section">
-            <div class="container">
-                <h2>O mnie</h2>
-                <p>Witaj! Jestem Halina i tworzę unikalne rękodzieło od ponad 20 lat.</p>
-            </div>
-        </section>
-
-        <section id="kontakt" class="section">
-            <div class="container">
-                <h2>Kontakt</h2>
-                <p>Email: halina@babciahalina.com</p>
-                <p>Telefon: +48 123 456 789</p>
-            </div>
-        </section>
-    </main>
+    <section id="kontakt" class="section">
+        <div class="container">
+            <h2>Kontakt i zamówienia</h2>
+            <p>Chcesz coś zamówić lub masz pytania? Napisz do mnie!</p>
+            <p>📧 Email: <a href="mailto:halina@babciahalina.com">halina@babciahalina.com</a></p>
+            <p>📞 Telefon: +48 123 456 789</p>
+        </div>
+    </section>
 
     <footer>
         <div class="container">
-            <p>© 2024 Babcia Halina</p>
+            <p>© 2024 Babcia Halina | Wszelkie prawa zastrzeżone</p>
         </div>
     </footer>
-
-    <!-- Snipcart -->
-    <div hidden id="snipcart" data-api-key="YOUR_API_KEY"></div>
-    <script src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
-    <!-- Our JS -->
-    <script src="script.js"></script>
 </body>
 </html>
