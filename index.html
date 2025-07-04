@@ -3,17 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Babcia Halina - Rękodzieło Handmade</title>
+    <title>Babcia Halina - Sklep Rękodzieła</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <!-- Snipcart CSS -->
+    <!-- Snipcart -->
     <link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.css">
 </head>
 <body>
     <header>
         <div class="container">
             <h1>Babcia Halina</h1>
-            <p>Unikalne rękodzieło handmade</p>
+            <p>Rękodzieło handmade z pasją</p>
+            <button class="snipcart-checkout cart-btn">
+                🛒 Koszyk (<span class="snipcart-items-count">0</span>)
+            </button>
         </div>
     </header>
 
@@ -22,74 +25,45 @@
             <a href="#sklep">Sklep</a>
             <a href="#o-mnie">O mnie</a>
             <a href="#kontakt">Kontakt</a>
-            <!-- Koszyk Snipcart -->
-            <button class="snipcart-checkout">Koszyk (<span class="snipcart-items-count">0</span>)</button>
         </div>
     </nav>
 
-    <section id="sklep" class="section">
-        <div class="container">
-            <h2>Sklep</h2>
-            <div class="produkty-grid">
-                <!-- Przykładowy produkt 1 -->
-                <div class="produkt">
-                    <img src="assets/produkty/torba.jpg" alt="Torba lniana handmade">
-                    <h3>Torba lniana</h3>
-                    <p>50 zł</p>
-                    <button class="snipcart-add-item"
-                        data-item-id="torba-lniana"
-                        data-item-price="50.00"
-                        data-item-url="/"
-                        data-item-description="Ręcznie szyta torba lniana."
-                        data-item-image="assets/produkty/torba.jpg"
-                        data-item-name="Torba lniana">
-                        Dodaj do koszyka
-                    </button>
+    <main>
+        <section id="sklep" class="section">
+            <div class="container">
+                <h2>Nasze Produkty</h2>
+                <div class="product-grid" id="products">
+                    <!-- Products load here automatically -->
                 </div>
-
-                <!-- Przykładowy produkt 2 -->
-                <div class="produkt">
-                    <img src="assets/produkty/szal.jpg" alt="Szal wełniany">
-                    <h3>Szal wełniany</h3>
-                    <p>80 zł</p>
-                    <button class="snipcart-add-item"
-                        data-item-id="szal-welniany"
-                        data-item-price="80.00"
-                        data-item-url="/"
-                        data-item-description="Ręcznie robiony szal z wełny."
-                        data-item-image="assets/produkty/szal.jpg"
-                        data-item-name="Szal wełniany">
-                        Dodaj do koszyka
-                    </button>
-                </div>
-                <!-- Dodaj więcej produktów -->
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="o-mnie" class="section">
-        <div class="container">
-            <h2>O mnie</h2>
-            <p>Witaj! Jestem Halina i od lat tworzę unikalne rękodzieło. Każdy produkt jest wykonany z pasją i dbałością o detale.</p>
-        </div>
-    </section>
+        <section id="o-mnie" class="section">
+            <div class="container">
+                <h2>O mnie</h2>
+                <p>Witaj! Jestem Halina i tworzę unikalne rękodzieło od ponad 20 lat.</p>
+            </div>
+        </section>
 
-    <section id="kontakt" class="section">
-        <div class="container">
-            <h2>Kontakt</h2>
-            <p>Email: <a href="mailto:crox.and.crox@gmail.com">crox.and.crox@gmail.com</a></p>
-            <p>Telefon: +447939656804</p>
-        </div>
-    </section>
+        <section id="kontakt" class="section">
+            <div class="container">
+                <h2>Kontakt</h2>
+                <p>Email: halina@babciahalina.com</p>
+                <p>Telefon: +48 123 456 789</p>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <div class="container">
-            <p>© 2024 Babcia Halina | Wszelkie prawa zastrzeżone</p>
+            <p>© 2024 Babcia Halina</p>
         </div>
     </footer>
 
-    <!-- Snipcart JS -->
-    <script async src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
-    <div hidden id="snipcart" data-api-key="YOUR_API_KEY" data-config-modal-style="side"></div>
+    <!-- Snipcart -->
+    <div hidden id="snipcart" data-api-key="YOUR_API_KEY"></div>
+    <script src="https://cdn.snipcart.com/themes/v3.3.1/default/snipcart.js"></script>
+    <!-- Our JS -->
+    <script src="script.js"></script>
 </body>
 </html>
