@@ -145,5 +145,48 @@
   <span class="lightbox-close" id="lightbox-close">&times;</span>
   <img src="" alt="Podgląd zdjęcia" id="lightbox-img">
 </div>
+  <!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <img src="" alt="Podgląd zdjęcia" id="lightbox-img">
+</div>
+
+<script>
+  // Animacja scrollowania produktów
+  const produkty = document.querySelectorAll('.produkt');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  produkty.forEach(produkt => {
+    observer.observe(produkt);
+  });
+
+  // Lightbox
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  const closeBtn = document.getElementById('lightbox-close');
+
+  document.querySelectorAll('.produkt img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightboxImg.src = img.src;
+      lightbox.style.display = 'flex';
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+  });
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
 </body>
 </html>
