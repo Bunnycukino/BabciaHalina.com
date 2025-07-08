@@ -1,11 +1,11 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Babcia Halina - Rękodzieło Handmade</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet"/>
 </head>
 <body>
   <header>
@@ -37,27 +37,27 @@
         <div class="produkt">
           <img src="assets/produkty/IMG_3958.jpeg" alt="Serweta handmade">
           <h3>Serweta</h3>
-          <p>brak na stanie mozliwosc zamowienia 120 zł</p>
+          <p>brak na stanie możliwość zamówienia – 120 zł</p>
         </div>
         <div class="produkt">
-          <img src="assets/produkty/IMG_3963.jpeg" alt="Serweta handmade">
+          <img src="assets/produkty/IMG_3963.jpeg" alt="Wielkanoc handmade">
           <h3>Wielkanoc</h3>
-          <p>brak na stanie mozliwosc zamowienia  120 zł</p>
+          <p>brak na stanie możliwość zamówienia – 120 zł</p>
         </div>
         <div class="produkt">
           <img src="assets/produkty/IMG_3962.jpeg" alt="Serweta handmade">
           <h3>Serweta</h3>
-          <p>brak na stanie mozliwosc zamowienia 120 zł</p>
+          <p>brak na stanie możliwość zamówienia – 120 zł</p>
         </div>
         <div class="produkt">
-          <img src="assets/produkty/IMG_3927.jpg" alt="Torba handmade">
+          <img src="assets/produkty/IMG_3927.jpg" alt="Aniołek handmade">
           <h3>Aniołek</h3>
-          <p>brak na stanie mozliwosc zamowienia 50 zł</p>
+          <p>brak na stanie możliwość zamówienia – 50 zł</p>
         </div>
         <div class="produkt">
-          <img src="assets/produkty/IMG_3960.jpeg" alt="Serweta ręcznie robiona">
+          <img src="assets/produkty/IMG_3960.jpeg" alt="Serweta kwadrat">
           <h3>Serweta kwadrat</h3>
-          <p>brak na stanie mozliwosc zamowienia 120 zł</p>
+          <p>brak na stanie możliwość zamówienia – 120 zł</p>
         </div>
       </div>
     </div>
@@ -66,14 +66,14 @@
   <section id="kontakt" class="section">
     <div class="container">
       <h2>Kontakt i zamówienia</h2>
-      <p>Chcesz coś zamówić lub masz pytania? Wypełnij formularz – odpowiem jak najszybciej!</p>
+      <p>Chcesz coś zamówić lub masz pytania? Napisz do mnie:</p>
 
-      <form action="mailto:crox.and.crox@gmail.com" method="post" enctype="text/plain">
+      <form action="https://formspree.io/f/xeqywljk" method="POST">
         <label for="name">Imię:</label>
-        <input type="text" id="name" name="name" required>
+        <input type="text" id="name" name="name" required />
 
         <label for="email">Adres e-mail:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="email" id="email" name="email" required />
 
         <label for="message">Wiadomość:</label>
         <textarea id="message" name="message" rows="5" required></textarea>
@@ -89,46 +89,16 @@
     </div>
   </footer>
 
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img src="" alt="Podgląd zdjęcia" id="lightbox-img">
+  </div>
+
   <script>
-  const produkty = document.querySelectorAll('.produkt');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-  produkty.forEach(produkt => observer.observe(produkt));
-
-  // LIGHTBOX
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const closeBtn = document.getElementById('lightbox-close');
-
-  document.querySelectorAll('.produkt img').forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightbox.style.display = 'flex';
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-  });
-
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-      lightbox.style.display = 'none';
-    }
-  });
-</script>
-  <script>
+    // Animacja wejścia produktów
     const produkty = document.querySelectorAll('.produkt');
-
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
@@ -138,55 +108,29 @@
     }, {
       threshold: 0.1
     });
-
     produkty.forEach(produkt => observer.observe(produkt));
-  </script>
-  <div class="lightbox" id="lightbox">
-  <span class="lightbox-close" id="lightbox-close">&times;</span>
-  <img src="" alt="Podgląd zdjęcia" id="lightbox-img">
-</div>
-  <!-- Lightbox -->
-<div class="lightbox" id="lightbox">
-  <span class="lightbox-close" id="lightbox-close">&times;</span>
-  <img src="" alt="Podgląd zdjęcia" id="lightbox-img">
-</div>
 
-<script>
-  // Animacja scrollowania produktów
-  const produkty = document.querySelectorAll('.produkt');
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const closeBtn = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.produkt img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
+
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
       }
     });
-  }, {
-    threshold: 0.1
-  });
-
-  produkty.forEach(produkt => {
-    observer.observe(produkt);
-  });
-
-  // Lightbox
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  const closeBtn = document.getElementById('lightbox-close');
-
-  document.querySelectorAll('.produkt img').forEach(img => {
-    img.addEventListener('click', () => {
-      lightboxImg.src = img.src;
-      lightbox.style.display = 'flex';
-    });
-  });
-
-  closeBtn.addEventListener('click', () => {
-    lightbox.style.display = 'none';
-  });
-
-  lightbox.addEventListener('click', e => {
-    if (e.target === lightbox) {
-      lightbox.style.display = 'none';
+  </script>
 </body>
 </html>
