@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Babcia Halina - Rękodzieło Handmade</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" rel="stylesheet"/>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Roboto:wght@300;400&display=swap"/></noscript>
 </head>
 <body>
   <header>
@@ -15,7 +16,7 @@
     </div>
   </header>
 
-  <nav>
+  <nav aria-label="Główna nawigacja">
     <div class="container">
       <a href="#o-mnie">O mnie</a>
       <a href="#produkty">Produkty</a>
@@ -23,87 +24,87 @@
     </div>
   </nav>
 
-  <section id="o-mnie" class="section">
+  <section id="o-mnie" class="section" aria-labelledby="o-mnie-heading">
     <div class="container">
-      <h2>O mnie</h2>
+      <h2 id="o-mnie-heading">O mnie</h2>
       <p>Cześć! Jestem Halina i od lat tworzę unikalne rękodzieło. Szyję torby, robótki ręczne, decoupage i wiele więcej. Każdy produkt jest wykonany z miłością i dbałością o detale.</p>
     </div>
   </section>
 
-  <section id="produkty" class="section">
+  <section id="produkty" class="section" aria-labelledby="produkty-heading">
     <div class="container">
-      <h2>Moje produkty</h2>
+      <h2 id="produkty-heading">Moje produkty</h2>
       <div class="produkty-grid">
-         <div class="produkt">
-          <img src="assets/produkty/IMG_3966.jpeg" alt="Serweta handmade">
+        <div class="produkt">
+          <img src="assets/produkty/IMG_3966.jpeg" alt="Serweta ręcznie robiona, brak na stanie" loading="lazy">
           <h3>Serweta</h3>
-          <p>brak na stanie możliwość zamówienia – 120 zł</p>
-        </div>
-         <div class="produkt">
-          <img src="assets/produkty/IMG_3967.jpeg" alt="Serweta handmade">
-          <h3>Serweta</h3>
-          <p>brak na stanie możliwość zamówienia – 120 zł</p>
-        </div>
-         <div class="produkt">
-          <img src="assets/produkty/IMG_3968.jpeg" alt="Serweta handmade">
-          <h3>Serweta</h3>
-          <p>brak na stanie możliwość zamówienia – 120 zł</p>
-        </div>
-         <div class="produkt">
-          <img src="assets/produkty/IMG_3969.jpeg" alt="Serweta handmade">
-          <h3>Serweta</h3>
-          <p>brak na stanie możliwość zamówienia – 120 zł</p>
-        </div>
-         <div class="produkt">
-          <img src="assets/produkty/IMG_3964.jpeg" alt="Serweta handmade">
-          <h3>Serweta</h3>
-          <p>brak na stanie możliwość zamówienia – 120 zł</p>
-        </div>
-         <div class="produkt">
-          <img src="assets/produkty/IMG_3965.jpeg" alt="Serweta handmade">
-          <h3>Serweta</h3>
-          <p>brak na stanie możliwość zamówienia – 120 zł</p>
+          <p>Brak na stanie, możliwość zamówienia – 120 zł</p>
         </div>
         <div class="produkt">
-          <img src="assets/produkty/IMG_3958.jpeg" alt="Serweta handmade">
+          <img src="assets/produkty/IMG_3967.jpeg" alt="Serweta ręcznie robiona, brak na stanie" loading="lazy">
           <h3>Serweta</h3>
-          <p>brak na stanie możliwość zamówienia – 120 zł</p>
+          <p>Brak na stanie, możliwość zamówienia – 120 zł</p>
         </div>
         <div class="produkt">
-          <img src="assets/produkty/IMG_3963.jpeg" alt="Wielkanoc handmade">
+          <img src="assets/produkty/IMG_3968.jpeg" alt="Serweta ręcznie robiona, brak na stanie" loading="lazy">
+          <h3>Serweta</h3>
+          <p>Brak na stanie, możliwość zamówienia – 120 zł</p>
+        </div>
+        <div class="produkt">
+          <img src="assets/produkty/IMG_3969.jpeg" alt="Serweta ręcznie robiona, brak na stanie" loading="lazy">
+          <h3>Serweta</h3>
+          <p>Brak na stanie, możliwość zamówienia – 120 zł</p>
+        </div>
+        <div class="produkt">
+          <img src="assets/produkty/IMG_3964.jpeg" alt="Serweta ręcznie robiona, brak na stanie" loading="lazy">
+          <h3>Serweta</h3>
+          <p>Brak na stanie, możliwość zamówienia – 120 zł</p>
+        </div>
+        <div class="produkt">
+          <img src="assets/produkty/IMG_3965.jpeg" alt="Serweta ręcznie robiona, brak na stanie" loading="lazy">
+          <h3>Serweta</h3>
+          <p>Brak na stanie, możliwość zamówienia – 120 zł</p>
+        </div>
+        <div class="produkt">
+          <img src="assets/produkty/IMG_3958.jpeg" alt="Serweta ręcznie robiona, brak na stanie" loading="lazy">
+          <h3>Serweta</h3>
+          <p>Brak na stanie, możliwość zamówienia – 120 zł</p>
+        </div>
+        <div class="produkt">
+          <img src="assets/produkty/IMG_3963.jpeg" alt="Dekoracja Wielkanocna ręcznie robiona, brak na stanie" loading="lazy">
           <h3>Wielkanoc</h3>
-          <p>brak na stanie możliwość zamówienia – 120 zł</p>
+          <p>Brak na stanie, możliwość zamówienia – 120 zł</p>
         </div>
         <div class="produkt">
-          <img src="assets/produkty/IMG_3962.jpeg" alt="Serweta handmade">
+          <img src="assets/produkty/IMG_3962.jpeg" alt="Serweta ręcznie robiona, brak na stanie" loading="lazy">
           <h3>Serweta</h3>
-          <p>brak na stanie możliwość zamówienia – 120 zł</p>
+          <p>Brak na stanie, możliwość zamówienia – 120 zł</p>
         </div>
         <div class="produkt">
-          <img src="assets/produkty/IMG_3927.jpg" alt="Aniołek handmade">
+          <img src="assets/produkty/IMG_3927.jpg" alt="Aniołek ręcznie robiony, brak na stanie" loading="lazy">
           <h3>Aniołek</h3>
-          <p>brak na stanie możliwość zamówienia – 50 zł</p>
+          <p>Brak na stanie, możliwość zamówienia – 50 zł</p>
         </div>
         <div class="produkt">
-          <img src="assets/produkty/IMG_3960.jpeg" alt="Serweta kwadrat">
+          <img src="assets/produkty/IMG_3960.jpeg" alt="Serweta kwadratowa ręcznie robiona, brak na stanie" loading="lazy">
           <h3>Serweta kwadrat</h3>
-          <p>brak na stanie możliwość zamówienia – 120 zł</p>
+          <p>Brak na stanie, możliwość zamówienia – 120 zł</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="kontakt" class="section">
+  <section id="kontakt" class="section" aria-labelledby="kontakt-heading">
     <div class="container">
-      <h2>Kontakt i zamówienia</h2>
+      <h2 id="kontakt-heading">Kontakt i zamówienia</h2>
       <p>Chcesz coś zamówić lub masz pytania? Napisz do mnie:</p>
 
       <form action="https://formspree.io/f/xeqywljk" method="POST">
         <label for="name">Imię:</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" autocomplete="name" required />
 
         <label for="email">Adres e-mail:</label>
-        <input type="email" id="email" name="email" required />
+        <input type="email" id="email" name="email" autocomplete="email" required />
 
         <label for="message">Wiadomość:</label>
         <textarea id="message" name="message" rows="5" required></textarea>
@@ -115,13 +116,12 @@
 
   <footer>
     <div class="container">
-      <p>© 2024 Babcia Halina | Wszelkie prawa zastrzeżone</p>
+      <p>&copy; 2024 Babcia Halina | Wszelkie prawa zastrzeżone</p>
     </div>
   </footer>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <span class="lightbox-close" id="lightbox-close">&times;</span>
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Powiększony obraz produktu" tabindex="-1">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Zamknij podgląd zdjęcia">&times;</button>
     <img src="" alt="Podgląd zdjęcia" id="lightbox-img">
   </div>
 
@@ -148,7 +148,9 @@
     document.querySelectorAll('.produkt img').forEach(img => {
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt; // Ustawienie alt dla obrazka w lightboxie
         lightbox.style.display = 'flex';
+        lightbox.focus(); // Przeniesienie fokusu na lightbox po otwarciu
       });
     });
 
@@ -158,6 +160,13 @@
 
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+      }
+    });
+
+    // Obsługa klawisza Esc do zamykania lightboxa
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.style.display === 'flex') {
         lightbox.style.display = 'none';
       }
     });
