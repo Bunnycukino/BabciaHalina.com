@@ -1,3 +1,4 @@
+/* ===== PODSTAWY ===== */
 :root {
   --cream: #F8F1E9;
   --light-brown: #A78A7F;
@@ -11,7 +12,6 @@ body {
   color: var(--text);
   line-height: 1.6;
   background: var(--cream);
-  scroll-behavior: smooth;
 }
 
 .container {
@@ -20,7 +20,7 @@ body {
   margin: 0 auto;
 }
 
-/* ===== HEADER ===== */
+/* ===== NAGŁÓWEK ===== */
 header {
   background: var(--dark-brown);
   color: white;
@@ -40,11 +40,10 @@ header p {
   font-weight: 300;
 }
 
-/* ===== NAVIGATION ===== */
+/* ===== NAWIGACJA ===== */
 nav {
   background: var(--light-brown);
   padding: 1rem 0;
-  text-align: center;
 }
 
 nav a {
@@ -59,7 +58,7 @@ nav a:hover {
   opacity: 0.8;
 }
 
-/* ===== SECTIONS ===== */
+/* ===== SEKCJE ===== */
 .section {
   padding: 4rem 0;
 }
@@ -72,7 +71,7 @@ h2 {
   font-size: 2.2rem;
 }
 
-/* ===== PRODUCTS ===== */
+/* ===== PRODUKTY ===== */
 .produkty-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -86,8 +85,19 @@ h2 {
   text-align: center;
   border-radius: 8px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.05);
-  transition: transform 0.3s, opacity 1s;
+  transition: transform 0.3s;
   opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.produkt.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.produkt:hover {
+  transform: translateY(-5px);
 }
 
 .produkt img {
@@ -102,75 +112,58 @@ h2 {
   color: var(--dark-brown);
 }
 
-/* Animation class */
-.fade-in {
-  opacity: 1 !important;
-  transform: translateY(0);
+.produkt p {
+  color: var(--text);
+  margin: 0;
 }
 
 /* ===== KONTAKT ===== */
-#kontakt form {
-  max-width: 600px;
-  margin: 0 auto;
+#kontakt p {
+  text-align: center;
 }
 
-#kontakt input, #kontakt textarea {
-  width: 100%;
-  padding: 1rem;
-  margin-bottom: 1rem;
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto 0;
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+form label {
+  font-weight: 500;
+  color: var(--dark-brown);
+}
+
+form input,
+form textarea {
+  padding: 0.8rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
 }
 
-#kontakt button {
+form button {
   background: var(--light-brown);
   color: white;
+  padding: 0.8rem 1.5rem;
   border: none;
-  padding: 0.8rem 2rem;
   border-radius: 6px;
-  cursor: pointer;
   font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
 }
 
-#kontakt button:hover {
+form button:hover {
   background: var(--dark-brown);
 }
 
-/* ===== OPINIE ===== */
-.opinie {
-  background: white;
-  border-left: 4px solid var(--light-brown);
-  margin: 1rem auto;
-  padding: 1rem 2rem;
-  max-width: 800px;
-  font-style: italic;
-}
-
-/* ===== GALERIA ===== */
-.gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: center;
-}
-
-.gallery img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-/* ===== FACEBOOK ===== */
-.fb-container iframe {
-  width: 100%;
-  height: 400px;
-  border: none;
-  overflow: hidden;
-}
-
-/* ===== FOOTER ===== */
+/* ===== STOPKA ===== */
 footer {
   background: var(--dark-brown);
   color: white;
@@ -184,14 +177,9 @@ footer {
   .container {
     width: 90%;
   }
-  
+
   nav a {
     margin: 0 1rem;
     font-size: 1rem;
-  }
-
-  .gallery img {
-    width: 100%;
-    height: auto;
   }
 }
