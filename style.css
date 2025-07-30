@@ -25,7 +25,7 @@ body {
 
 /* ===== NAGŁÓWEK ===== */
 header {
-  background: var(--dark-brown);
+  background: var(--lite blue);
   color: white;
   padding: 3rem 0;
   text-align: center;
