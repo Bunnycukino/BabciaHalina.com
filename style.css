@@ -11,7 +11,10 @@ body {
   margin: 0;
   color: var(--text);
   line-height: 1.6;
-  background: var(--cream);
+  background: 
+    linear-gradient(rgba(248, 241, 233, 0.9), 
+    rgba(248, 241, 233, 0.9)),
+    url('assets/Tlo Jul 30, 2025, 01_39_44 AM.png') center/cover fixed;
 }
 
 .container {
