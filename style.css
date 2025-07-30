@@ -247,4 +247,30 @@ footer {
   .produkty-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
+  .youtube-links {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+}
+
+.youtube-links a {
+  background: white;
+  color: var(--dark-brown);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  text-decoration: none;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.youtube-links a:hover {
+  background: var(--light-brown);
+  color: white;
+}
+
 }
