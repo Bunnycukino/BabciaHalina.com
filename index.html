@@ -280,41 +280,14 @@
     const produktyGrid = document.getElementById('produkty-grid');
 
     // === Lista produktów (z localStorage) ===
-    let products = JSON.parse(localStorage.getItem('babcia-products')) || [
-      { src: "assets/produkty/IMG_3993.jpeg", title: "Aniołek Lily", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_4464.jpeg", title: "pajacyki", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_4161.jpeg", title: "ubranko", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_4162.jpeg", title: "Buciki", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_4167.jpeg", title: "Czerwony Aniołek", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_4168.jpeg", title: "Bąbki", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_4169.jpeg", title: "Koszyk różyczek", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_4115.jpeg", title: "kurczaczki", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_4116.jpeg", title: "Kroliczek", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_4118.jpeg", title: "koszyczek Wielkanocny", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_4119.jpeg", title: "Buciki dla dzieciuszka", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3992.jpeg", title: "Aniołek 2", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3991.jpeg", title: "Balwanki i Aniołek", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3986.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3987.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3988.jpeg", title: "Dzwoneczki", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3989.jpeg", title: "Serweta misa", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3990.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3966.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3967.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3968.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3969.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3964.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3965.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3958.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3963.jpeg", title: "Wielkanoc", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3962.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3927.jpg", title: "Aniołek", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_3960.jpeg", title: "Serweta kwadrat", desc: "brak na stanie możliwość zamówienia" }
-    ];
+    let products = JSON.parse(localStorage.getItem('babcia-products')) || [];  // Pusta lista domyślnie
 
     // === Wyświetlanie produktów ===
     function renderProducts() {
       produktyGrid.innerHTML = '';
+      if (products.length === 0) {
+        produktyGrid.innerHTML = '<p style="text-align:center; color:#666;">Brak produktów – dodaj pierwsze w panelu admina!</p>';
+      }
       products.forEach(p => {
         const div = document.createElement('div');
         div.className = 'produkt';
