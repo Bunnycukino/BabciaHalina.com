@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Rękodzieło handmade autorstwa Babci Haliny - unikalne serwety, aniołki i dekoracje domowe">
   <title>Babcia Halina - Rękodzieło Handmade</title>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" as="style">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap">
   <style>
-    /* Styl panelu admina */
+    /* Dodatkowe style dla panelu admina i lightbox */
     #admin-panel {
       display: none;
       position: fixed;
@@ -17,11 +18,9 @@
       width: 100%;
       height: 100%;
       background: rgba(0,0,0,0.9);
-      color: white;
       z-index: 1000;
       overflow-y: auto;
       padding: 20px;
-      box-sizing: border-box;
     }
     #admin-content {
       max-width: 600px;
@@ -40,7 +39,6 @@
       margin: 10px 0;
       border: 1px solid #ccc;
       border-radius: 5px;
-      box-sizing: border-box;
     }
     #admin-login button {
       background: #333;
@@ -49,7 +47,6 @@
       border: none;
       border-radius: 5px;
       cursor: pointer;
-      margin-top: 10px;
     }
     #admin-dashboard {
       display: none;
@@ -57,7 +54,6 @@
     .admin-close {
       float: right;
       font-size: 28px;
-      font-weight: bold;
       cursor: pointer;
       color: #aaa;
     }
@@ -76,18 +72,12 @@
     .form-group label {
       display: block;
       margin-bottom: 5px;
-      font-weight: 500;
     }
-    .form-group input[type="text"],
-    .form-group input[type="file"] {
+    .form-group input, .form-group textarea {
       width: 100%;
       padding: 10px;
       border: 1px solid #ccc;
       border-radius: 5px;
-      box-sizing: border-box;
-    }
-    button {
-      cursor: pointer;
     }
     #add-product {
       background: #28a745;
@@ -108,7 +98,6 @@
       margin-top: 15px;
       font-weight: bold;
     }
-    /* Lightbox */
     .lightbox {
       display: none;
       position: fixed;
@@ -117,15 +106,13 @@
       top: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0,0,0,0.9);
+      background: rgba(0,0,0,0.9);
       justify-content: center;
       align-items: center;
     }
     .lightbox img {
       max-width: 90%;
       max-height: 90%;
-      border: 5px solid white;
-      border-radius: 10px;
     }
     .lightbox-close {
       position: absolute;
@@ -133,7 +120,6 @@
       right: 30px;
       color: white;
       font-size: 40px;
-      font-weight: bold;
       cursor: pointer;
     }
   </style>
@@ -143,7 +129,7 @@
     <div class="container">
       <h1>Babcia Halina</h1>
       <p>Rękodzieło handmade z pasją</p>
-      <button id="admin-login-btn" style="position:absolute; top:10px; right:20px; background:#333; color:white; border:none; padding:8px 16px; border-radius:5px; cursor:pointer; font-size:14px;">
+      <button id="admin-login-btn" style="position:absolute; top:10px; right:20px; background:#333; color:white; border:none; padding:8px 16px; border-radius:5px; cursor:pointer;">
         Panel Admina
       </button>
     </div>
@@ -170,7 +156,7 @@
       <div class="container">
         <h2>Moje produkty</h2>
         <div class="produkty-grid" id="produkty-grid">
-          <!-- Produkty ładowane dynamicznie -->
+          <!-- Tu będą dynamicznie ładowane produkty -->
         </div>
       </div>
     </section>
@@ -178,7 +164,7 @@
     <section id="youtube" class="section">
       <div class="container">
         <h2>Filmy YouTube</h2>
-        <p>Zapraszam do obejrzenia roznych filmów na YouTube:</p>
+        <p>Zapraszam do obejrzenia różnych filmów na YouTube:</p>
         <ul style="list-style: none; padding: 0; text-align: center;">
           <li><a href="https://www.youtube.com/watch?v=0KrzBSPJ-o8" target="_blank">Robienie na drutach początkujących - część 1</a></li>
           <li><a href="https://www.youtube.com/watch?v=UsZXmPuWoGI" target="_blank">PODSTAWY ROBÓTEK NA DRUTACH CZĘŚĆ 1</a></li>
@@ -218,52 +204,50 @@
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
-    <span class="lightbox-close" id="lightbox-close">×</span>
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
     <img src="" alt="Podgląd zdjęcia" id="lightbox-img" loading="lazy">
   </div>
 
   <!-- Panel Admina -->
   <div id="admin-panel">
     <div id="admin-content">
-      <span class="admin-close" id="admin-close">×</span>
-
+      <span class="admin-close" id="admin-close">&times;</span>
       <div id="admin-login">
         <h2>Logowanie Admina</h2>
-        <input type="text" id="admin-username" placeholder="Login" required>
-        <input type="password" id="admin-password" placeholder="Hasło" required>
+        <input type="text" id="admin-username" placeholder="Login (Halinka)" required>
+        <input type="password" id="admin-password" placeholder="Hasło (Halinka)" required>
         <button id="login-submit">Zaloguj</button>
-        <p id="login-error" style="color:red; display:none; margin-top:10px;">Nieprawidłowy login lub hasło!</p>
+        <p id="login-error" style="color:red; display:none;">Błędny login lub hasło!</p>
       </div>
-
       <div id="admin-dashboard">
-        <h2>Panel Administracyjny</h2>
-        <p>Witaj, Halinko! Dodaj nowe zdjęcie produktu:</p>
-
+        <h2>Panel Admina</h2>
+        <p>Witaj! Dodaj produkt:</p>
         <div class="form-group">
-          <label>Nazwa produktu:</label>
-          <input type="text" id="product-name" placeholder="np. Serweta w kwiaty" required>
+          <label>Nazwa:</label>
+          <input type="text" id="product-name" required>
         </div>
-
         <div class="form-group">
-          <label>Wybierz zdjęcie:</label>
+          <label>Opis:</label>
+          <textarea id="product-desc">brak na stanie możliwość zamówienia</textarea>
+        </div>
+        <div class="form-group">
+          <label>Zdjęcie:</label>
           <input type="file" id="product-image" accept="image/*" required>
-          <img id="photo-preview" src="" alt="Podgląd zdjęcia">
+          <img id="photo-preview" alt="Podgląd">
         </div>
-
-        <button id="add-product">Dodaj produkt</button>
+        <button id="add-product">Dodaj</button>
         <button id="admin-logout">Wyloguj</button>
-
         <p id="add-status"></p>
       </div>
     </div>
   </div>
 
   <script>
-    // === DANE ADMINA ===
+    // Login/hasło
     const ADMIN_LOGIN = "Halinka";
     const ADMIN_PASSWORD = "Halinka";
 
-    // === Elementy DOM ===
+    // Elementy
     const adminBtn = document.getElementById('admin-login-btn');
     const adminPanel = document.getElementById('admin-panel');
     const adminClose = document.getElementById('admin-close');
@@ -273,68 +257,99 @@
     const adminDashboard = document.getElementById('admin-dashboard');
     const addProductBtn = document.getElementById('add-product');
     const productName = document.getElementById('product-name');
+    const productDesc = document.getElementById('product-desc');
     const productImage = document.getElementById('product-image');
     const photoPreview = document.getElementById('photo-preview');
     const addStatus = document.getElementById('add-status');
     const adminLogout = document.getElementById('admin-logout');
     const produktyGrid = document.getElementById('produkty-grid');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
 
-    // === Lista produktów (z localStorage) ===
-    let products = JSON.parse(localStorage.getItem('babcia-products')) || [];  // Pusta lista domyślnie
+    // Produkty z localStorage lub domyślne
+    let products = JSON.parse(localStorage.getItem('babcia-products')) || [
+      { src: "assets/produkty/IMG_3993.jpeg", title: "Aniołek Lily", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_4464.jpeg", title: "pajacyki", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_4161.jpeg", title: "ubranko", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_4162.jpeg", title: "Buciki", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_4167.jpeg", title: "Czerwony Aniołek", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_4168.jpeg", title: "Bąbki 😍", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_4169.jpeg", title: "Koszyk różyczek", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_4115.jpeg", title: "kurczaczki", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_4116.jpeg", title: "Kroliczek", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_4118.jpeg", title: "koszyczek Wielkanocny", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_4119.jpeg", title: "Buciki dla dzieciuszka", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3992.jpeg", title: "Aniołek 2", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3991.jpeg", title: "Balwanki i Aniołek", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3986.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3987.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3988.jpeg", title: "Dzwoneczki", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3989.jpeg", title: "Serweta misa", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3990.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3966.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3967.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3968.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3969.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3964.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3965.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3958.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3963.jpeg", title: "Wielkanoc", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3962.jpeg", title: "Serweta", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3927.jpg", title: "Aniołek", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_3960.jpeg", title: "Serweta kwadrat", desc: "brak na stanie możliwość zamówienia" }
+    ];
 
-    // === Wyświetlanie produktów ===
+    // Render produktów
     function renderProducts() {
       produktyGrid.innerHTML = '';
       if (products.length === 0) {
-        produktyGrid.innerHTML = '<p style="text-align:center; color:#666;">Brak produktów – dodaj pierwsze w panelu admina!</p>';
+        produktyGrid.innerHTML = '<p>Brak produktów – dodaj w panelu admina.</p>';
+      } else {
+        products.forEach(p => {
+          const div = document.createElement('div');
+          div.className = 'produkt';
+          div.innerHTML = `
+            <img src="${p.src}" alt="${p.title}" loading="lazy" onclick="openLightbox('${p.src}')">
+            <h3>${p.title}</h3>
+            <p>${p.desc}</p>
+          `;
+          produktyGrid.appendChild(div);
+        });
       }
-      products.forEach(p => {
-        const div = document.createElement('div');
-        div.className = 'produkt';
-        div.innerHTML = `
-          <img src="${p.src}" alt="${p.title}" loading="lazy" onclick="openLightbox('${p.src}')">
-          <h3>${p.title}</h3>
-          <p>${p.desc}</p>
-        `;
-        produktyGrid.appendChild(div);
-      });
     }
 
-    // === Otwieranie panelu admina ===
-    adminBtn.onclick = () => {
+    // Otwórz panel
+    adminBtn.addEventListener('click', () => {
       adminPanel.style.display = 'block';
       adminLogin.style.display = 'block';
       adminDashboard.style.display = 'none';
-      loginError.style.display = 'none';
-      document.getElementById('admin-username').value = '';
-      document.getElementById('admin-password').value = '';
-    };
+    });
 
-    adminClose.onclick = () => {
+    // Zamknij panel
+    adminClose.addEventListener('click', () => {
       adminPanel.style.display = 'none';
-    };
+    });
 
-    // === Logowanie ===
-    loginSubmit.onclick = () => {
-      const user = document.getElementById('admin-username').value.trim();
-      const pass = document.getElementById('admin-password').value;
-
+    // Logowanie
+    loginSubmit.addEventListener('click', () => {
+      const user = adminUsername.value.trim();
+      const pass = adminPassword.value;
       if (user === ADMIN_LOGIN && pass === ADMIN_PASSWORD) {
         adminLogin.style.display = 'none';
         adminDashboard.style.display = 'block';
-        loginError.style.display = 'none';
       } else {
         loginError.style.display = 'block';
       }
-    };
+    });
 
-    // === Wylogowanie ===
-    adminLogout.onclick = () => {
+    // Wyloguj
+    adminLogout.addEventListener('click', () => {
       adminPanel.style.display = 'none';
-    };
+    });
 
-    // === Podgląd zdjęcia ===
-    productImage.onchange = () => {
+    // Podgląd zdjęcia
+    productImage.addEventListener('change', () => {
       const file = productImage.files[0];
       if (file) {
         const reader = new FileReader();
@@ -344,52 +359,39 @@
         };
         reader.readAsDataURL(file);
       }
-    };
+    });
 
-    // === Dodawanie produktu ===
-    addProductBtn.onclick = () => {
+    // Dodaj produkt
+    addProductBtn.addEventListener('click', () => {
       const name = productName.value.trim();
+      const desc = productDesc.value.trim();
       const file = productImage.files[0];
-
-      if (!name || !file) {
-        addStatus.textContent = "Uzupełnij wszystkie pola!";
-        addStatus.style.color = "red";
-        return;
-      }
+      if (!name || !file) return addStatus.textContent = 'Uzupełnij pola!';
 
       const reader = new FileReader();
       reader.onload = e => {
-        const newProduct = {
-          src: e.target.result,
-          title: name,
-          desc: "brak na stanie możliwość zamówienia"
-        };
-        products.unshift(newProduct);
+        products.push({ src: e.target.result, title: name, desc: desc || 'brak na stanie możliwość zamówienia' });
         localStorage.setItem('babcia-products', JSON.stringify(products));
         renderProducts();
-        addStatus.textContent = "Dodano produkt!";
-        addStatus.style.color = "green";
-
-        // Reset formularza
+        addStatus.textContent = 'Dodano!';
         productName.value = '';
+        productDesc.value = '';
         productImage.value = '';
-        photoPreview.src = '';
         photoPreview.style.display = 'none';
       };
       reader.readAsDataURL(file);
-    };
+    });
 
-    // === Lightbox ===
-    window.openLightbox = (src) => {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').style.display = 'flex';
+    // Lightbox
+    window.openLightbox = src => {
+      lightboxImg.src = src;
+      lightbox.style.display = 'flex';
     };
+    lightboxClose.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+    });
 
-    document.getElementById('lightbox-close').onclick = () => {
-      document.getElementById('lightbox').style.display = 'none';
-    };
-
-    // === Inicjalizacja ===
+    // Inicjalizacja
     document.getElementById('current-year').textContent = new Date().getFullYear();
     renderProducts();
   </script>
