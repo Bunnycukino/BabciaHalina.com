@@ -5,22 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Rękodzieło handmade autorstwa Babci Haliny - unikalne serwety, aniołki i dekoracje domowe">
   <title>Babcia Halina - Rękodzieło Handmade</title>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" as="style">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap">
   <style>
-    /* Dodatkowe style dla panelu admina i lightbox */
+    /* Panel Admina */
     #admin-panel {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: rgba(0,0,0,0.9);
       z-index: 1000;
-      overflow-y: auto;
       padding: 20px;
+      overflow-y: auto;
+      box-sizing: border-box;
     }
     #admin-content {
       max-width: 600px;
@@ -30,97 +28,41 @@
       padding: 30px;
       border-radius: 10px;
     }
-    #admin-login {
-      text-align: center;
-    }
-    #admin-login input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-    #admin-login button {
-      background: #333;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    #admin-dashboard {
-      display: none;
-    }
-    .admin-close {
-      float: right;
-      font-size: 28px;
-      cursor: pointer;
-      color: #aaa;
-    }
+    .admin-close { float: right; font-size: 28px; cursor: pointer; color: #aaa; }
     .admin-close:hover { color: #000; }
     #photo-preview {
-      max-width: 200px;
-      max-height: 200px;
-      margin: 10px 0;
-      display: none;
-      border: 2px dashed #ccc;
-      border-radius: 5px;
+      max-width: 200px; max-height: 200px;
+      margin: 10px 0; display: none;
+      border: 2px dashed #ccc; border-radius: 5px;
     }
-    .form-group {
-      margin-bottom: 15px;
-    }
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-    }
+    .form-group { margin-bottom: 15px; }
+    .form-group label { display: block; margin-bottom: 5px; font-weight: 500; }
     .form-group input, .form-group textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box;
     }
-    #add-product {
-      background: #28a745;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-    }
-    #admin-logout {
-      background: #6c757d;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      border-radius: 5px;
-      margin-left: 10px;
-    }
-    #add-status {
-      margin-top: 15px;
-      font-weight: bold;
-    }
+    #add-product { background: #28a745; color: white; padding: 10px 20px; border: none; border-radius: 5px; }
+    #admin-logout { background: #6c757d; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin-left: 10px; }
+    #reset-storage { background: #dc3545; color: white; padding: 10px 20px; border: none; border-radius: 5px; margin-top: 20px; }
+    #add-status { margin-top: 15px; font-weight: bold; }
+
+    /* Lightbox */
     .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 1001;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.9);
-      justify-content: center;
-      align-items: center;
+      display: none; position: fixed; z-index: 1001;
+      left: 0; top: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.9); justify-content: center; align-items: center;
     }
-    .lightbox img {
-      max-width: 90%;
-      max-height: 90%;
+    .lightbox img { max-width: 90%; max-height: 90%; border: 5px solid white; border-radius: 10px; }
+    .lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
+
+    /* Produkty */
+    .produkt img {
+      width: 100%; height: 200px; object-fit: cover;
+      border-radius: 8px; background: #f0f0f0;
+      display: block;
     }
-    .lightbox-close {
-      position: absolute;
-      top: 20px;
-      right: 30px;
-      color: white;
-      font-size: 40px;
-      cursor: pointer;
+    .produkt {
+      background: white; padding: 15px; border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1); text-align: center;
     }
   </style>
 </head>
@@ -155,9 +97,7 @@
     <section id="produkty" class="section">
       <div class="container">
         <h2>Moje produkty</h2>
-        <div class="produkty-grid" id="produkty-grid">
-          <!-- Tu będą dynamicznie ładowane produkty -->
-        </div>
+        <div class="produkty-grid" id="produkty-grid"></div>
       </div>
     </section>
 
@@ -204,24 +144,23 @@
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
-    <span class="lightbox-close" id="lightbox-close">&times;</span>
-    <img src="" alt="Podgląd zdjęcia" id="lightbox-img" loading="lazy">
+    <span class="lightbox-close" id="lightbox-close">x</span>
+    <img src="" alt="Podgląd" id="lightbox-img">
   </div>
 
   <!-- Panel Admina -->
   <div id="admin-panel">
     <div id="admin-content">
-      <span class="admin-close" id="admin-close">&times;</span>
+      <span class="admin-close" id="admin-close">x</span>
       <div id="admin-login">
         <h2>Logowanie Admina</h2>
-        <input type="text" id="admin-username" placeholder="Login (Halinka)" required>
-        <input type="password" id="admin-password" placeholder="Hasło (Halinka)" required>
+        <input type="text" id="admin-username" placeholder="Halinka" required>
+        <input type="password" id="admin-password" placeholder="Halinka" required>
         <button id="login-submit">Zaloguj</button>
-        <p id="login-error" style="color:red; display:none;">Błędny login lub hasło!</p>
+        <p id="login-error" style="color:red; display:none;">Błędne dane!</p>
       </div>
-      <div id="admin-dashboard">
-        <h2>Panel Admina</h2>
-        <p>Witaj! Dodaj produkt:</p>
+      <div id="admin-dashboard" style="display:none;">
+        <h2>Dodaj produkt</h2>
         <div class="form-group">
           <label>Nazwa:</label>
           <input type="text" id="product-name" required>
@@ -237,17 +176,16 @@
         </div>
         <button id="add-product">Dodaj</button>
         <button id="admin-logout">Wyloguj</button>
+        <button id="reset-storage">Resetuj dane</button>
         <p id="add-status"></p>
       </div>
     </div>
   </div>
 
   <script>
-    // Login/hasło
     const ADMIN_LOGIN = "Halinka";
     const ADMIN_PASSWORD = "Halinka";
 
-    // Elementy
     const adminBtn = document.getElementById('admin-login-btn');
     const adminPanel = document.getElementById('admin-panel');
     const adminClose = document.getElementById('admin-close');
@@ -262,19 +200,16 @@
     const photoPreview = document.getElementById('photo-preview');
     const addStatus = document.getElementById('add-status');
     const adminLogout = document.getElementById('admin-logout');
+    const resetStorage = document.getElementById('reset-storage');
     const produktyGrid = document.getElementById('produkty-grid');
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightbox-img');
-    const lightboxClose = document.getElementById('lightbox-close');
 
-    // Produkty z localStorage lub domyślne
     let products = JSON.parse(localStorage.getItem('babcia-products')) || [
       { src: "assets/produkty/IMG_3993.jpeg", title: "Aniołek Lily", desc: "brak na stanie możliwość zamówienia" },
       { src: "assets/produkty/IMG_4464.jpeg", title: "pajacyki", desc: "brak na stanie możliwość zamówienia" },
       { src: "assets/produkty/IMG_4161.jpeg", title: "ubranko", desc: "brak na stanie możliwość zamówienia" },
       { src: "assets/produkty/IMG_4162.jpeg", title: "Buciki", desc: "brak na stanie możliwość zamówienia" },
       { src: "assets/produkty/IMG_4167.jpeg", title: "Czerwony Aniołek", desc: "brak na stanie możliwość zamówienia" },
-      { src: "assets/produkty/IMG_4168.jpeg", title: "Bąbki 😍", desc: "brak na stanie możliwość zamówienia" },
+      { src: "assets/produkty/IMG_4168.jpeg", title: "Bąbki", desc: "brak na stanie możliwość zamówienia" },
       { src: "assets/produkty/IMG_4169.jpeg", title: "Koszyk różyczek", desc: "brak na stanie możliwość zamówienia" },
       { src: "assets/produkty/IMG_4115.jpeg", title: "kurczaczki", desc: "brak na stanie możliwość zamówienia" },
       { src: "assets/produkty/IMG_4116.jpeg", title: "Kroliczek", desc: "brak na stanie możliwość zamówienia" },
@@ -300,56 +235,55 @@
       { src: "assets/produkty/IMG_3960.jpeg", title: "Serweta kwadrat", desc: "brak na stanie możliwość zamówienia" }
     ];
 
-    // Render produktów
     function renderProducts() {
       produktyGrid.innerHTML = '';
       if (products.length === 0) {
-        produktyGrid.innerHTML = '<p>Brak produktów – dodaj w panelu admina.</p>';
-      } else {
-        products.forEach(p => {
-          const div = document.createElement('div');
-          div.className = 'produkt';
-          div.innerHTML = `
-            <img src="${p.src}" alt="${p.title}" loading="lazy" onclick="openLightbox('${p.src}')">
-            <h3>${p.title}</h3>
-            <p>${p.desc}</p>
-          `;
-          produktyGrid.appendChild(div);
-        });
+        produktyGrid.innerHTML = '<p style="text-align:center; color:#666;">Brak produktów – dodaj w panelu admina.</p>';
+        return;
       }
+
+      products.forEach(p => {
+        const div = document.createElement('div');
+        div.className = 'produkt';
+
+        const img = document.createElement('img');
+        img.src = p.src;
+        img.alt = p.title;
+        img.loading = "lazy";
+        img.style.height = "200px";
+        img.style.objectFit = "cover";
+        img.style.borderRadius = "8px";
+        img.style.background = "#f0f0f0";
+
+        img.onerror = () => {
+          img.src = "data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZjBmMGYwIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtc2l6ZT0iMTgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGR5PSIuM2VtIiBmaWxsPSIjOTk5Ij5CbGFkIG9icmF6dTwvdGV4dD48L3N2Zz4=";
+        };
+
+        img.onclick = () => openLightbox(p.src);
+
+        div.appendChild(img);
+        div.innerHTML += `<h3>${p.title}</h3><p>${p.desc}</p>`;
+        produktyGrid.appendChild(div);
+      });
     }
 
-    // Otwórz panel
-    adminBtn.addEventListener('click', () => {
-      adminPanel.style.display = 'block';
-      adminLogin.style.display = 'block';
-      adminDashboard.style.display = 'none';
-    });
+    adminBtn.onclick = () => { adminPanel.style.display = 'block'; adminLogin.style.display = 'block'; adminDashboard.style.display = 'none'; };
+    adminClose.onclick = () => adminPanel.style.display = 'none';
+    adminLogout.onclick = () => adminPanel.style.display = 'none';
 
-    // Zamknij panel
-    adminClose.addEventListener('click', () => {
-      adminPanel.style.display = 'none';
-    });
-
-    // Logowanie
-    loginSubmit.addEventListener('click', () => {
-      const user = adminUsername.value.trim();
-      const pass = adminPassword.value;
-      if (user === ADMIN_LOGIN && pass === ADMIN_PASSWORD) {
+    loginSubmit.onclick = () => {
+      const u = document.getElementById('admin-username').value.trim();
+      const p = document.getElementById('admin-password').value;
+      if (u === ADMIN_LOGIN && p === ADMIN_PASSWORD) {
         adminLogin.style.display = 'none';
         adminDashboard.style.display = 'block';
+        loginError.style.display = 'none';
       } else {
         loginError.style.display = 'block';
       }
-    });
+    };
 
-    // Wyloguj
-    adminLogout.addEventListener('click', () => {
-      adminPanel.style.display = 'none';
-    });
-
-    // Podgląd zdjęcia
-    productImage.addEventListener('change', () => {
+    productImage.onchange = () => {
       const file = productImage.files[0];
       if (file) {
         const reader = new FileReader();
@@ -359,39 +293,42 @@
         };
         reader.readAsDataURL(file);
       }
-    });
+    };
 
-    // Dodaj produkt
-    addProductBtn.addEventListener('click', () => {
+    addProductBtn.onclick = () => {
       const name = productName.value.trim();
-      const desc = productDesc.value.trim();
+      const desc = productDesc.value.trim() || "brak na stanie możliwość zamówienia";
       const file = productImage.files[0];
       if (!name || !file) return addStatus.textContent = 'Uzupełnij pola!';
 
       const reader = new FileReader();
       reader.onload = e => {
-        products.push({ src: e.target.result, title: name, desc: desc || 'brak na stanie możliwość zamówienia' });
+        products.unshift({ src: e.target.result, title: name, desc: desc });
         localStorage.setItem('babcia-products', JSON.stringify(products));
         renderProducts();
         addStatus.textContent = 'Dodano!';
-        productName.value = '';
-        productDesc.value = '';
-        productImage.value = '';
-        photoPreview.style.display = 'none';
+        productName.value = ''; productDesc.value = ''; productImage.value = ''; photoPreview.style.display = 'none';
       };
       reader.readAsDataURL(file);
-    });
-
-    // Lightbox
-    window.openLightbox = src => {
-      lightboxImg.src = src;
-      lightbox.style.display = 'flex';
     };
-    lightboxClose.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-    });
 
-    // Inicjalizacja
+    resetStorage.onclick = () => {
+      if (confirm("Czy na pewno chcesz usunąć wszystkie dodane zdjęcia?")) {
+        localStorage.removeItem('babcia-products');
+        products = products.filter(p => p.src.startsWith('assets/'));
+        renderProducts();
+        addStatus.textContent = 'Zresetowano!';
+      }
+    };
+
+    window.openLightbox = src => {
+      document.getElementById('lightbox-img').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    };
+    document.getElementById('lightbox-close').onclick = () => {
+      document.getElementById('lightbox').style.display = 'none';
+    };
+
     document.getElementById('current-year').textContent = new Date().getFullYear();
     renderProducts();
   </script>
