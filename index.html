@@ -299,7 +299,11 @@
       const name = productName.value.trim();
       const desc = productDesc.value.trim() || "brak na stanie możliwość zamówienia";
       const file = productImage.files[0];
-      if (!name || !file) return addStatus.textContent = 'Uzupełnij pola!';
+      if (!name || !file) {
+        addStatus.textContent = 'Uzupełnij pola!';
+        addStatus.style.color = 'red';
+        return;
+      }
 
       const reader = new FileReader();
       reader.onload = e => {
@@ -307,6 +311,7 @@
         localStorage.setItem('babcia-products', JSON.stringify(products));
         renderProducts();
         addStatus.textContent = 'Dodano!';
+        addStatus.style.color = 'green';
         productName.value = ''; productDesc.value = ''; productImage.value = ''; photoPreview.style.display = 'none';
       };
       reader.readAsDataURL(file);
