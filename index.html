@@ -1,56 +1,19 @@
-<!DOCTYPE html>
+Stworzyłem stronę dla mojej mamy mógłbyś dodać admin konto do kodu żeby mogła się logować i dodawać zdjęcia tu podaje kod <!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rękodzieło handmade autorstwa Babci Haliny - unikalne serwety, aniołki i dekoracje domowe">
   <title>Babcia Halina - Rękodzieło Handmade</title>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" as="style">
   <link rel="stylesheet" href="style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-  <style>
-    body { margin: 0; font-family: 'Plus Jakarta Sans', sans-serif; background: #f9f9f9; color: #333; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-    header { background: #8b5a2b; color: white; padding: 20px 0; text-align: center; position: relative; }
-    header h1 { margin: 0; font-family: 'Playfair Display', serif; font-size: 2.5rem; }
-    nav { background: #6d4c41; padding: 15px 0; text-align: center; }
-    nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: 500; }
-    nav a:hover { text-decoration: underline; }
-    .section { padding: 60px 0; }
-    #produkty { background: #fff; }
-    .produkty-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); gap: 20px; }
-    .produkt { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); text-align: center; }
-    .produkt img { width: 100%; height: 200px; object-fit: cover; cursor: pointer; transition: transform 0.3s; background: #f0f0f0; }
-    .produkt img:hover { transform: scale(1.05); }
-    .produkt h3 { margin: 15px 0 8px; font-size: 1.2rem; }
-    .produkt p { margin: 0 0 15px; color: #666; font-size: 0.9rem; }
-
-    .lightbox { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 1000; justify-content: center; align-items: center; }
-    .lightbox img { max-width: 90%; max-height: 90%; border: 8px solid white; border-radius: 12px; }
-    .lightbox-close { position: absolute; top: 20px; right: 30px; color: white; font-size: 40px; cursor: pointer; }
-
-    #admin-panel { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1001; padding: 20px; overflow-y: auto; }
-    #admin-content { max-width: 500px; margin: 40px auto; background: white; padding: 30px; border-radius: 12px; }
-    .admin-close { float: right; font-size: 28px; cursor: pointer; color: #999; }
-    .form-group { margin-bottom: 15px; }
-    .form-group label { display: block; margin-bottom: 5px; font-weight: 600; }
-    .form-group input, .form-group textarea { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; }
-    button { background: #28a745; color: white; border: none; padding: 12px 20px; border-radius: 6px; cursor: pointer; font-size: 1rem; }
-    button:hover { background: #218838; }
-    #admin-logout { background: #6c757d; margin-left: 10px; }
-    #add-status { margin-top: 15px; font-weight: bold; }
-    #photo-preview { max-width: 100%; max-height: 200px; margin-top: 10px; display: none; border: 2px dashed #ccc; border-radius: 6px; }
-
-    footer { background: #333; color: white; text-align: center; padding: 20px 0; font-size: 0.9rem; }
-  </style>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap">
 </head>
 <body>
-
   <header>
     <div class="container">
       <h1>Babcia Halina</h1>
       <p>Rękodzieło handmade z pasją</p>
-      <button id="admin-login-btn" style="position:absolute; top:15px; right:20px; background:#444; color:white; border:none; padding:8px 16px; border-radius:6px; font-size:0.9rem; cursor:pointer;">
-        Panel Admina
-      </button>
     </div>
   </header>
 
@@ -67,7 +30,7 @@
     <section id="o-mnie" class="section">
       <div class="container">
         <h2>O mnie</h2>
-        <p>Cześć! Nazywam się Halina i od wielu lat z pasją tworzę rękodzieło. Szyję serwetki, aniołki, dekoracje i wiele innych. Każdy produkt powstaje z sercem i dbałością o detale – idealny do Twojego domu.</p>
+        <p>Cześć! Nazywam się Halina i od wielu lat z pasją tworzę rękodzieło. Szyję serwetki, wykonuję robótki ręczne i wiele innych unikalnych przedmiotów. Każdy produkt powstaje z sercem, starannością i dbałością o najmniejsze detale – tak, aby cieszył i ozdabiał Wasze domy.</p>
       </div>
     </section>
 
@@ -75,170 +38,210 @@
       <div class="container">
         <h2>Moje produkty</h2>
         <div class="produkty-grid">
-
-          <!-- WSZYSTKIE ZDJĘCIA Z .jpg – TWOJE ORYGINALNE NAZWY -->
-          <div class="produkt"><img src="assets/produkty/IMG_3993.jpg" alt="Aniołek Lily" loading="lazy" onclick="openLightbox(this.src)"><h3>Aniołek Lily</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4464.jpg" alt="pajacyki" loading="lazy" onclick="openLightbox(this.src)"><h3>pajacyki</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4161.jpg" alt="ubranko" loading="lazy" onclick="openLightbox(this.src)"><h3>ubranko</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4162.jpg" alt="Buciki" loading="lazy" onclick="openLightbox(this.src)"><h3>Buciki</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4167.jpg" alt="Czerwony Aniołek" loading="lazy" onclick="openLightbox(this.src)"><h3>Czerwony Aniołek</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4168.jpg" alt="Bąbki" loading="lazy" onclick="openLightbox(this.src)"><h3>Bąbki</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4169.jpg" alt="Koszyk różyczek" loading="lazy" onclick="openLightbox(this.src)"><h3>Koszyk różyczek</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4115.jpg" alt="kurczaczki" loading="lazy" onclick="openLightbox(this.src)"><h3>kurczaczki</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4116.jpg" alt="Kroliczek" loading="lazy" onclick="openLightbox(this.src)"><h3>Kroliczek</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4118.jpg" alt="koszyczek Wielkanocny" loading="lazy" onclick="openLightbox(this.src)"><h3>koszyczek Wielkanocny</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4119.jpg" alt="Buciki dla dzieciuszka" loading="lazy" onclick="openLightbox(this.src)"><h3>Buciki dla dzieciuszka</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3992.jpg" alt="Aniołek 2" loading="lazy" onclick="openLightbox(this.src)"><h3>Aniołek 2</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3991.jpg" alt="Balwanki i Aniołek" loading="lazy" onclick="openLightbox(this.src)"><h3>Balwanki i Aniołek</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3986.jpg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3987.jpg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3988.jpg" alt="Dzwoneczki" loading="lazy" onclick="openLightbox(this.src)"><h3>Dzwoneczki</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3989.jpg" alt="Serweta misa" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta misa</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3990.jpg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3966.jpg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3967.jpg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3968.jpg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3969.jpg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3964.jpg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3965.jpg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3958.jpg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3963.jpg" alt="Wielkanoc" loading="lazy" onclick="openLightbox(this.src)"><h3>Wielkanoc</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3962.jpg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3927.jpg" alt="Aniołek" loading="lazy" onclick="openLightbox(this.src)"><h3>Aniołek</h3><p>brak na stanie możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3960.jpg" alt="Serweta kwadrat" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta kwadrat</h3><p>brak na stanie możliwość zamówienia</p></div>
-
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3993.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
+            <h3>Aniołek Lily</h3>
+            <p>brak na stanie możliwość zamówienia </p>
+          </div>
+             <div class="produkty-grid">
+          <div class="produkt">
+            <img src="assets/produkty/IMG_4464.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
+            <h3>pajacyki</h3>
+            <p>brak na stanie możliwość zamówienia </p>
+          </div>
+                     <div class="produkty-grid">
+          <div class="produkt">
+            <img src="assets/produkty/IMG_4161.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
+            <h3>ubranko</h3>
+            <p>brak na stanie możliwość zamówienia </p>
+          </div>
+                  <div class="produkty-grid">
+          <div class="produkt">
+            <img src="assets/produkty/IMG_4162.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
+            <h3>Buciki</h3>
+            <p>brak na stanie możliwość zamówienia </p>
+          </div>
+                      <div class="produkty-grid">
+          <div class="produkt">
+            <img src="assets/produkty/IMG_4167.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
+            <h3>Czerwony Aniołek</h3>
+            <p>brak na stanie możliwość zamówienia </p>
+          </div>
+                       <div class="produkty-grid">
+          <div class="produkt">
+            <img src="assets/produkty/IMG_4168.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
+            <h3>Bąbki 😍</h3>
+            <p>brak na stanie możliwość zamówienia </p>
+          </div>
+                  <div class="produkty-grid">
+          <div class="produkt">
+            <img src="assets/produkty/IMG_4169.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
+            <h3>Koszyk różyczek</h3>
+            <p>brak na stanie możliwość zamówienia </p>
+          </div>          
+          <div class="produkt">
+            <img src="assets/produkty/IMG_4115.jpeg" alt="Aniołek - ręcznie robiony" loading="lazy">
+            <h3>kurczaczki</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_4116.jpeg" alt="Aniołek - ręcznie robiony" loading="lazy">
+            <h3>Kroliczek</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_4118.jpeg" alt="Aniołek - ręcznie robiony" loading="lazy">
+            <h3>koszyczek Wielkanocny</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_4119.jpeg" alt="Aniołek - ręcznie robiony" loading="lazy">
+            <h3>Buciki dla dzieciuszka</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3992.jpeg" alt="Aniołek - ręcznie robiony" loading="lazy">
+            <h3>Aniołek 2</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3991.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
+            <h3>Balwanki i Aniołek</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3986.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
+            <h3>Serweta</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3987.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
+            <h3>Serweta</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3988.jpeg" alt="Dzwoneczki ręcznie robione" loading="lazy">
+            <h3>Dzwoneczki</h3>
+            <p>brak na stanie możliwość zamówienia </p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3989.jpeg" alt="Serweta misa ręcznie robiona" loading="lazy">
+            <h3>Serweta misa</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3990.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
+            <h3>Serweta</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3966.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
+            <h3>Serweta</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3967.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
+            <h3>Serweta</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3968.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
+            <h3>Serweta</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3969.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
+            <h3>Serweta</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3964.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
+            <h3>Serweta</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3965.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
+            <h3>Serweta</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3958.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
+            <h3>Serweta</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3963.jpeg" alt="Wielkanocna dekoracja ręcznie robiona" loading="lazy">
+            <h3>Wielkanoc</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3962.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
+            <h3>Serweta</h3>
+            <p>brak na stanie możliwość zamówienia</p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3927.jpg" alt="Aniołek ręcznie robiony" loading="lazy">
+            <h3>Aniołek</h3>
+            <p>brak na stanie możliwość zamówienia </p>
+          </div>
+          <div class="produkt">
+            <img src="assets/produkty/IMG_3960.jpeg" alt="Serweta kwadrat ręcznie robiona" loading="lazy">
+            <h3>Serweta kwadrat</h3>
+            <p>brak na stanie możliwość zamówienia </p>
+          </div>
         </div>
       </div>
-    </section>
-
-    <section id="youtube" class="section">
-      <div class="container">
-        <h2>Filmy YouTube</h2>
-        <ul style="list-style:none; padding:0; text-align:center;">
-          <li><a href="https://www.youtube.com/watch?v=0KrzBSPJ-o8" target="_blank">Robienie na drutach początkujących</a></li>
-          <li><a href="https://www.youtube.com/watch?v=UsZXmPuWoGI" target="_blank">PODSTAWY ROBÓTEK NA DRUTACH</a></li>
-          <li><a href="https://www.youtube.com/watch?v=aujM89g7cLM" target="_blank">Poczatki!!!</a></li>
-        </ul>
-      </div>
-    </section>
+                        <section id="youtube" class="section">
+  <div class="container">
+    <h2>Filmy YouTube</h2>
+    <p>Zapraszam do obejrzenia roznych filmów na YouTube:</p>
+    <ul style="list-style: none; padding: 0; text-align: center;">
+      <li><a href="https://www.youtube.com/watch?v=0KrzBSPJ-o8" target="_blank">👉 Robienie na drutach początkujących - część 1</a></li>
+      <li><a href="https://www.youtube.com/watch?v=UsZXmPuWoGI" target="_blank">👉PODSTAWY ROBÓTEK NA DRUTACH 🧶CZĘŚĆ 1</a></li>
+      <li><a href="https://www.youtube.com/watch?v=aujM89g7cLM">👉 Poczatki!!!</a></li>
+    </ul>
+  </div>
+</section>
 
     <section id="kontakt" class="section">
-      <div class="container">
-        <h2>Kontakt i zamówienia</h2>
-        <form action="https://formspree.io/f/mldleovp" method="POST">
-          <div class="form-group"><label>Imię:</label><input type="text" name="name" required></div>
-          <div class="form-group"><label>E-mail:</label><input type="email" name="email" required></div>
-          <div class="form-group"><label>Wiadomość:</label><textarea name="message" rows="5" required></textarea></div>
-          <button type="submit">Wyślij</button>
-        </form>
+  <div class="container">
+    <h2>Kontakt i zamówienia</h2>
+    <p>Chcesz coś zamówić lub masz pytania? Napisz do mnie:</p>
+
+    <form action="https://formspree.io/f/mldleovp" method="POST">
+      <div class="form-group">
+        <label for="name">Imię:</label>
+        <input type="text" id="name" name="name" required>
       </div>
-    </section>
+      
+      <div class="form-group">
+        <label for="email">Adres e-mail:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Wiadomość:</label>
+        <textarea id="message" name="message" rows="5" required></textarea>
+      </div>
+
+      <button type="submit">Wyślij wiadomość</button>
+    </form>
+  </div>
+</section>
   </main>
 
   <footer>
     <div class="container">
-      <p>© <span id="year"></span> Babcia Halina | Wszelkie prawa zastrzeżone</p>
+      <p>© <span id="current-year"></span> Babcia Halina | Wszelkie prawa zastrzeżone</p>
     </div>
   </footer>
 
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox">
-    <span class="lightbox-close" id="close">x</span>
-    <img id="lightbox-img" src="" alt="">
+    <span class="lightbox-close" id="lightbox-close">&times;</span>
+    <img src="" alt="Podgląd zdjęcia" id="lightbox-img" loading="lazy">
   </div>
 
-  <!-- Panel Admina -->
-  <div id="admin-panel">
-    <div id="admin-content">
-      <span class="admin-close" id="admin-close">x</span>
-      <div id="login-form">
-        <h3>Logowanie</h3>
-        <input type="text" id="username" placeholder="Halinka">
-        <input type="password" id="password" placeholder="Halinka">
-        <button id="login-btn">Zaloguj</button>
-        <p id="error" style="color:red;display:none;">Błąd!</p>
-      </div>
-      <div id="dashboard" style="display:none;">
-        <h3>Dodaj produkt</h3>
-        <div class="form-group"><label>Nazwa:</label><input type="text" id="name"></div>
-        <div class="form-group"><label>Opis:</label><textarea id="desc">brak na stanie możliwość zamówienia</textarea></div>
-        <div class="form-group"><label>Zdjęcie:</label><input type="file" id="file" accept="image/*"><img id="preview" style="max-width:100%;margin-top:10px;display:none;"></div>
-        <button id="add-btn">Dodaj</button>
-        <button id="logout-btn">Wyloguj</button>
-        <p id="status"></p>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // Lightbox
-    window.openLightbox = src => {
-      document.getElementById('lightbox-img').src = src;
-      document.getElementById('lightbox').style.display = 'flex';
-    };
-    document.getElementById('close').onclick = () => document.getElementById('lightbox').style.display = 'none';
-
-    // Panel Admina
-    document.getElementById('admin-login-btn').onclick = () => document.getElementById('admin-panel').style.display = 'block';
-    document.getElementById('admin-close').onclick = () => document.getElementById('admin-panel').style.display = 'none';
-
-    document.getElementById('login-btn').onclick = () => {
-      if (document.getElementById('username').value === 'Halinka' && document.getElementById('password').value === 'Halinka') {
-        document.getElementById('login-form').style.display = 'none';
-        document.getElementById('dashboard').style.display = 'block';
-        document.getElementById('error').style.display = 'none';
-      } else {
-        document.getElementById('error').style.display = 'block';
-      }
-    };
-
-    document.getElementById('logout-btn').onclick = () => {
-      document.getElementById('admin-panel').style.display = 'none';
-      document.getElementById('login-form').style.display = 'block';
-      document.getElementById('dashboard').style.display = 'none';
-    };
-
-    // Podgląd zdjęcia
-    document.getElementById('file').onchange = e => {
-      const file = e.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = ev => {
-          const prev = document.getElementById('preview');
-          prev.src = ev.target.result;
-          prev.style.display = 'block';
-        };
-        reader.readAsDataURL(file);
-      }
-    };
-
-    // Dodawanie produktu
-    document.getElementById('add-btn').onclick = () => {
-      const name = document.getElementById('name').value.trim();
-      const desc = document.getElementById('desc').value.trim() || 'brak na stanie możliwość zamówienia';
-      const file = document.getElementById('file').files[0];
-      if (!name || !file) {
-        document.getElementById('status').textContent = 'Uzupełnij pola!';
-        document.getElementById('status').style.color = 'red';
-        return;
-      }
-
-      const reader = new FileReader();
-      reader.onload = ev => {
-        const html = `<div class="produkt"><img src="${ev.target.result}" alt="${name}" loading="lazy" onclick="openLightbox(this.src)"><h3>${name}</h3><p>${desc}</p></div>`;
-        document.querySelector('.produkty-grid').insertAdjacentHTML('afterbegin', html);
-        document.getElementById('status').textContent = 'Dodano!';
-        document.getElementById('status').style.color = 'green';
-        document.getElementById('name').value = '';
-        document.getElementById('desc').value = '';
-        document.getElementById('file').value = '';
-        document.getElementById('preview').style.display = 'none';
-      };
-      reader.readAsDataURL(file);
-    };
-
-    // Rok
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
