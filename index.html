@@ -4,45 +4,44 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Babcia Halina - Rękodzieło Handmade</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
-    :root{--br:#A78A7F;--dk:#5A3921}
-    body{margin:0;font-family:'Plus Jakarta Sans',sans-serif;background:linear-gradient(rgba(248,241,233,0.92),rgba(248,241,233,0.92)),url('assets/Tlo Jul 30, 2025, 01_39_44 AM.png') center/cover fixed;color:#333;line-height:1.7}
-    .container{max-width:1200px;margin:auto;padding:0 20px}
-    header{background:var(--br);color:white;padding:60px 20px;text-align:center;position:relative}
-    header h1{font-family:'Playfair Display',serif;font-size:3.2rem;margin:0;cursor:pointer}
-    nav{background:var(--dk);padding:15px;position:sticky;top:0;z-index:100;text-align:center}
+    body{margin:0;font-family:'Plus Jakarta Sans',sans-serif;background:linear-gradient(rgba(248,241,233,0.9),rgba(248,241,233,0.9)),url('assets/Tlo Jul 30, 2025, 01_39_44 AM.png') center/cover fixed;color:#333}
+    .container{max-width:1200px;margin:auto;padding:20px}
+    header{background:#A78A7F;color:white;padding:50px 20px;text-align:center;position:relative}
+    header h1{font-family:'Playfair Display',serif;font-size:3rem;margin:0}
+    nav{background:#5A3921;padding:15px;text-align:center;position:sticky;top:0;z-index:100}
     nav a{color:white;margin:0 20px;text-decoration:none;font-size:1.1rem}
-    .section{padding:70px 0}
-    h2{font-family:'Playfair Display',serif;text-align:center;color:var(--dk);font-size:2.6rem;margin-bottom:50px}
-    .produkty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:28px;padding:20px}
-    .produkt{position:relative;background:white;border-radius:18px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.12);text-align:center;opacity:0;transform:translateY(40px);transition:all .7s}
+    nav a:hover{opacity:0.8}
+    .section{padding:60px 0}
+    h2{font-family:'Playfair Display',serif;text-align:center;color:#5A3921;font-size:2.5rem;margin-bottom:40px}
+    .produkty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:25px;padding:20px}
+    .produkt{background:white;border-radius:15px;overflow:hidden;box-shadow:0 8px 20px rgba(0,0,0,0.1);text-align:center;opacity:0;transform:translateY(30px);transition:all .6s}
     .produkt.visible{opacity:1;transform:none}
-    .produkt img{width:100%;height:250px;object-fit:cover;cursor:pointer;transition:.3s}
-    .produkt img:hover{transform:scale(1.06)}
-    .produkt h3{margin:18px 0 10px;color:var(--dk);font-size:1.3rem}
-    .del-btn{position:absolute;top:10px;right:10px;background:#e74c3c;color:white;width:36px;height:36px;border-radius:50%;border:none;font-size:20px;cursor:pointer;opacity:0;transition:.3s;z-index:10}
-    .produkt:hover .del-btn{opacity:1}
-    .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.96);z-index:1000;justify-content:center;align-items:center}
-    .lightbox img{max-width:92%;max-height:92%;border:12px solid white;border-radius:18px}
-    .lightbox-close{position:absolute;top:25px;right:35px;color:white;font-size:55px;cursor:pointer}
+    .produkt img{width:100%;height:240px;object-fit:cover;cursor:pointer;transition:.3s}
+    .produkt img:hover{transform:scale(1.05)}
+    .produkt h3{margin:15px 0 8px;color:#5A3921}
+    .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:1000;justify-content:center;align-items:center}
+    .lightbox img{max-width:90%;max-height:90%;border:10px solid white;border-radius:15px}
+    .lightbox-close{position:absolute;top:20px;right:30px;color:white;font-size:50px;cursor:pointer}
+    #admin-btn{position:absolute;top:20px;right:20px;background:#333;color:white;padding:12px 20px;border:none;border-radius:8px;cursor:pointer;font-size:15px}
     #admin-panel{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:1001;padding:20px;box-sizing:border-box;overflow-y:auto}
-    #admin-content{max-width:520px;margin:60px auto;background:white;padding:40px;border-radius:20px;text-align:center;box-shadow:0 15px 40px rgba(0,0,0,0.3)}
-    .form-group{margin:25px 0}
-    input[type="text"],input[type="file"]{width:100%;padding:14px;border-radius:10px;border:1px solid #ddd;font-size:16px}
-    button{background:var(--dk);color:white;padding:14px 24px;border:none;border-radius:10px;cursor:pointer;font-size:16px;margin:10px}
-    button:hover{background:#333}
-    #status{font-weight:bold;margin-top:20px;font-size:1.1rem}
-    footer{background:var(--dk);color:white;text-align:center;padding:25px;font-size:0.95rem}
+    #admin-content{max-width:500px;margin:50px auto;background:white;padding:30px;border-radius:15px;text-align:center}
+    .form-group{margin:20px 0}
+    input, button{width:100%;padding:12px;margin:10px 0;border-radius:8px;border:1px solid #ddd;font-size:16px}
+    button{background:#5A3921;color:white;border:none;cursor:pointer}
+    button:hover{background:#444}
+    #status{font-weight:bold;margin-top:20px}
+    footer{background:#5A3921;color:white;text-align:center;padding:20px}
   </style>
 </head>
 <body>
 
   <header>
     <div class="container">
-      <!-- TRZY KLIKNIĘCIA W "Babcia Halina" = otwarcie panelu -->
-      <h1 id="secret-title">Babcia Halina</h1>
-      <p>Rękodzieło handmade z sercem i pasją ♡</p>
+      <h1>Babcia Halina</h1>
+      <p>Rękodzieło handmade z pasją i sercem</p>
+      <button id="admin-btn">Panel Admina</button>
     </div>
   </header>
 
@@ -56,126 +55,97 @@
   </nav>
 
   <main>
-    <section id="o-mnie" class="section"><div class="container"><h2>O mnie</h2><p style="max-width:800px;margin:auto;text-align:center;font-size:1.2rem">Cześć! Jestem Halina i od ponad 40 lat tworzę rękodzieło: aniołki, serwetki, buciki, dekoracje świąteczne… Wszystko szyte i dziergane z miłością. Zapraszam do mojego świata ♡</p></div></section>
+    <section id="o-mnie" class="section"><div class="container"><h2>O mnie</h2><p style="text-align:center;font-size:1.2rem;max-width:800px;margin:auto">Cześć! Nazywam się Halina i od wielu lat z pasją tworzę rękodzieło. Szyję serwetki, aniołki, dekoracje wielkanocne i bożonarodzeniowe. Każdy produkt powstaje z miłością i dbałością o detale – idealny na prezent lub do Twojego domu ♡</p></div></section>
 
     <section id="produkty" class="section">
       <div class="container">
         <h2>Moje produkty</h2>
-        <div class="produkty-grid" id="grid"></div>
+        <div class="produkty-grid" id="grid">
+          <!-- Zdjęcia będą się tu ładować automatycznie z ImgBB + localStorage -->
+        </div>
       </div>
     </section>
 
-    <section id="youtube" class="section"><div class="container"><h2>Filmy na YouTube</h2><div style="text-align:center;font-size:1.3rem;line-height:2.2"><a href="https://www.youtube.com/watch?v=0KrzBSPJ-o8" target="_blank">Robienie na drutach dla początkujących</a><br><a href="https://www.youtube.com/watch?v=UsZXmPuWoGI" target="_blank">PODSTAWY ROBÓTEK NA DRUTACH</a><br><a href="https://www.youtube.com/watch?v=aujM89g7cLM" target="_blank">Poczatki!!!</a></div></div></section>
+    <section id="youtube" class="section"><div class="container"><h2>Filmy YouTube</h2><div style="text-align:center;font-size:1.3rem"><p><a href="https://www.youtube.com/watch?v=0KrzBSPJ-o8" target="_blank">Robienie na drutach dla początkujących</a></p><p><a href="https://www.youtube.com/watch?v=UsZXmPuWoGI" target="_blank">PODSTAWY ROBÓTEK NA DRUTACH</a></p><p><a href="https://www.youtube.com/watch?v=aujM89g7cLM" target="_blank">Poczatki!!!</a></p></div></div></section>
 
-    <section id="kontakt" class="section"><div class="container"><h2>Kontakt i zamówienia</h2><form action="https://formspree.io/f/mldleovp" method="POST" style="max-width:520px;margin:auto;background:white;padding:40px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,0.1)"><input type="text" name="name" placeholder="Twoje imię" required><input type="email" name="email" placeholder="Twój e-mail" required><textarea name="message" rows="6" placeholder="Napisz do mnie..." required></textarea><button type="submit">Wyślij wiadomość</button></form></div></section>
+    <section id="kontakt" class="section"><div class="container"><h2>Kontakt i zamówienia</h2><form action="https://formspree.io/f/mldleovp" method="POST" style="max-width:500px;margin:auto;background:white;padding:30px;border-radius:15px;box-shadow:0 8px 25px rgba(0,0,0,0.1)"><div class="form-group"><input type="text" name="name" placeholder="Twoje imię" required></div><div class="form-group"><input type="email" name="email" placeholder="Twój e-mail" required></div><div class="form-group"><textarea name="message" rows="5" placeholder="Twoja wiadomość..." required></textarea></div><button type="submit">Wyślij wiadomość</button></form></div></section>
   </main>
 
   <footer><div class="container"><p>© <span id="year"></span> Babcia Halina ♡ Wszelkie prawa zastrzeżone</p></div></footer>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
-    <span class="lightbox-close">×</span>
-    <img src="" id="lbimg">
-  </div>
+  <div class="lightbox" id="lightbox" onclick="this.style.display='none'"><img src="" id="lbimg"><div class="lightbox-close">×</div></div>
 
-  <!-- Panel Admina – ukryty -->
+  <!-- Panel Admina -->
   <div id="admin-panel">
     <div id="admin-content">
-      <h2 style="color:var(--dk)">Dodaj nowy produkt</h2>
-      <div class="form-group"><input type="text" id="nazwa" placeholder="Nazwa (np. Aniołek niebieski)"></div>
+      <h2>Dodaj nowy produkt</h2>
+      <div class="form-group"><input type="text" id="nazwa" placeholder="Nazwa produktu (np. Aniołek biały)"></div>
       <div class="form-group"><input type="file" id="zdjecie" accept="image/*"></div>
       <button onclick="dodajProdukt()">Dodaj na stronę</button>
-      <button onclick="zamknijPanel()" style="background:#777">Zamknij</button>
+      <button onclick="document.getElementById('admin-panel').style.display='none'" style="background:#666">Anuluj</button>
       <p id="status"></p>
     </div>
   </div>
 
   <script>
     const GRID = document.getElementById('grid');
-    const API_KEY = '5c8b7b5f8441e8e21b3779df3c1e9c1f'; // ImgBB – darmowy klucz
+    const API_KEY = '5c8b7b5f8441e8e21b3779df3c1e9c1f'; // darmowy klucz ImgBB – działa bez rejestracji!
 
-    // Wczytaj produkty z localStorage
-    let produkty = JSON.parse(localStorage.getItem('babciahalina_v2') || '[]');
-    produkty.forEach(p => dodajDoGrid(p.url, p.nazwa, p.id));
+    // Wczytaj zapisane produkty
+    const zapisane = JSON.parse(localStorage.getItem('babciahalina_produkty') || '[]');
+    zapisane.forEach(p => dodajDoGrid(p.url, p.nazwa));
 
-    // Potrójne kliknięcie w tytuł = otwarcie panelu
-    let kliki = 0;
-    document.getElementById('secret-title').ondblclick = () => {
-      kliki = 0;
-    };
-    document.getElementById('secret-title').onclick = () => {
-      kliki++;
-      if (kliki === 3) {
-        document.getElementById('admin-panel').style.display = 'block';
-        kliki = 0;
-      }
-    };
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('admin-btn').onclick = () => document.getElementById('admin-panel').style.display = 'block';
 
-    function zamknijPanel() {
-      document.getElementById('admin-panel').style.display = 'none';
-    }
-
-    function dodajDoGrid(src, nazwa, id) {
+    function dodajDoGrid(src, nazwa) {
       const div = document.createElement('div');
       div.className = 'produkt visible';
-      div.dataset.id = id;
-      div.innerHTML = `
-        <img src="${src}" loading="lazy" onclick="openLightbox(this.src)">
-        <h3>${nazwa || 'Piękny rękodzieło'}</h3>
-        <p>brak na stanie – możliwość zamówienia</p>
-        <button class="del-btn" onclick="usunProdukt('${id}', this)">−</button>
-      `;
+      div.innerHTML = `<img src="${src}" loading="lazy" onclick="openLightbox(this.src)">
+                       <h3>${nazwa || 'Nowy produkt'}</h3>
+                       <p>brak na stanie – możliwość zamówienia</p>`;
       GRID.insertBefore(div, GRID.firstChild);
+      
+      // Animacja
+      const obs = new IntersectionObserver(e => e.forEach(en => {if(en.isIntersecting) en.target.classList.add('visible')}), {threshold: 0.1});
+      document.querySelectorAll('.produkt').forEach(p => obs.observe(p));
     }
 
     window.dodajProdukt = () => {
       const plik = document.getElementById('zdjecie').files[0];
-      const nazwa = document.getElementById('nazwa').value.trim() || 'Nowy produkt';
-      if (!plik) return status("Wybierz zdjęcie!");
+      const nazwa = document.getElementById('nazwa').value.trim() || 'Piękny rękodzieło';
+      if (!plik) return document.getElementById('status').innerHTML = '<span style="color:red">Wybierz zdjęcie!</span>';
 
-      status("Wysyłam zdjęcie...");
-      const fd = new FormData();
-      fd.append('image', plik);
+      document.getElementById('status').textContent = 'Wysyłam...';
+      const formData = new FormData();
+      formData.append('image', plik);
 
-      fetch(`https://api.imgbb.com/1/upload?key=${API_KEY}`, {method:'POST', body:fd})
-        .then(r => r.json())
-        .then(d => {
-          if (d.data?.url) {
-            const id = Date.now() + Math.random();
-            dodajDoGrid(d.data.url, nazwa, id);
-            produkty.unshift({url: d.data.url, nazwa, id});
-            localStorage.setItem('babciahalina_v2', JSON.stringify(produkty.slice(0,200)));
-            status("Dodano! ♡");
-            document.getElementById('zdjecie').value = '';
-            document.getElementById('nazwa').value = '';
-            setTimeout(zamknijPanel, 1200);
-          }
-        })
-        .catch(() => status("Błąd – spróbuj jeszcze raz"));
+      fetch(`https://api.imgbb.com/1/upload?key=${API_KEY}`, {
+        method: 'POST',
+        body: formData
+      })
+      .then(r => r.json())
+      .then(data => {
+        if (data.data?.url) {
+          dodajDoGrid(data.data.url, nazwa);
+          
+          // Zapisz w przeglądarce (działa nawet po odświeżeniu!)
+          const nowe = [{url: data.data.url, nazwa}, ...zapisane];
+          localStorage.setItem('babciahalina_produkty', JSON.stringify(nowe.slice(0, 100))); // max 100 ostatnich
+
+          document.getElementById('status').innerHTML = '<span style="color:green">Dodano! ♡</span>';
+          document.getElementById('zdjecie').value = '';
+          document.getElementById('nazwa').value = '';
+          setTimeout(() => document.getElementById('admin-panel').style.display = 'none', 1500);
+        }
+      })
+      .catch(() => document.getElementById('status').innerHTML = '<span style="color:red">Błąd – spróbuj jeszcze raz</span>');
     };
-
-    window.usunProdukt = (id, btn) => {
-      if (confirm("Na pewno usunąć ten produkt?")) {
-        btn.parentElement.remove();
-        produkty = produkty.filter(p => p.id != id);
-        localStorage.setItem('babciahalina_v2', JSON.stringify(produkty));
-      }
-    };
-
-    function status(txt) {
-      document.getElementById('status').innerHTML = txt;
-    }
 
     window.openLightbox = src => {
       document.getElementById('lbimg').src = src;
       document.getElementById('lightbox').style.display = 'flex';
     };
-
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Animacja pojawiania
-    new IntersectionObserver(e=>e.forEach(en=>en.isIntersecting&&en.target.classList.add('visible')),{threshold:0.1})
-      .observe(document.querySelectorAll('.produkt'));
   </script>
 </body>
 </html>
