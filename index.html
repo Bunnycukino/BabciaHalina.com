@@ -6,46 +6,43 @@
   <title>Babcia Halina - Rękodzieło Handmade</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
   <style>
-    :root{--cream:#F8F1E9;--brown:#A78A7F;--dark:#5A3921;--text:#2D2D2D}
-    body{margin:0;font-family:'Plus Jakarta Sans',sans-serif;background:linear-gradient(rgba(248,241,233,0.9),rgba(248,241,233,0.9)),url('assets/Tlo Jul 30, 2025, 01_39_44 AM.png') center/cover fixed;color:var(--text);line-height:1.6}
-    .container{max-width:1200px;margin:0 auto;padding:0 20px}
-    header{background:var(--brown);color:white;padding:3rem 0;text-align:center;position:relative}
-    header h1{font-family:'Playfair Display',serif;font-size:3rem;margin:0}
-    nav{background:var(--dark);padding:1rem 0;position:sticky;top:0;z-index:100;text-align:center}
-    nav a{color:white;margin:0 1.5rem;text-decoration:none;font-size:1.1rem}
-    nav a:hover{opacity:0.8}
-    .section{padding:4rem 0}
-    h2{font-family:'Playfair Display',serif;color:var(--dark);text-align:center;margin-bottom:2rem;font-size:2.2rem}
-    .produkty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:2rem;margin-top:2rem}
-    .produkt{background:white;border-radius:12px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,0.1);text-align:center;opacity:0;transform:translateY(30px);transition:all .6s}
-    .produkt.visible{opacity:1;transform:translateY(0)}
-    .produkt img{width:100%;height:220px;object-fit:cover;cursor:pointer;transition:transform .3s}
-    .produkt img:hover{transform:scale(1.05)}
-    .produkt h3{margin:15px 0 8px;color:var(--dark)}
-    .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:1000;justify-content:center;align-items:center}
-    .lightbox img{max-width:90%;max-height:90%;border:8px solid white;border-radius:12px}
-    .lightbox-close{position:absolute;top:20px;right:30px;color:white;font-size:40px;cursor:pointer}
-    #admin-panel{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);z-index:1001;padding:20px;overflow-y:auto}
-    #admin-content{max-width:600px;margin:40px auto;background:white;padding:30px;border-radius:12px;color:#333}
-    .admin-close{float:right;font-size:28px;cursor:pointer;color:#999}
-    .form-group{margin:15px 0}
-    .form-group label{display:block;margin-bottom:5px;font-weight:600}
-    .form-group input,.form-group textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;box-sizing:border-box}
-    button{background:var(--brown);color:white;border:none;padding:12px 20px;border-radius:6px;cursor:pointer}
-    button:hover{background:var(--dark)}
-    footer{background:var(--dark);color:white;text-align:center;padding:20px 0}
-    @media(max-width:768px){.produkty-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}}
+    :root{--br:#A78A7F;--dk:#5A3921}
+    body{margin:0;font-family:'Plus Jakarta Sans',sans-serif;background:linear-gradient(rgba(248,241,233,0.92),rgba(248,241,233,0.92)),url('assets/Tlo Jul 30, 2025, 01_39_44 AM.png') center/cover fixed;color:#333;line-height:1.7}
+    .container{max-width:1200px;margin:auto;padding:0 20px}
+    header{background:var(--br);color:white;padding:60px 20px;text-align:center;position:relative}
+    header h1{font-family:'Playfair Display',serif;font-size:3.2rem;margin:0;cursor:pointer}
+    nav{background:var(--dk);padding:15px;position:sticky;top:0;z-index:100;text-align:center}
+    nav a{color:white;margin:0 20px;text-decoration:none;font-size:1.1rem}
+    .section{padding:70px 0}
+    h2{font-family:'Playfair Display',serif;text-align:center;color:var(--dk);font-size:2.6rem;margin-bottom:50px}
+    .produkty-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:28px;padding:20px}
+    .produkt{position:relative;background:white;border-radius:18px;overflow:hidden;box-shadow:0 10px 25px rgba(0,0,0,0.12);text-align:center;opacity:0;transform:translateY(40px);transition:all .7s}
+    .produkt.visible{opacity:1;transform:none}
+    .produkt img{width:100%;height:250px;object-fit:cover;cursor:pointer;transition:.3s}
+    .produkt img:hover{transform:scale(1.06)}
+    .produkt h3{margin:18px 0 10px;color:var(--dk);font-size:1.3rem}
+    .del-btn{position:absolute;top:10px;right:10px;background:#e74c3c;color:white;width:36px;height:36px;border-radius:50%;border:none;font-size:20px;cursor:pointer;opacity:0;transition:.3s;z-index:10}
+    .produkt:hover .del-btn{opacity:1}
+    .lightbox{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.96);z-index:1000;justify-content:center;align-items:center}
+    .lightbox img{max-width:92%;max-height:92%;border:12px solid white;border-radius:18px}
+    .lightbox-close{position:absolute;top:25px;right:35px;color:white;font-size:55px;cursor:pointer}
+    #admin-panel{display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.95);z-index:1001;padding:20px;box-sizing:border-box;overflow-y:auto}
+    #admin-content{max-width:520px;margin:60px auto;background:white;padding:40px;border-radius:20px;text-align:center;box-shadow:0 15px 40px rgba(0,0,0,0.3)}
+    .form-group{margin:25px 0}
+    input[type="text"],input[type="file"]{width:100%;padding:14px;border-radius:10px;border:1px solid #ddd;font-size:16px}
+    button{background:var(--dk);color:white;padding:14px 24px;border:none;border-radius:10px;cursor:pointer;font-size:16px;margin:10px}
+    button:hover{background:#333}
+    #status{font-weight:bold;margin-top:20px;font-size:1.1rem}
+    footer{background:var(--dk);color:white;text-align:center;padding:25px;font-size:0.95rem}
   </style>
 </head>
 <body>
 
   <header>
     <div class="container">
-      <h1>Babcia Halina</h1>
-      <p>Rękodzieło handmade z pasją</p>
-      <button id="admin-btn" style="position:absolute;top:20px;right:20px;background:#333;color:white;border:none;padding:10px 20px;border-radius:6px;cursor:pointer;font-size:14px">
-        Panel Admina
-      </button>
+      <!-- TRZY KLIKNIĘCIA W "Babcia Halina" = otwarcie panelu -->
+      <h1 id="secret-title">Babcia Halina</h1>
+      <p>Rękodzieło handmade z sercem i pasją ♡</p>
     </div>
   </header>
 
@@ -59,71 +56,126 @@
   </nav>
 
   <main>
-    <section id="o-mnie" class="section"><div class="container"><h2>O mnie</h2><p>Cześć! Nazywam się Halina i od wielu lat z pasją tworzę rękodzieło. Szyję serwetki, aniołki, dekoracje i wiele innych. Każdy produkt powstaje z sercem i dbałością o detale – idealny do Twojego domu.</p></div></section>
+    <section id="o-mnie" class="section"><div class="container"><h2>O mnie</h2><p style="max-width:800px;margin:auto;text-align:center;font-size:1.2rem">Cześć! Jestem Halina i od ponad 40 lat tworzę rękodzieło: aniołki, serwetki, buciki, dekoracje świąteczne… Wszystko szyte i dziergane z miłością. Zapraszam do mojego świata ♡</p></div></section>
 
     <section id="produkty" class="section">
       <div class="container">
         <h2>Moje produkty</h2>
-        <div class="produkty-grid" id="grid">
-          <div class="produkt"><img src="assets/produkty/IMG_3993.jpeg" alt="Aniołek Lily" loading="lazy" onclick="openLightbox(this.src)"><h3>Aniołek Lily</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4464.jpeg" alt="pajacyki" loading="lazy" onclick="openLightbox(this.src)"><h3>pajacyki</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4161.jpeg" alt="ubranko" loading="lazy" onclick="openLightbox(this.src)"><h3>ubranko</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4162.jpeg" alt="Buciki" loading="lazy" onclick="openLightbox(this.src)"><h3>Buciki</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4167.jpeg" alt="Czerwony Aniołek" loading="lazy" onclick="openLightbox(this.src)"><h3>Czerwony Aniołek</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4168.jpeg" alt="Bąbki" loading="lazy" onclick="openLightbox(this.src)"><h3>Bąbki</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4169.jpeg" alt="Koszyk różyczek" loading="lazy" onclick="openLightbox(this.src)"><h3>Koszyk różyczek</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4115.jpeg" alt="kurczaczki" loading="lazy" onclick="openLightbox(this.src)"><h3>kurczaczki</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4116.jpeg" alt="Kroliczek" loading="lazy" onclick="openLightbox(this.src)"><h3>Kroliczek</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4118.jpeg" alt="koszyczek Wielkanocny" loading="lazy" onclick="openLightbox(this.src)"><h3>koszyczek Wielkanocny</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4119.jpeg" alt="Buciki dla dzieciuszka" loading="lazy" onclick="openLightbox(this.src)"><h3>Buciki dla dzieciuszka</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3992.jpeg" alt="Aniołek 2" loading="lazy" onclick="openLightbox(this.src)"><h3>Aniołek 2</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3991.jpeg" alt="Balwanki i Aniołek" loading="lazy" onclick="openLightbox(this.src)"><h3>Balwanki i Aniołek</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3986.jpeg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3987.jpeg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3988.jpeg" alt="Dzwoneczki" loading="lazy" onclick="openLightbox(this.src)"><h3>Dzwoneczki</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3989.jpeg" alt="Serweta misa" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta misa</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3990.jpeg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3966.jpeg" alt="Serweta" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3927.jpg" alt="Aniołek" loading="lazy" onclick="openLightbox(this.src)"><h3>Aniołek</h3><p>brak na stanie – możliwość zamówienia</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_3960.jpeg" alt="Serweta kwadrat" loading="lazy" onclick="openLightbox(this.src)"><h3>Serweta kwadrat</h3><p>brak na stanie – możliwość zamówienia</p></div>
-        </div>
+        <div class="produkty-grid" id="grid"></div>
       </div>
     </section>
 
-    <section id="youtube" class="section"><div class="container"><h2>Filmy YouTube</h2><ul style="list-style:none;padding:0;text-align:center;font-size:1.2rem"><li style="margin:1rem"><a href="https://www.youtube.com/watch?v=0KrzBSPJ-o8" target="_blank">Robienie na drutach dla początkujących</a></li><li style="margin:1rem"><a href="https://www.youtube.com/watch?v=UsZXmPuWoGI" target="_blank">PODSTAWY ROBÓTEK NA DRUTACH</a></li><li style="margin:1rem"><a href="https://www.youtube.com/watch?v=aujM89g7cLM" target="_blank">Poczatki!!!</a></li></ul></div></section>
+    <section id="youtube" class="section"><div class="container"><h2>Filmy na YouTube</h2><div style="text-align:center;font-size:1.3rem;line-height:2.2"><a href="https://www.youtube.com/watch?v=0KrzBSPJ-o8" target="_blank">Robienie na drutach dla początkujących</a><br><a href="https://www.youtube.com/watch?v=UsZXmPuWoGI" target="_blank">PODSTAWY ROBÓTEK NA DRUTACH</a><br><a href="https://www.youtube.com/watch?v=aujM89g7cLM" target="_blank">Poczatki!!!</a></div></div></section>
 
-    <section id="kontakt" class="section"><div class="container"><h2>Kontakt i zamówienia</h2><form action="https://formspree.io/f/mldleovp" method="POST" style="max-width:500px;margin:2rem auto;background:white;padding:2rem;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,0.1)"><div class="form-group"><label>Imię:</label><input type="text" name="name" required></div><div class="form-group"><label>E-mail:</label><input type="email" name="email" required></div><div class="form-group"><label>Wiadomość:</label><textarea name="message" rows="5" required></textarea></div><button type="submit">Wyślij</button></form></div></section>
+    <section id="kontakt" class="section"><div class="container"><h2>Kontakt i zamówienia</h2><form action="https://formspree.io/f/mldleovp" method="POST" style="max-width:520px;margin:auto;background:white;padding:40px;border-radius:18px;box-shadow:0 10px 30px rgba(0,0,0,0.1)"><input type="text" name="name" placeholder="Twoje imię" required><input type="email" name="email" placeholder="Twój e-mail" required><textarea name="message" rows="6" placeholder="Napisz do mnie..." required></textarea><button type="submit">Wyślij wiadomość</button></form></div></section>
   </main>
 
-  <footer><div class="container"><p>© <span id="year"></span> Babcia Halina | Wszelkie prawa zastrzeżone</p></div></footer>
+  <footer><div class="container"><p>© <span id="year"></span> Babcia Halina ♡ Wszelkie prawa zastrzeżone</p></div></footer>
 
-  <div class="lightbox" id="lightbox"><span class="lightbox-close" onclick="document.getElementById('lightbox').style.display='none'">×</span><img id="lb-img" src="" alt=""></div>
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" onclick="this.style.display='none'">
+    <span class="lightbox-close">×</span>
+    <img src="" id="lbimg">
+  </div>
 
+  <!-- Panel Admina – ukryty -->
   <div id="admin-panel">
     <div id="admin-content">
-      <span class="admin-close" onclick="document.getElementById('admin-panel').style.display='none'">×</span>
-      <div id="login"><h3>Logowanie</h3><input type="text" id="user" placeholder="Halinka"><input type="password" id="pass" placeholder="Halinka"><button onclick="login()">Zaloguj</button><p id="err" style="color:red;display:none">Błąd!</p></div>
-      <div id="dash" style="display:none"><h3>Dodaj produkt</h3><input type="text" id="nazwa" placeholder="Nazwa produktu"><input type="file" id="zdj" accept="image/*"><img id="prev" style="max-width:100%;margin-top:10px;display:none"><button onclick="dodaj()">Dodaj</button><button onclick="document.getElementById('admin-panel').style.display='none'">Wyloguj</button><p id="stat"></p></div>
+      <h2 style="color:var(--dk)">Dodaj nowy produkt</h2>
+      <div class="form-group"><input type="text" id="nazwa" placeholder="Nazwa (np. Aniołek niebieski)"></div>
+      <div class="form-group"><input type="file" id="zdjecie" accept="image/*"></div>
+      <button onclick="dodajProdukt()">Dodaj na stronę</button>
+      <button onclick="zamknijPanel()" style="background:#777">Zamknij</button>
+      <p id="status"></p>
     </div>
   </div>
 
   <script>
-    document.getElementById('year').textContent=new Date().getFullYear();
-    document.getElementById('admin-btn').onclick=()=>{document.getElementById('admin-panel').style.display='block'}
-    function login(){if(document.getElementById('user').value==='Halinka'&&document.getElementById('pass').value==='Halinka'){document.getElementById('login').style.display='none';document.getElementById('dash').style.display='block'}else{document.getElementById('err').style.display='block'}}
-    document.getElementById('zdj').onchange=e=>{if(e.target.files[0]){const r=new FileReader();r.onload=ev=>{document.getElementById('prev').src=ev.target.result;document.getElementById('prev').style.display='block'};r.readAsDataURL(e.target.files[0])}}
-    function dodaj(){
-      const n=document.getElementById('nazwa').value||'Nowy produkt';
-      const f=document.getElementById('zdj').files[0];
-      if(!f){document.getElementById('stat').textContent='Wybierz zdjęcie!';return}
-      const r=new FileReader();
-      r.onload=ev=>{const h=`<div class="produkt visible"><img src="${ev.target.result}" loading="lazy" onclick="openLightbox(this.src)"><h3>${n}</h3><p>brak na stanie – możliwość zamówienia</p></div>`;document.getElementById('grid').insertAdjacentHTML('afterbegin',h);document.getElementById('stat').textContent='Dodano!';document.getElementById('nazwa').value='';document.getElementById('zdj').value='';document.getElementById('prev').style.display='none'}
-      r.readAsDataURL(f)
+    const GRID = document.getElementById('grid');
+    const API_KEY = '5c8b7b5f8441e8e21b3779df3c1e9c1f'; // ImgBB – darmowy klucz
+
+    // Wczytaj produkty z localStorage
+    let produkty = JSON.parse(localStorage.getItem('babciahalina_v2') || '[]');
+    produkty.forEach(p => dodajDoGrid(p.url, p.nazwa, p.id));
+
+    // Potrójne kliknięcie w tytuł = otwarcie panelu
+    let kliki = 0;
+    document.getElementById('secret-title').ondblclick = () => {
+      kliki = 0;
+    };
+    document.getElementById('secret-title').onclick = () => {
+      kliki++;
+      if (kliki === 3) {
+        document.getElementById('admin-panel').style.display = 'block';
+        kliki = 0;
+      }
+    };
+
+    function zamknijPanel() {
+      document.getElementById('admin-panel').style.display = 'none';
     }
-    window.openLightbox=s=>{document.getElementById('lb-img').src=s;document.getElementById('lightbox').style.display='flex'}
-    // Animacja pojawiania się produktów
-    const obs=new IntersectionObserver(e=>e.forEach(en=>{if(en.isIntersecting){en.target.classList.add('visible')}}),{threshold:0.1})
-    document.querySelectorAll('.produkt').forEach(p=>obs.observe(p))
+
+    function dodajDoGrid(src, nazwa, id) {
+      const div = document.createElement('div');
+      div.className = 'produkt visible';
+      div.dataset.id = id;
+      div.innerHTML = `
+        <img src="${src}" loading="lazy" onclick="openLightbox(this.src)">
+        <h3>${nazwa || 'Piękny rękodzieło'}</h3>
+        <p>brak na stanie – możliwość zamówienia</p>
+        <button class="del-btn" onclick="usunProdukt('${id}', this)">−</button>
+      `;
+      GRID.insertBefore(div, GRID.firstChild);
+    }
+
+    window.dodajProdukt = () => {
+      const plik = document.getElementById('zdjecie').files[0];
+      const nazwa = document.getElementById('nazwa').value.trim() || 'Nowy produkt';
+      if (!plik) return status("Wybierz zdjęcie!");
+
+      status("Wysyłam zdjęcie...");
+      const fd = new FormData();
+      fd.append('image', plik);
+
+      fetch(`https://api.imgbb.com/1/upload?key=${API_KEY}`, {method:'POST', body:fd})
+        .then(r => r.json())
+        .then(d => {
+          if (d.data?.url) {
+            const id = Date.now() + Math.random();
+            dodajDoGrid(d.data.url, nazwa, id);
+            produkty.unshift({url: d.data.url, nazwa, id});
+            localStorage.setItem('babciahalina_v2', JSON.stringify(produkty.slice(0,200)));
+            status("Dodano! ♡");
+            document.getElementById('zdjecie').value = '';
+            document.getElementById('nazwa').value = '';
+            setTimeout(zamknijPanel, 1200);
+          }
+        })
+        .catch(() => status("Błąd – spróbuj jeszcze raz"));
+    };
+
+    window.usunProdukt = (id, btn) => {
+      if (confirm("Na pewno usunąć ten produkt?")) {
+        btn.parentElement.remove();
+        produkty = produkty.filter(p => p.id != id);
+        localStorage.setItem('babciahalina_v2', JSON.stringify(produkty));
+      }
+    };
+
+    function status(txt) {
+      document.getElementById('status').innerHTML = txt;
+    }
+
+    window.openLightbox = src => {
+      document.getElementById('lbimg').src = src;
+      document.getElementById('lightbox').style.display = 'flex';
+    };
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Animacja pojawiania
+    new IntersectionObserver(e=>e.forEach(en=>en.isIntersecting&&en.target.classList.add('visible')),{threshold:0.1})
+      .observe(document.querySelectorAll('.produkt'));
   </script>
 </body>
 </html>
