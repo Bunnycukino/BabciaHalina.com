@@ -3,27 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rękodzieło handmade Babci Haliny - aniołki, serwety, buciki, robótki na drutach i szydełku">
-  <title>Babcia Halina - Rękodzieło z sercem</title>
+  <meta name="description" content="Rękodzieło handmade Babci Haliny - aniołki, serwety, buciki, robótki na drutach i szydełku, inspirowane luksusem">
+  <title>Babcia Halina - Rękodzieło z sercem | Kolekcja 2025</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- HERO -->
+  <!-- HERO inspirowany LV: kontrast + tapeta -->
   <header class="hero">
+    <div class="hero-overlay"></div>
     <div class="container">
       <h1>Babcia Halina</h1>
-      <p class="subtitle">Rękodzieło handmade z miłością i pasją</p>
+      <p class="subtitle">Kolekcja Rękodzieła 2025 – dialog kontrastów: delikatność vs. siła, tradycja vs. nowoczesność 🧶✨</p>
+      <a href="#produkty" class="cta-btn">Odkryj kolekcję</a>
     </div>
   </header>
 
   <nav>
     <div class="container">
       <a href="#o-mnie">O mnie</a>
-27      <a href="#produkty">Produkty</a>
+      <a href="#produkty">Kolekcja</a>
       <a href="#youtube">Tutoriale</a>
       <a href="#kontakt">Kontakt</a>
     </div>
@@ -31,34 +34,44 @@
 
   <main>
 
-    <!-- O MNIE -->
-    <section id="o-mnie" class="section">
+    <!-- O MNIE z kontrastem -->
+    <section id="o-mnie" class="section about-section">
       <div class="container">
-        <h2>O mnie</h2>
+        <h2>Inspiracje</h2>
         <div class="about-grid">
           <div class="text">
-            <p>Cześć! Jestem Halina, ale wszyscy mówią mi Babcia Halina ❤️</p>
-            <p>Od ponad 50 lat robię na drutach i szydełku. Każda serweta, każdy aniołek, buciki czy dekoracja powstaje z ogromną miłością i dbałością o detale. Wszystko handmade, tylko naturalne materiały, tylko serce.</p>
-            <p>Jeśli chcesz coś specjalnego – napisz, zrobię specjalnie dla Ciebie!</p>
+            <p>Inspirowana splendorem średniowiecznych gobelinów i blaskiem glam rocka, tworzę kolekcję, gdzie rzeźbiarskie detale spotykają się z miękkimi wełнами. Każdy aniołek czy serweta to reinterpretacja ikon – z sercem i precyzją.</p>
+            <p>Od 50 lat łączę tradycję z nowoczesnością. Zamów swoją unikalną interpretację!</p>
+          </div>
+          <div class="inspo-image">
+            <img src="assets/tapeta.jpg" alt="Tapetowe inspiracje" loading="lazy"> <!-- Dodaj swoje zdjęcie z motywem -->
           </div>
         </div>
       </div>
     </section>
 
-    <!-- PRODUKTY – WSZYSTKIE 31 ZDJĘĆ -->
+    <!-- PRODUKTY: Carousel + Grid jak LV slider -->
     <section id="produkty" class="section">
       <div class="container">
-        <h2>Moje rękodzieło</h2>
-        <p class="center">Wszystkie prace wykonuję na zamówienie – napisz do mnie!</p>
+        <h2>Kolekcja 2025</h2>
+        <p class="center">Sculptural lines, metallic gleams, tapestry motifs – wszystko na zamówienie</p>
 
+        <!-- Carousel dla highlightów (pierwsze 6 produktów) -->
+        <div class="carousel-wrapper">
+          <div class="tns-carousel" id="product-carousel">
+            <div><div class="produkt highlight"><img src="assets/produkty/IMG_3993.jpeg" alt="Aniołek Lily"><h3>Aniołek Lily</h3><p class="status gold">Ikona reinterpretowana</p></div></div>
+            <div><div class="produkt highlight"><img src="assets/produkty/IMG_4464.jpeg" alt="Pajacyki"><h3>Pajacyki</h3><p class="status gold">Glam rock detale</p></div></div>
+            <div><div class="produkt highlight"><img src="assets/produkty/IMG_4161.jpeg" alt="Ubranko"><h3>Ubranko</h3><p class="status gold">Tapestry motifs</p></div></div>
+            <div><div class="produkt highlight"><img src="assets/produkty/IMG_4162.jpeg" alt="Buciki"><h3>Buciki</h3><p class="status gold">Metallic gleams</p></div></div>
+            <div><div class="produkt highlight"><img src="assets/produkty/IMG_4167.jpeg" alt="Czerwony Aniołek"><h3>Czerwony Aniołek</h3><p class="status gold">Średniowieczny kontrast</p></div></div>
+            <div><div class="produkt highlight"><img src="assets/produkty/IMG_4168.jpeg" alt="Bąbki"><h3>Bąbki</h3><p class="status gold">Sculptural lines</p></div></div>
+          </div>
+          <button class="carousel-nav prev">‹</button>
+          <button class="carousel-nav next">›</button>
+        </div>
+
+        <!-- Pełny grid z resztą -->
         <div class="produkty-grid">
-
-          <div class="produkt"><img src="assets/produkty/IMG_3993.jpeg" alt="Aniołek Lily"><h3>Aniołek Lily</h3><p class="status">Na zamówienie</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4464.jpeg" alt="Pajacyki"><h3>Pajacyki</h3><p class="status">Na zamówienie</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4161.jpeg" alt="Ubranko"><h3>Ubranko</h3><p class="status">Na zamówienie</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4162.jpeg" alt="Buciki"><h3>Buciki</h3><p class="status">Na zamówienie</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4167.jpeg" alt="Czerwony Aniołek"><h3>Czerwony Aniołek</h3><p class="status">Na zamówienie</p></div>
-          <div class="produkt"><img src="assets/produkty/IMG_4168.jpeg" alt="Bąbki"><h3>Bąbki</h3><p class="status">Na zamówienie</p></div>
           <div class="produkt"><img src="assets/produkty/IMG_4169.jpeg" alt="Koszyk różyczek"><h3>Koszyk różyczek</h3><p class="status">Na zamówienie</p></div>
           <div class="produkt"><img src="assets/produkty/IMG_4115.jpeg" alt="Kurczaczki"><h3>Kurczaczki</h3><p class="status">Na zamówienie</p></div>
           <div class="produkt"><img src="assets/produkty/IMG_4116.jpeg" alt="Króliczek"><h3>Króliczek</h3><p class="status">Na zamówienie</p></div>
@@ -82,72 +95,33 @@
           <div class="produkt"><img src="assets/produkty/IMG_3962.jpeg" alt="Serweta"><h3>Serweta</h3><p class="status">Na zamówienie</p></div>
           <div class="produkt"><img src="assets/produkty/IMG_3927.jpg" alt="Aniołek"><h3>Aniołek</h3><p class="status">Na zamówienie</p></div>
           <div class="produkt"><img src="assets/produkty/IMG_3960.jpeg" alt="Serweta kwadrat"><h3>Serweta kwadrat</h3><p class="status">Na zamówienie</p></div>
-
-          <!-- Jeśli masz jeszcze jakieś nowe zdjęcia – po prostu dodaj kolejne linijki dokładnie tak samo -->
         </div>
       </div>
     </section>
 
-    <!-- YOUTUBE -->
+    <!-- YOUTUBE z carousel -->
     <section id="youtube" class="section youtube-section">
       <div class="container">
-        <h2>Moje tutoriale – ucz się ze mną</h2>
-        <p class="center">Robienie na drutach i szydełku krok po kroku</p>
-
-        <div class="youtube-grid">
-          <div class="video-card">
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/0KrzBSPJ-o8" title="Robienie na drutach dla początkujących – część 1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="video-info">
-              <h3>Robienie na drutach dla początkujących – część 1</h3>
-              <p>576 tys. wyświetleń · 3599 polubień</p>
-            </div>
-          </div>
-
-          <div class="video-card">
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/aujM89g7cLM" title="Nauka robienia na drutach – podstawy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="video-info">
-              <h3>Nauka robienia na drutach – pełne podstawy</h3>
-              <p>21 tys. wyświetleń · 501 polubień</p>
-            </div>
-          </div>
-
-          <div class="video-card">
-            <div class="video-wrapper">
-              <iframe src="https://www.youtube.com/embed/UsZXmPuWoGI" title="PODSTAWY ROBÓTEK NA DRUTACH" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
-            </div>
-            <div class="video-info">
-              <h3>PODSTAWY ROBÓTEK NA DRUTACH – część 1</h3>
-              <p>Bardzo pozytywnie oceniany film</p>
-            </div>
-          </div>
+        <h2>Campaign: Tutoriale</h2>
+        <p class="center">Odkryj krok po kroku – jak w fashion show</p>
+        <div class="tns-carousel" id="video-carousel">
+          <div><div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/0KrzBSPJ-o8" title="Część 1" frameborder="0" allowfullscreen loading="lazy"></iframe></div><h3>Część 1: Nabieranie oczek</h3><p>576k views</p></div></div>
+          <div><div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/aujM89g7cLM" title="Podstawy" frameborder="0" allowfullscreen loading="lazy"></iframe></div><h3>Pełne podstawy</h3><p>21k views</p></div></div>
+          <div><div class="video-card"><div class="video-wrapper"><iframe src="https://www.youtube.com/embed/UsZXmPuWoGI" title="Część 1" frameborder="0" allowfullscreen loading="lazy"></iframe></div><h3>Podstawy robótek</h3><p>Pozytywne recenzje</p></div></div>
         </div>
       </div>
     </section>
 
-    <!-- KONTAKT -->
+    <!-- KONTAKT bez zmian -->
     <section id="kontakt" class="section">
       <div class="container">
-        <h2>Kontakt i zamówienia</h2>
-        <p class="center">Chcesz zamówić coś specjalnego albo masz pytanie? Napisz – odpisuję na każdą wiadomość ❤️</p>
-
+        <h2>Discover More</h2>
+        <p class="center">Zamów reinterpretację dla siebie ❤️</p>
         <form action="https://formspree.io/f/mldleovp" method="POST">
-          <div class="form-group">
-            <label for="name">Imię:</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-          <div class="form-group">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-          <div class="form-group">
-            <label for="message">Wiadomość:</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-          </div>
-          <button type="submit">Wyślij wiadomość</button>
+          <div class="form-group"><label for="name">Imię:</label><input type="text" id="name" name="name" required></div>
+          <div class="form-group"><label for="email">E-mail:</label><input type="email" id="email" name="email" required></div>
+          <div class="form-group"><label for="message">Wiadomość:</label><textarea id="message" name="message" rows="6" required></textarea></div>
+          <button type="submit">Wyślij</button>
         </form>
       </div>
     </section>
@@ -156,7 +130,7 @@
 
   <footer>
     <div class="container">
-      <p>© <span id="current-year"></span> Babcia Halina • Rękodzieło z sercem</p>
+      <p>© <span id="current-year"></span> Babcia Halina • Inspired by LV Cruise 2026</p>
     </div>
   </footer>
 
@@ -166,6 +140,7 @@
     <img src="" alt="" id="lightbox-img">
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
