@@ -66,3 +66,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+// Na dole pliku dodaj:
+document.querySelectorAll('.video-wrapper').forEach(wrapper => {
+  wrapper.addEventListener('click', () => {
+    const iframe = wrapper.querySelector('iframe');
+    if (iframe) iframe.src += "&autoplay=1";
+  });
+});
