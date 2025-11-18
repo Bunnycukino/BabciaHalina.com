@@ -73,3 +73,38 @@ document.querySelectorAll('.video-wrapper').forEach(wrapper => {
     if (iframe) iframe.src += "&autoplay=1";
   });
 });
+// Istniejący kod... + carousel init
+document.addEventListener('DOMContentLoaded', function() {
+  // ... twój stary kod ...
+
+  // Tiny Slider dla produktów
+  if (typeof tns !== 'undefined') {
+    tns({
+      container: '#product-carousel',
+      items: 3,
+      slideBy: 'page',
+      autoplay: true,
+      autoplayTimeout: 4000,
+      controls: false,
+      nav: false,
+      responsive: {
+        768: { items: 1 },
+        1024: { items: 2 }
+      }
+    });
+
+    // Video carousel
+    tns({
+      container: '#video-carousel',
+      items: 1,
+      autoplay: false,
+      controls: false,
+      nav: false
+    });
+  }
+
+  // Hover gleam animation (już w CSS, ale JS dla smooth)
+  document.querySelectorAll('.produkt').forEach(el => {
+    el.addEventListener('mouseenter', () => el.style.animation = 'gleam 1s ease-in-out');
+  });
+});
