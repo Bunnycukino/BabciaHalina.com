@@ -1,247 +1,119 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Rękodzieło handmade autorstwa Babci Haliny - unikalne serwety, aniołki i dekoracje domowe">
-  <title>Babcia Halina - Rękodzieło Handmade</title>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" as="style">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babcia Halina | Rękodzieło Tworzone z Sercem</title>
+    <link rel="stylesheet" href="style.css"> 
+    <style>
+        /* Prosty CSS dla podglądu, docelowo przenieś go do pliku 'style.css' */
+        body { font-family: 'Arial', sans-serif; margin: 0; padding: 0; background-color: #f8f8f8; color: #333; }
+        header { background-color: #6a0dad; color: white; padding: 20px 0; text-align: center; }
+        nav { background-color: #5d07a7; padding: 10px 0; position: sticky; top: 0; z-index: 1000;}
+        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        .container { width: 90%; max-width: 1200px; margin: auto; overflow: hidden; padding: 20px 0; }
+        .product-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px; 
+            margin-top: 30px;
+        }
+        .product-card { 
+            background: white; 
+            padding: 15px; 
+            border: 1px solid #ddd; 
+            text-align: center; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+        }
+        .product-card img { 
+            width: 100%;
+            height: 250px; /* Stała wysokość zdjęcia dla równej siatki */
+            object-fit: cover; /* Upewnia się, że obrazek wypełnia przestrzeń */
+            display: block; 
+            margin: 0 auto 15px;
+            border-radius: 5px;
+        }
+        .cta-button { 
+            background-color: #ff6600; 
+            color: white; 
+            padding: 10px 20px; 
+            text-decoration: none; 
+            border-radius: 5px; 
+            display: inline-block; 
+            margin-top: 15px; 
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #e65c00;
+        }
+        footer { background-color: #333; color: white; text-align: center; padding: 20px 0; margin-top: 40px; }
+    </style>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Babcia Halina</h1>
-      <p>Rękodzieło handmade z pasją</p>
-    </div>
-  </header>
 
-  <nav>
-    <div class="container">
-      <a href="#youtube">YouTube</a>
-      <a href="#o-mnie">O mnie</a>
-      <a href="#produkty">Produkty</a>
-      <a href="#kontakt">Kontakt</a>
-    </div>
-  </nav>
+    <header>
+        <h1>Babcia Halina</h1>
+        <p>Rękodzieło Tworzone z Sercem i Pasją</p>
+    </header>
 
-  <main>
-    <section id="o-mnie" class="section">
-      <div class="container">
-        <h2>O mnie</h2>
-        <p>Cześć! Nazywam się Halina i od wielu lat z pasją tworzę rękodzieło. Szyję serwetki, wykonuję robótki ręczne i wiele innych unikalnych przedmiotów. Każdy produkt powstaje z sercem, starannością i dbałością o najmniejsze detale – tak, aby cieszył i ozdabiał Wasze domy.</p>
-      </div>
-    </section>
-
-    <section id="produkty" class="section">
-      <div class="container">
-        <h2>Moje produkty</h2>
-        <div class="produkty-grid">
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3993.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
-            <h3>Aniołek Lily</h3>
-            <p>brak na stanie możliwość zamówienia </p>
-          </div>
-             <div class="produkty-grid">
-          <div class="produkt">
-            <img src="assets/produkty/IMG_4464.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
-            <h3>pajacyki</h3>
-            <p>brak na stanie możliwość zamówienia </p>
-          </div>
-                     <div class="produkty-grid">
-          <div class="produkt">
-            <img src="assets/produkty/IMG_4161.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
-            <h3>ubranko</h3>
-            <p>brak na stanie możliwość zamówienia </p>
-          </div>
-                  <div class="produkty-grid">
-          <div class="produkt">
-            <img src="assets/produkty/IMG_4162.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
-            <h3>Buciki</h3>
-            <p>brak na stanie możliwość zamówienia </p>
-          </div>
-                      <div class="produkty-grid">
-          <div class="produkt">
-            <img src="assets/produkty/IMG_4167.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
-            <h3>Czerwony Aniołek</h3>
-            <p>brak na stanie możliwość zamówienia </p>
-          </div>
-                       <div class="produkty-grid">
-          <div class="produkt">
-            <img src="assets/produkty/IMG_4168.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
-            <h3>Bąbki 😍</h3>
-            <p>brak na stanie możliwość zamówienia </p>
-          </div>
-                  <div class="produkty-grid">
-          <div class="produkt">
-            <img src="assets/produkty/IMG_4169.jpeg" alt="Aniołek Lily - ręcznie robiony" loading="lazy">
-            <h3>Koszyk różyczek</h3>
-            <p>brak na stanie możliwość zamówienia </p>
-          </div>          
-          <div class="produkt">
-            <img src="assets/produkty/IMG_4115.jpeg" alt="Aniołek - ręcznie robiony" loading="lazy">
-            <h3>kurczaczki</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_4116.jpeg" alt="Aniołek - ręcznie robiony" loading="lazy">
-            <h3>Kroliczek</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_4118.jpeg" alt="Aniołek - ręcznie robiony" loading="lazy">
-            <h3>koszyczek Wielkanocny</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_4119.jpeg" alt="Aniołek - ręcznie robiony" loading="lazy">
-            <h3>Buciki dla dzieciuszka</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3992.jpeg" alt="Aniołek - ręcznie robiony" loading="lazy">
-            <h3>Aniołek 2</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3991.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
-            <h3>Balwanki i Aniołek</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3986.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
-            <h3>Serweta</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3987.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
-            <h3>Serweta</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3988.jpeg" alt="Dzwoneczki ręcznie robione" loading="lazy">
-            <h3>Dzwoneczki</h3>
-            <p>brak na stanie możliwość zamówienia </p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3989.jpeg" alt="Serweta misa ręcznie robiona" loading="lazy">
-            <h3>Serweta misa</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3990.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
-            <h3>Serweta</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3966.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
-            <h3>Serweta</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3967.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
-            <h3>Serweta</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3968.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
-            <h3>Serweta</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3969.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
-            <h3>Serweta</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3964.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
-            <h3>Serweta</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3965.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
-            <h3>Serweta</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3958.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
-            <h3>Serweta</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3963.jpeg" alt="Wielkanocna dekoracja ręcznie robiona" loading="lazy">
-            <h3>Wielkanoc</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3962.jpeg" alt="Serweta ręcznie robiona" loading="lazy">
-            <h3>Serweta</h3>
-            <p>brak na stanie możliwość zamówienia</p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3927.jpg" alt="Aniołek ręcznie robiony" loading="lazy">
-            <h3>Aniołek</h3>
-            <p>brak na stanie możliwość zamówienia </p>
-          </div>
-          <div class="produkt">
-            <img src="assets/produkty/IMG_3960.jpeg" alt="Serweta kwadrat ręcznie robiona" loading="lazy">
-            <h3>Serweta kwadrat</h3>
-            <p>brak na stanie możliwość zamówienia </p>
-          </div>
+    <nav>
+        <div class="container">
+            <a href="#o-mnie">O Mnie</a>
+            <a href="#galeria">Galeria Prac</a>
+            <a href="#kontakt">Kontakt</a>
+            <a href="link_do_twojego_youtube" target="_blank">Wideo i Poradniki</a>
         </div>
-      </div>
-                        <section id="youtube" class="section">
-  <div class="container">
-    <h2>Filmy YouTube</h2>
-    <p>Zapraszam do obejrzenia roznych filmów na YouTube:</p>
-    <ul style="list-style: none; padding: 0; text-align: center;">
-      <li><a href="https://www.youtube.com/watch?v=0KrzBSPJ-o8" target="_blank">👉 Robienie na drutach początkujących - część 1</a></li>
-      <li><a href="https://www.youtube.com/watch?v=UsZXmPuWoGI" target="_blank">👉PODSTAWY ROBÓTEK NA DRUTACH 🧶CZĘŚĆ 1</a></li>
-      <li><a href="https://www.youtube.com/watch?v=aujM89g7cLM">👉 Poczatki!!!</a></li>
-    </ul>
-  </div>
-</section>
+    </nav>
 
-    <section id="kontakt" class="section">
-  <div class="container">
-    <h2>Kontakt i zamówienia</h2>
-    <p>Chcesz coś zamówić lub masz pytania? Napisz do mnie:</p>
-
-    <form action="https://formspree.io/f/mldleovp" method="POST">
-      <div class="form-group">
-        <label for="name">Imię:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="email">Adres e-mail:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      
-      <div class="form-group">
-        <label for="message">Wiadomość:</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-      </div>
-
-      <button type="submit">Wyślij wiadomość</button>
-    </form>
-  </div>
-</section>
-  </main>
-
-  <footer>
     <div class="container">
-      <p>© <span id="current-year"></span> Babcia Halina | Wszelkie prawa zastrzeżone</p>
-    </div>
-  </footer>
+        
+        <section id="o-mnie" style="margin-bottom: 60px; padding-top: 20px;">
+            <h2>O Mnie i o Mojej Misji</h2>
+            <p>Witaj w świecie Babci Haliny, gdzie tradycja spotyka się z pasją do rękodzieła. Od lat tworzę unikalne tekstylia i dekoracje, dbając o jakość, która przetrwa lata. Moje produkty to inwestycja w piękno i rzemieślniczą staranność.</p>
+            <p>Każdy egzemplarz, czy to serwetka, czy robótka na drutach, powstaje z najwyższej jakości materiałów i jest wyrazem mojej wieloletniej pasji. Nie kupujesz masowej produkcji – kupujesz unikalną historię.</p>
+        </section>
 
-  <!-- Lightbox -->
-  <div class="lightbox" id="lightbox">
-    <span class="lightbox-close" id="lightbox-close">&times;</span>
-    <img src="" alt="Podgląd zdjęcia" id="lightbox-img" loading="lazy">
-  </div>
+        <section id="galeria" style="padding-top: 20px;">
+            <h2>Galeria Wcześniejszych Prac i Zamówienia Specjalne</h2>
+            <p>Poniżej znajdziesz przykłady moich dotychczasowych projektów. **Większość z nich jest dostępna wyłącznie na zamówienie, co gwarantuje Ci niepowtarzalność.**</p>
+            
+            <div id="product-list" class="product-grid">
+                </div>
 
-  <script src="script.js"></script>
+            <div style="text-align: center; margin-top: 50px;">
+                <a href="#kontakt" class="cta-button">Zapytaj o Czas Realizacji Twojego Zamówienia</a>
+            </div>
+        </section>
+
+        <section id="kontakt" style="margin-top: 60px; padding-top: 20px;">
+            <h2>Skontaktuj Się Ze Mną</h2>
+            <p>Masz pomysł na unikalny prezent? Chcesz zamówić spersonalizowany produkt? Napisz do mnie!</p>
+            <form action="twoj_adres_email_lub_skrypt_serwera" method="POST">
+                <p><label for="name">Imię:</label><br><input type="text" id="name" name="name" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc;"></p>
+                <p><label for="email">E-mail:</label><br><input type="email" id="email" name="email" required style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc;"></p>
+                <p><label for="message">Wiadomość:</label><br><textarea id="message" name="message" required rows="6" style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc;"></textarea></p>
+                <button type="submit" class="cta-button">Wyślij Wiadomość</button>
+            </form>
+        </section>
+
+    </div> <footer>
+        <div class="container">
+            <p>Babcia Halina | Rękodzieło Tworzone z Sercem</p>
+            <p>&copy; 2024 Wszelkie prawa zastrzeżone | 
+                <a href="link_do_polityki_prywatnosci" style="color: #ff6600; text-decoration: none;">Polityka Prywatności</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script> 
+
 </body>
 </html>
