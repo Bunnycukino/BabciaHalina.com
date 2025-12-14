@@ -1,248 +1,256 @@
 // ================================================================
-// BABCIA HALINA - GŁÓWNY SKRYPT JAVASCRIPT
+// BABCIA HALINA - GÅÃWNY SKRYPT JAVASCRIPT
 // Wersja 2.0 - Zaktualizowana 2025
 // ================================================================
 
 // ----------------------------------------------------------------
-// 1. DANE PRODUKTÓW - GALERIA
+// 1. DANE PRODUKTÃW - GALERIA
 // ----------------------------------------------------------------
 const products = [
     { 
         id: 1, 
-        name: "Aniołek Lily", 
-        description: "Ręcznie robiony aniołek na prezent lub dekorację świąteczną. Unikatowy design.", 
+        name: "AnioÅek Lily", 
+        description: "RÄcznie robiony anioÅek na prezent lub dekoracjÄ ÅwiÄtecznÄ. Unikatowy design.", 
         image: "assets/produkty/IMG_3993.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "aniolki"
     },
     { 
         id: 2, 
         name: "Pajacyki", 
-        description: "Urocze, szyte maskotki, idealne dla najmłodszych. Zapytaj o dostępne kolory.", 
+        description: "Urocze, szyte maskotki, idealne dla najmÅodszych. Zapytaj o dostÄpne kolory.", 
         image: "assets/produkty/IMG_4464.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "dzieci"
     },
     { 
         id: 3, 
         name: "Ubranko dla dziecka", 
-        description: "Delikatne, ręcznie dziergane ubranko dla malucha. Idealne na chrzest lub sesję zdjęciową.", 
+        description: "Delikatne, rÄcznie dziergane ubranko dla malucha. Idealne na chrzest lub sesjÄ zdjÄciowÄ.", 
         image: "assets/produkty/IMG_4161.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "dzieci"
     },
     { 
         id: 4, 
         name: "Buciki", 
-        description: "Ciepłe, dziergane buciki niemowlęce. Zapewniają komfort i stylowy wygląd.", 
+        description: "CiepÅe, dziergane buciki niemowlÄce. ZapewniajÄ komfort i stylowy wyglÄd.", 
         image: "assets/produkty/IMG_4162.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "dzieci"
     },
     { 
         id: 5, 
-        name: "Czerwony Aniołek", 
-        description: "Aniołek w intensywnym, czerwonym kolorze. Doskonay akcent do każdego wnętrza.", 
+        name: "Czerwony AnioÅek", 
+        description: "AnioÅek w intensywnym, czerwonym kolorze. Doskonay akcent do kaÅ¼dego wnÄtrza.", 
         image: "assets/produkty/IMG_4167.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "aniolki"
     },
     { 
         id: 6, 
-        name: "Bombki 😍", 
-        description: "Unikalne, ręcznie robione bombki, które dodadzą blasku Twojej choince.", 
+        name: "Bombki ð", 
+        description: "Unikalne, rÄcznie robione bombki, ktÃ³re dodadzÄ blasku Twojej choince.", 
         image: "assets/produkty/IMG_4168.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "dekoracje"
     },
     { 
         id: 7, 
-        name: "Koszyk różyczek", 
-        description: "Ozdobny koszyczek z haftowanymi lub dzierganymi różyczkami.", 
+        name: "Koszyk rÃ³Å¼yczek", 
+        description: "Ozdobny koszyczek z haftowanymi lub dzierganymi rÃ³Å¼yczkami.", 
         image: "assets/produkty/IMG_4169.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "dekoracje"
     },
     { 
         id: 8, 
         name: "Kurczaczki", 
-        description: "Wielkanocna dekoracja: urocze, małe kurczaczki na świąteczny stół.", 
+        description: "Wielkanocna dekoracja: urocze, maÅe kurczaczki na ÅwiÄteczny stÃ³Å.", 
         image: "assets/produkty/IMG_4115.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "dekoracje"
     },
     { 
         id: 9, 
-        name: "Króliczek", 
-        description: "Ręcznie robiony króliczek, idealny jako maskotka lub dekoracja Wielkanocna.", 
+        name: "KrÃ³liczek", 
+        description: "RÄcznie robiony krÃ³liczek, idealny jako maskotka lub dekoracja Wielkanocna.", 
         image: "assets/produkty/IMG_4116.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "dekoracje"
     },
     { 
         id: 10, 
         name: "Koszyczek Wielkanocny", 
-        description: "Mały, ozdobny koszyczek, idealny do święconki lub jako dekoracja.", 
+        description: "MaÅy, ozdobny koszyczek, idealny do ÅwiÄconki lub jako dekoracja.", 
         image: "assets/produkty/IMG_4118.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "dekoracje"
     },
     { 
         id: 11, 
         name: "Buciki dla dzieciuszka", 
-        description: "Wyjątkowe buciki niemowlęce, idealny pomysł na prezent.", 
+        description: "WyjÄtkowe buciki niemowlÄce, idealny pomysÅ na prezent.", 
         image: "assets/produkty/IMG_4119.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "dzieci"
     },
     { 
         id: 12, 
-        name: "Aniołek 2", 
-        description: "Inny wariant aniołka, wykonany z dbaością o każdy detal.", 
+        name: "AnioÅek 2", 
+        description: "Inny wariant anioÅka, wykonany z dbaoÅciÄ o kaÅ¼dy detal.", 
         image: "assets/produkty/IMG_3992.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "aniolki"
     },
     { 
         id: 13, 
-        name: "Bałwanki i Aniołek", 
-        description: "Zestaw uroczych, zimowych dekoracji. Zapytaj o dostępność całego kompletu.", 
+        name: "BaÅwanki i AnioÅek", 
+        description: "Zestaw uroczych, zimowych dekoracji. Zapytaj o dostÄpnoÅÄ caÅego kompletu.", 
         image: "assets/produkty/IMG_3991.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "dekoracje"
     },
     { 
         id: 14, 
         name: "Serweta - Delikatna Koronka", 
-        description: "Klasyczna, okrągła serweta koronkowa. Średnica na zamówienie.", 
+        description: "Klasyczna, okrÄgÅa serweta koronkowa. Årednica na zamÃ³wienie.", 
         image: "assets/produkty/IMG_3986.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
     },
     { 
         id: 15, 
-        name: "Serweta - Gęsty Wzór", 
-        description: "Ręcznie robiona serweta z bogatym, gęstym wzorem.", 
+        name: "Serweta - GÄsty WzÃ³r", 
+        description: "RÄcznie robiona serweta z bogatym, gÄstym wzorem.", 
         image: "assets/produkty/IMG_3987.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
     },
     { 
         id: 16, 
         name: "Dzwoneczki", 
-        description: "Ozdobne dzwoneczki, idealne na choinkę lub jako świąteczna zawieszka.", 
+        description: "Ozdobne dzwoneczki, idealne na choinkÄ lub jako ÅwiÄteczna zawieszka.", 
         image: "assets/produkty/IMG_3988.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "dekoracje"
     },
     { 
         id: 17, 
         name: "Serweta Misa", 
-        description: "Serweta formowana w kształcie misy, idealna na owoce lub słodycze.", 
+        description: "Serweta formowana w ksztaÅcie misy, idealna na owoce lub sÅodycze.", 
         image: "assets/produkty/IMG_3989.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
     },
     { 
         id: 18, 
-        name: "Serweta - Duża", 
-        description: "Duża serweta stołowa, idealna do salonu. Wymiary na życzenie.", 
+        name: "Serweta - DuÅ¼a", 
+        description: "DuÅ¼a serweta stoÅowa, idealna do salonu. Wymiary na Å¼yczenie.", 
         image: "assets/produkty/IMG_3990.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
     },
     { 
         id: 19, 
-        name: "Serweta - Finezyjny Wzór", 
-        description: "Serweta o unikatowym, finezyjnym wzorze. Prawdziwe arcydzieło rękodzieła.", 
+        name: "Serweta - Finezyjny WzÃ³r", 
+        description: "Serweta o unikatowym, finezyjnym wzorze. Prawdziwe arcydzieÅo rÄkodzieÅa.", 
         image: "assets/produkty/IMG_3966.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
     },
     { 
         id: 20, 
         name: "Serweta - Klasyczna", 
-        description: "Elegancka, klasyczna serweta koronkowa, pasująca do każdego wnętrza.", 
+        description: "Elegancka, klasyczna serweta koronkowa, pasujÄca do kaÅ¼dego wnÄtrza.", 
         image: "assets/produkty/IMG_3967.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
     },
     { 
         id: 21, 
-        name: "Serweta - Okrągła", 
-        description: "Serweta o idealnym okrągłym kształcie. Zapytaj o dostępne kolory nici.", 
+        name: "Serweta - OkrÄgÅa", 
+        description: "Serweta o idealnym okrÄgÅym ksztaÅcie. Zapytaj o dostÄpne kolory nici.", 
         image: "assets/produkty/IMG_3968.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
     },
     { 
         id: 22, 
         name: "Serweta - Kwadratowa", 
-        description: "Serweta w kształcie kwadratu. Geometryczny wzór idealny na stolik kawowy.", 
+        description: "Serweta w ksztaÅcie kwadratu. Geometryczny wzÃ³r idealny na stolik kawowy.", 
         image: "assets/produkty/IMG_3969.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
     },
     { 
         id: 23, 
-        name: "Serweta - Mała", 
-        description: "Komplet małych serwetek, idealnych pod filiżanki i kubki.", 
+        name: "Serweta - MaÅa", 
+        description: "Komplet maÅych serwetek, idealnych pod filiÅ¼anki i kubki.", 
         image: "assets/produkty/IMG_3964.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
     },
     { 
         id: 24, 
         name: "Serweta - Owalna", 
-        description: "Elegancka serweta na podłużny stół lub komodę.", 
+        description: "Elegancka serweta na podÅuÅ¼ny stÃ³Å lub komodÄ.", 
         image: "assets/produkty/IMG_3965.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
     },
     { 
         id: 25, 
-        name: "Serweta - Płatek Śniegu", 
-        description: "Serweta z motywem zimowym lub kwiatowym. Zapytaj o szczegóły.", 
+        name: "Serweta - PÅatek Åniegu", 
+        description: "Serweta z motywem zimowym lub kwiatowym. Zapytaj o szczegÃ³Åy.", 
         image: "assets/produkty/IMG_3958.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
     },
     { 
         id: 26, 
         name: "Wielkanocna Dekoracja", 
-        description: "Zestaw figurek i dekoracji świątecznych. Stworzony specjalnie na Wielkanoc.", 
+        description: "Zestaw figurek i dekoracji ÅwiÄtecznych. Stworzony specjalnie na Wielkanoc.", 
         image: "assets/produkty/IMG_3963.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "dekoracje"
     },
     { 
         id: 27, 
-        name: "Serweta - Rękodzieło", 
-        description: "Kolejna piękna serweta z mojej kolekcji. Gwarancja najwyższej jakości.", 
+        name: "Serweta - RÄkodzieÅo", 
+        description: "Kolejna piÄkna serweta z mojej kolekcji. Gwarancja najwyÅ¼szej jakoÅci.", 
         image: "assets/produkty/IMG_3962.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
     },
     { 
         id: 28, 
-        name: "Aniołek - Mały", 
-        description: "Subtelny, mniejszy aniołek. Idealny jako zawieszka lub dodatek do prezentu.", 
+        name: "AnioÅek - MaÅy", 
+        description: "Subtelny, mniejszy anioÅek. Idealny jako zawieszka lub dodatek do prezentu.", 
         image: "assets/produkty/IMG_3927.jpg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "aniolki"
     },
     { 
         id: 29, 
         name: "Serweta Kwadrat", 
-        description: "Serweta kwadratowa, doskonaa pod wazon lub ramkę na zdjęcia.", 
+        description: "Serweta kwadratowa, doskonaa pod wazon lub ramkÄ na zdjÄcia.", 
         image: "assets/produkty/IMG_3960.jpeg", 
-        status: "Na Zamówienie",
+        status: "Na ZamÃ³wienie",
         category: "serwety"
+    },
+    {
+        id: 1765729517900,
+        name: "jablko",
+        description: "art",
+        image: "assets/produkty/IMG_1765729516587.jpg",
+        status: "Na Zamówienie",
+        category: "dekoracje"
     }
-];
+];;
 
 // ----------------------------------------------------------------
-// 2. INICJALIZACJA PO ZAŁADOWANIU DOM
+// 2. INICJALIZACJA PO ZAÅADOWANIU DOM
 // ----------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
@@ -285,14 +293,14 @@ function initNavigation() {
         });
     }
     
-    // Zamykanie menu po kliknięciu w link
+    // Zamykanie menu po klikniÄciu w link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
         });
     });
     
-    // Płynne przewijanie
+    // PÅynne przewijanie
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             const href = link.getAttribute('href');
@@ -340,7 +348,7 @@ function renderProducts(productsToRender) {
             </div>
         `;
         
-        // Kliknięcie otwiera modal ze zdjęciem
+        // KlikniÄcie otwiera modal ze zdjÄciem
         item.addEventListener('click', () => {
             openImageModal(product.image, product.name);
         });
@@ -424,10 +432,10 @@ function initContactForm() {
                 message: document.getElementById('message').value
             };
             
-            // Tutaj możesz dodać wysyłkę do serwera
-            console.log('Formularz wysłany:', formData);
+            // Tutaj moÅ¼esz dodaÄ wysyÅkÄ do serwera
+            console.log('Formularz wysÅany:', formData);
             
-            alert('✅ Dziękuję za wiadomość! Odpowiem najszybciej jak to możliwe.');
+            alert('â DziÄkujÄ za wiadomoÅÄ! Odpowiem najszybciej jak to moÅ¼liwe.');
             contactForm.reset();
         });
     }
@@ -486,7 +494,7 @@ function initAdminPanel() {
                 sessionStorage.setItem('adminLoggedIn', 'true');
                 window.location.href = 'admin.html';
             } else {
-                errorMessage.textContent = '❌ Nieprawidłowe hasło!';
+                errorMessage.textContent = 'â NieprawidÅowe hasÅo!';
                 setTimeout(() => {
                     errorMessage.textContent = '';
                 }, 3000);
