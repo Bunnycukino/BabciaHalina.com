@@ -215,6 +215,10 @@
             });
         }
         
+        function escapeJson(str) {
+            return str.replace(/\\/g, '\\\\').replace(/"/g, '\\"').replace(/\n/g, '\\n').replace(/\r/g, '\\r').replace(/\t/g, '\\t');
+        }
+        
         async function uploadImage(file, name) {
             const token = localStorage.getItem('githubToken');
             if (!token) throw new Error('Brak tokenu');
@@ -266,26 +270,44 @@
             });
             
             const data = await getResp.json();
-            const content = atob(data.content);
+            let content = atob(data.content);
             
-            const newProd = `    { id: ${product.id}, name: "${product.name}", description: "${product.description}", image: "${product.image}", status: "${product.status}", category: "${product.category}" }`;
+            // Escape polskich znaków w JSON
+            const newProd = `    { id: ${product.id}, name: "${escapeJson(product.name)}", description: "${escapeJson(product.description)}", image: "${product.image}", status: "${escapeJson(product.status)}", category: "${product.category}" }`;
+            
             const idx = content.lastIndexOf('}\n];');
+            if (idx === -1) {
+                throw new Error('Nie znaleziono tablicy produktów w script.js');
+            }
+            
             const updated = content.substring(0, idx) + '},\n' + newProd + '\n];' + content.substring(idx + 3);
             
             log('Zapisuję zaktualizowany script.js...');
             
+            // Kodowanie UTF-8 przed wysyłką
+            const encoder = new TextEncoder();
+            const utf8Bytes = encoder.encode(updated);
+            const base64Content = btoa(String.fromCharCode(...utf8Bytes));
+            
             const putResp = await fetch(`https://api.github.com/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/script.js`, {
                 method: 'PUT',
-                headers: { 'Authorization': `Bearer ${token}`, 'Content-Type': 'application/json' },
+                headers: { 
+                    'Authorization': `Bearer ${token}`, 
+                    'Content-Type': 'application/json; charset=utf-8'
+                },
                 body: JSON.stringify({
                     message: `Dodano: ${product.name}`,
-                    content: btoa(unescape(encodeURIComponent(updated))),
+                    content: base64Content,
                     sha: data.sha,
                     branch: GITHUB_BRANCH
                 })
             });
             
-            if (!putResp.ok) throw new Error('Błąd aktualizacji script.js');
+            if (!putResp.ok) {
+                const err = await putResp.json();
+                log(`Błąd podczas aktualizacji: ${JSON.stringify(err)}`);
+                throw new Error('Błąd aktualizacji script.js');
+            }
             log('Script.js zaktualizowany!');
         }
         
@@ -369,7 +391,7 @@
                 document.getElementById('imagePreview').style.display = 'none';
                 document.getElementById('fileInfo').textContent = '';
                 
-                alert('🎉 SUKCES! Produkt dodany. Odśwież stronę główną!');
+                alert('🎉 SUKCES! Produkt dodany. Odśwież stronę główną (może potrwać 1-2 min)!');
                 log('KONIEC: Sukces!');
                 
             } catch (error) {
