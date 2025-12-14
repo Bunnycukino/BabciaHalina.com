@@ -97,7 +97,14 @@
             </div>
 
             <div class="contact-content">
-                <form id="contactForm" class="contact-form">
+                <!-- NAPRAWIONY FORMULARZ - Używa FormSubmit.co -->
+                <form action="https://formsubmit.co/crox.and.crox@gmail.com" method="POST" class="contact-form">
+                    <!-- Ukryte pola konfiguracyjne FormSubmit -->
+                    <input type="hidden" name="_subject" value="Nowe zamówienie z BabciaHalina.com">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="text" name="_honey" style="display:none">
+                    
                     <div class="form-group">
                         <label for="name">Imię *</label>
                         <input type="text" id="name" name="name" required>
@@ -114,8 +121,16 @@
                         <label for="message">Wiadomość *</label>
                         <textarea id="message" name="message" required rows="6"></textarea>
                     </div>
-                    <button type="submit" class="submit-button">Wyślij Wiadomość</button>
+                    <button type="submit" class="submit-button">📧 Wyślij Wiadomość</button>
                 </form>
+                
+                <!-- Alternatywna opcja kontaktu -->
+                <div style="margin-top: 2rem; text-align: center; padding: 1.5rem; background: var(--color-background-alt); border-radius: 12px;">
+                    <p style="margin-bottom: 1rem; color: var(--color-text-light);">Możesz również skontaktować się bezpośrednio:</p>
+                    <a href="mailto:crox.and.crox@gmail.com" style="display: inline-block; padding: 0.8rem 2rem; background: var(--color-accent); color: white; border-radius: 25px; font-weight: 600; transition: all 0.3s;">
+                        📧 crox.and.crox@gmail.com
+                    </a>
+                </div>
             </div>
         </div>
     </section>
