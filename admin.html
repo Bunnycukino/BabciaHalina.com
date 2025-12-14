@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Administratora | Babcia Halina</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .admin-container {
+            max-width: 1200px;
+            margin: 100px auto 50px;
+            padding: 2rem;
+        }
+        
+        .admin-header {
+            background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .admin-header h1 {
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .admin-nav {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .admin-nav-btn {
+            flex: 1;
+            min-width: 150px;
+            padding: 1rem;
+            background: white;
+            border: 2px solid var(--color-border);
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .admin-nav-btn:hover,
+        .admin-nav-btn.active {
+            background: var(--color-primary);
+            color: white;
+            border-color: var(--color-primary);
+        }
+        
+        .admin-section {
+            display: none;
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .admin-section.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+        
+        .form-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .image-preview {
+            max-width: 300px;
+            margin: 1rem 0;
+            border-radius: 8px;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .product-list {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .product-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: var(--color-background-alt);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .product-item:hover {
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .product-item img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        .product-item-info {
+            flex: 1;
+        }
+        
+        .product-item-actions {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .btn-edit,
+        .btn-delete {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-edit {
+            background: var(--color-accent);
+            color: white;
+        }
+        
+        .btn-delete {
+            background: var(--color-error);
+            color: white;
+        }
+        
+        .btn-edit:hover {
+            opacity: 0.8;
+        }
+        
+        .btn-delete:hover {
+            opacity: 0.8;
+        }
+        
+        .logout-btn {
+            position: fixed;
+            top: 90px;
+            right: 2rem;
+            padding: 0.7rem 1.5rem;
+            background: var(--color-error);
+            color: white;
+            border-radius: 25px;
+            font-weight: 600;
+            z-index: 100;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .stat-card {
+            background: var(--color-background-alt);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid var(--color-border);
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+            font-family: var(--font-heading);
+        }
+        
+        .stat-label {
+            color: var(--color-text-light);
+            font-weight: 600;
+            margin-top: 0.5rem;
+        }
+        
+        .success-message {
+            background: var(--color-success);
+            color: white;
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+        
+        .success-message.show {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+    </style>
+</head>
+<body>
+    <button class="logout-btn" id="logoutBtn">Wyloguj się</button>
+    
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>🛠️ Panel Administratora</h1>
+            <p>Zarządzaj galerią Babci Haliny</p>
+        </div>
+        
+        <div class="admin-nav">
+            <button class="admin-nav-btn active" data-section="dashboard">Panel Główny</button>
+            <button class="admin-nav-btn" data-section="add-product">Dodaj Produkt</button>
+            <button class="admin-nav-btn" data-section="manage-products">Zarządzaj Produktami</button>
+        </div>
+        
+        <!-- Dashboard -->
+        <div class="admin-section active" id="dashboard">
+            <h2>Statystyki</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalProducts">0</div>
+                    <div class="stat-label">Całkowita liczba produktów</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalSerwety">0</div>
+                    <div class="stat-label">Serwety</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalAniolki">0</div>
+                    <div class="stat-label">Aniołki</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalDekoracje">0</div>
+                    <div class="stat-label">Dekoracje</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalDzieci">0</div>
+                    <div class="stat-label">Dla Dzieci</div>
+                </div>
+            </div>
+            
+            <h3>Instrukcje</h3>
+            <p>Witaj w panelu administratora! Stąd możesz:</p>
+            <ul style="line-height: 2; color: var(--color-text-light);">
+                <li>✅ Dodawać nowe produkty do galerii</li>
+                <li>✅ Edytować istniejące produkty</li>
+                <li>✅ Usuwać produkty z galerii</li>
+                <li>✅ Przeglądać statystyki</li>
+            </ul>
+            <p style="margin-top: 1rem; padding: 1rem; background: var(--color-secondary); border-radius: 8px;">
+                <strong>Ważne:</strong> Wszystkie zmiany są zapisywane lokalnie w przeglądarce. Aby zachować zmiany na stałe, należy zaktualizować plik script.js w repozytorium.
+            </p>
+        </div>
+        
+        <!-- Dodaj Produkt -->
+        <div class="admin-section" id="add-product">
+            <div class="success-message" id="successMessage">
+                ✅ Produkt został pomyślnie dodany!
+            </div>
+            
+            <h2>Dodaj Nowy Produkt</h2>
+            <form id="addProductForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productName">Nazwa produktu *</label>
+                        <input type="text" id="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productCategory">Kategoria *</label>
+                        <select id="productCategory" required>
+                            <option value="">Wybierz kategorię</option>
+                            <option value="serwety">Serwety</option>
+                            <option value="aniolki">Aniołki</option>
+                            <option value="dekoracje">Dekoracje</option>
+                            <option value="dzieci">Dla Dzieci</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productDescription">Opis produktu *</label>
+                    <textarea id="productDescription" rows="4" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productImage">Zdjęcie produktu (URL lub wybierz plik)</label>
+                    <input type="text" id="productImageUrl" placeholder="assets/produkty/nazwa_pliku.jpg">
+                    <input type="file" id="productImageFile" accept="image/*" style="margin-top: 0.5rem;">
+                    <img id="imagePreview" class="image-preview" style="display: none;" alt="Podgląd">
+                </div>
+                
+                <div class="form-group">
+                    <label for="productStatus">Status</label>
+                    <select id="productStatus">
+                        <option value="Na Zamówienie">Na Zamówienie</option>
+                        <option value="Dostępny">Dostępny</option>
+                        <option value="Wyprzedany">Wyprzedany</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-button">Dodaj Produkt</button>
+            </form>
+        </div>
+        
+        <!-- Zarządzaj Produktami -->
+        <div class="admin-section" id="manage-products">
+            <h2>Zarządzaj Produktami</h2>
+            <div class="product-list" id="productList">
+                <!-- Produkty załadowane przez JavaScript -->
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Sprawdzenie autoryzacji
+        if (sessionStorage.getItem('adminLoggedIn') !== 'true') {
+            window.location.href = 'index.html';
+        }
+        
+        // Pobranie produktów z localStorage lub użycie domyślnych
+        let products = JSON.parse(localStorage.getItem('products')) || [];
+        
+        // Jeśli brak produktów, załaduj domyślne
+        if (products.length === 0) {
+            // Skopiuj produkty z głównego skryptu
+            products = [];
+        }
+        
+        // Nawigacja między sekcjami
+        document.querySelectorAll('.admin-nav-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.admin-nav-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                
+                document.querySelectorAll('.admin-section').forEach(s => s.classList.remove('active'));
+                const sectionId = btn.dataset.section;
+                document.getElementById(sectionId).classList.add('active');
+            });
+        });
+        
+        // Wylogowanie
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+            sessionStorage.removeItem('adminLoggedIn');
+            window.location.href = 'index.html';
+        });
+        
+        // Podgląd zdjęcia
+        document.getElementById('productImageFile').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    const preview = document.getElementById('imagePreview');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Dodawanie produktu
+        document.getElementById('addProductForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            const newProduct = {
+                id: Date.now(),
+                name: document.getElementById('productName').value,
+                description: document.getElementById('productDescription').value,
+                category: document.getElementById('productCategory').value,
+                status: document.getElementById('productStatus').value,
+                image: document.getElementById('productImageUrl').value || 'assets/placeholder.jpg'
+            };
+            
+            products.push(newProduct);
+            localStorage.setItem('products', JSON.stringify(products));
+            
+            // Pokaż komunikat sukcesu
+            const successMsg = document.getElementById('successMessage');
+            successMsg.classList.add('show');
+            setTimeout(() => successMsg.classList.remove('show'), 3000);
+            
+            // Reset formularza
+            e.target.reset();
+            document.getElementById('imagePreview').style.display = 'none';
+            
+            updateStats();
+            renderProductList();
+            
+            alert('✅ Produkt dodany! Pamiętaj, aby zaktualizować plik script.js w repozytorium, jeśli chcesz zachować zmiany na stałe.');
+        });
+        
+        // Aktualizacja statystyk
+        function updateStats() {
+            document.getElementById('totalProducts').textContent = products.length;
+            document.getElementById('totalSerwety').textContent = products.filter(p => p.category === 'serwety').length;
+            document.getElementById('totalAniolki').textContent = products.filter(p => p.category === 'aniolki').length;
+            document.getElementById('totalDekoracje').textContent = products.filter(p => p.category === 'dekoracje').length;
+            document.getElementById('totalDzieci').textContent = products.filter(p => p.category === 'dzieci').length;
+        }
+        
+        // Renderowanie listy produktów
+        function renderProductList() {
+            const list = document.getElementById('productList');
+            list.innerHTML = '';
+            
+            products.forEach(product => {
+                const item = document.createElement('div');
+                item.className = 'product-item';
+                item.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}" onerror="this.src='assets/placeholder.jpg'">
+                    <div class="product-item-info">
+                        <h4>${product.name}</h4>
+                        <p style="color: var(--color-text-light); font-size: 0.9rem;">${product.description.substring(0, 80)}...</p>
+                        <span style="display: inline-block; padding: 0.3rem 0.8rem; background: var(--color-secondary); border-radius: 15px; font-size: 0.85rem; margin-top: 0.5rem;">
+                            ${product.category}
+                        </span>
+                    </div>
+                    <div class="product-item-actions">
+                        <button class="btn-edit" onclick="editProduct(${product.id})">Edytuj</button>
+                        <button class="btn-delete" onclick="deleteProduct(${product.id})">Usuń</button>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+        }
+        
+        // Usuwanie produktu
+        function deleteProduct(id) {
+            if (confirm('Czy na pewno chcesz usunąć ten produkt?')) {
+                products = products.filter(p => p.id !== id);
+                localStorage.setItem('products', JSON.stringify(products));
+                updateStats();
+                renderProductList();
+            }
+        }
+        
+        // Edycja produktu
+        function editProduct(id) {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                document.getElementById('productName').value = product.name;
+                document.getElementById('productDescription').value = product.description;
+                document.getElementById('productCategory').value = product.category;
+                document.getElementById('productStatus').value = product.status;
+                document.getElementById('productImageUrl').value = product.image;
+                
+                // Przewiń do formularza
+                document.querySelector('[data-section="add-product"]').click();
+                
+                // Usuń stary produkt (zostanie dodany nowy po zapisaniu)
+                deleteProduct(id);
+            }
+        }
+        
+        // Inicjalizacja
+        updateStats();
+        renderProductList();
+    </script>
+</body>
+</html>
