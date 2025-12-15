@@ -1,40 +1,41 @@
 // ================================================================
-// BABCIA HALINA - GÅÃWNY SKRYPT JAVASCRIPT
+// BABCIA HALINA - GÃÂÃÂWNY SKRYPT JAVASCRIPT
 // Wersja 2.2 - Naprawione kodowanie UTF-8
 // ================================================================
 
 const products = [
-    { id: 1, name: "AnioÅek Lily", description: "RÄcznie robiony anioÅek na prezent", image: "assets/produkty/IMG_3993.jpeg", status: "Na ZamÃ³wienie", category: "aniolki" },
-    { id: 2, name: "Pajacyki", description: "Urocze maskotki dla najmÅodszych", image: "assets/produkty/IMG_4464.jpeg", status: "Na ZamÃ³wienie", category: "dzieci" },
-    { id: 3, name: "Ubranko dla dziecka", description: "Delikatne, dziergane ubranko dla malucha", image: "assets/produkty/IMG_4161.jpeg", status: "Na ZamÃ³wienie", category: "dzieci" },
-    { id: 4, name: "Buciki", description: "CiepÅe buciki niemowlÄce", image: "assets/produkty/IMG_4162.jpeg", status: "Na ZamÃ³wienie", category: "dzieci" },
-    { id: 5, name: "Czerwony AnioÅek", description: "AnioÅek w intensywnym czerwonym kolorze", image: "assets/produkty/IMG_4167.jpeg", status: "Na ZamÃ³wienie", category: "aniolki" },
-    { id: 6, name: "Bombki", description: "RÄcznie robione bombki na choinkÄ", image: "assets/produkty/IMG_4168.jpeg", status: "Na ZamÃ³wienie", category: "dekoracje" },
-    { id: 7, name: "Koszyk rÃ³Å¼yczek", description: "Ozdobny koszyczek z haftowanymi rÃ³Å¼yczkami", image: "assets/produkty/IMG_4169.jpeg", status: "Na ZamÃ³wienie", category: "dekoracje" },
-    { id: 8, name: "Kurczaczki", description: "Wielkanocna dekoracja na ÅwiÄteczny stÃ³Å", image: "assets/produkty/IMG_4115.jpeg", status: "Na ZamÃ³wienie", category: "dekoracje" },
-    { id: 9, name: "KrÃ³liczek", description: "RÄcznie robiony krÃ³liczek wielkanocny", image: "assets/produkty/IMG_4116.jpeg", status: "Na ZamÃ³wienie", category: "dekoracje" },
-    { id: 10, name: "Koszyczek Wielkanocny", description: "MaÅy koszyczek idealny do ÅwiÄconki", image: "assets/produkty/IMG_4118.jpeg", status: "Na ZamÃ³wienie", category: "dekoracje" },
-    { id: 11, name: "Buciki dla dzieciuszka", description: "WyjÄtkowe buciki niemowlÄce", image: "assets/produkty/IMG_4119.jpeg", status: "Na ZamÃ³wienie", category: "dzieci" },
-    { id: 12, name: "AnioÅek", description: "Wykonany z dbaÅoÅciÄ o kaÅ¼dy detal", image: "assets/produkty/IMG_3992.jpeg", status: "Na ZamÃ³wienie", category: "aniolki" },
-    { id: 13, name: "BaÅwanki i AnioÅek", description: "Zestaw uroczych zimowych dekoracji", image: "assets/produkty/IMG_3991.jpeg", status: "Na ZamÃ³wienie", category: "dekoracje" },
-    { id: 14, name: "Serweta - Delikatna Koronka", description: "Klasyczna okrÄgÅa serweta koronkowa", image: "assets/produkty/IMG_3986.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 15, name: "Serweta - GÄsty WzÃ³r", description: "Serweta z bogatym gÄstym wzorem", image: "assets/produkty/IMG_3987.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 16, name: "Dzwoneczki", description: "Ozdobne dzwoneczki na choinkÄ", image: "assets/produkty/IMG_3988.jpeg", status: "Na ZamÃ³wienie", category: "dekoracje" },
-    { id: 17, name: "Serweta Misa", description: "Serweta w ksztaÅcie misy na owoce", image: "assets/produkty/IMG_3989.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 18, name: "Serweta - DuÅ¼a", description: "DuÅ¼a serweta stoÅowa do salonu", image: "assets/produkty/IMG_3990.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 19, name: "Serweta - Finezyjny WzÃ³r", description: "Serweta o unikatowym finezyjnym wzorze", image: "assets/produkty/IMG_3966.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 20, name: "Serweta - Klasyczna", description: "Elegancka klasyczna serweta koronkowa", image: "assets/produkty/IMG_3967.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 21, name: "Serweta - OkrÄgÅa", description: "Serweta o idealnym okrÄgÅym ksztaÅcie", image: "assets/produkty/IMG_3968.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 22, name: "Serweta - Kwadratowa", description: "Serweta kwadratowa na stolik kawowy", image: "assets/produkty/IMG_3969.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 23, name: "Serweta - MaÅa", description: "Komplet maÅych serwetek pod filiÅ¼anki", image: "assets/produkty/IMG_3964.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 24, name: "Serweta - Owalna", description: "Elegancka serweta na podÅuÅ¼ny stÃ³Å", image: "assets/produkty/IMG_3965.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 25, name: "Serweta - PÅatek Åniegu", description: "Serweta z motywem zimowym", image: "assets/produkty/IMG_3958.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 26, name: "Wielkanocna Dekoracja", description: "Zestaw figurek ÅwiÄtecznych na Wielkanoc", image: "assets/produkty/IMG_3963.jpeg", status: "Na ZamÃ³wienie", category: "dekoracje" },
-    { id: 27, name: "Serweta - RÄkodzieÅo", description: "PiÄkna serweta z mojej kolekcji", image: "assets/produkty/IMG_3962.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 28, name: "AnioÅek - MaÅy", description: "Subtelny mniejszy anioÅek", image: "assets/produkty/IMG_3927.jpg", status: "Na ZamÃ³wienie", category: "aniolki" },
-    { id: 29, name: "Serweta Kwadrat", description: "Serweta kwadratowa pod wazon", image: "assets/produkty/IMG_3960.jpeg", status: "Na ZamÃ³wienie", category: "serwety" },
-    { id: 1765735595826, name: "rafal", description: "oddam za darmo (zaplace za przesylke)", image: "assets/produkty/IMG_1765735594453.jpg", status: "Na Zamówienie", category: "aniolki" }
-];;
+    { id: 1, name: "AnioÃÂek Lily", description: "RÃÂcznie robiony anioÃÂek na prezent", image: "assets/produkty/IMG_3993.jpeg", status: "Na ZamÃÂ³wienie", category: "aniolki" },
+    { id: 2, name: "Pajacyki", description: "Urocze maskotki dla najmÃÂodszych", image: "assets/produkty/IMG_4464.jpeg", status: "Na ZamÃÂ³wienie", category: "dzieci" },
+    { id: 3, name: "Ubranko dla dziecka", description: "Delikatne, dziergane ubranko dla malucha", image: "assets/produkty/IMG_4161.jpeg", status: "Na ZamÃÂ³wienie", category: "dzieci" },
+    { id: 4, name: "Buciki", description: "CiepÃÂe buciki niemowlÃÂce", image: "assets/produkty/IMG_4162.jpeg", status: "Na ZamÃÂ³wienie", category: "dzieci" },
+    { id: 5, name: "Czerwony AnioÃÂek", description: "AnioÃÂek w intensywnym czerwonym kolorze", image: "assets/produkty/IMG_4167.jpeg", status: "Na ZamÃÂ³wienie", category: "aniolki" },
+    { id: 6, name: "Bombki", description: "RÃÂcznie robione bombki na choinkÃÂ", image: "assets/produkty/IMG_4168.jpeg", status: "Na ZamÃÂ³wienie", category: "dekoracje" },
+    { id: 7, name: "Koszyk rÃÂ³ÃÂ¼yczek", description: "Ozdobny koszyczek z haftowanymi rÃÂ³ÃÂ¼yczkami", image: "assets/produkty/IMG_4169.jpeg", status: "Na ZamÃÂ³wienie", category: "dekoracje" },
+    { id: 8, name: "Kurczaczki", description: "Wielkanocna dekoracja na ÃÂwiÃÂteczny stÃÂ³ÃÂ", image: "assets/produkty/IMG_4115.jpeg", status: "Na ZamÃÂ³wienie", category: "dekoracje" },
+    { id: 9, name: "KrÃÂ³liczek", description: "RÃÂcznie robiony krÃÂ³liczek wielkanocny", image: "assets/produkty/IMG_4116.jpeg", status: "Na ZamÃÂ³wienie", category: "dekoracje" },
+    { id: 10, name: "Koszyczek Wielkanocny", description: "MaÃÂy koszyczek idealny do ÃÂwiÃÂconki", image: "assets/produkty/IMG_4118.jpeg", status: "Na ZamÃÂ³wienie", category: "dekoracje" },
+    { id: 11, name: "Buciki dla dzieciuszka", description: "WyjÃÂtkowe buciki niemowlÃÂce", image: "assets/produkty/IMG_4119.jpeg", status: "Na ZamÃÂ³wienie", category: "dzieci" },
+    { id: 12, name: "AnioÃÂek", description: "Wykonany z dbaÃÂoÃÂciÃÂ o kaÃÂ¼dy detal", image: "assets/produkty/IMG_3992.jpeg", status: "Na ZamÃÂ³wienie", category: "aniolki" },
+    { id: 13, name: "BaÃÂwanki i AnioÃÂek", description: "Zestaw uroczych zimowych dekoracji", image: "assets/produkty/IMG_3991.jpeg", status: "Na ZamÃÂ³wienie", category: "dekoracje" },
+    { id: 14, name: "Serweta - Delikatna Koronka", description: "Klasyczna okrÃÂgÃÂa serweta koronkowa", image: "assets/produkty/IMG_3986.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 15, name: "Serweta - GÃÂsty WzÃÂ³r", description: "Serweta z bogatym gÃÂstym wzorem", image: "assets/produkty/IMG_3987.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 16, name: "Dzwoneczki", description: "Ozdobne dzwoneczki na choinkÃÂ", image: "assets/produkty/IMG_3988.jpeg", status: "Na ZamÃÂ³wienie", category: "dekoracje" },
+    { id: 17, name: "Serweta Misa", description: "Serweta w ksztaÃÂcie misy na owoce", image: "assets/produkty/IMG_3989.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 18, name: "Serweta - DuÃÂ¼a", description: "DuÃÂ¼a serweta stoÃÂowa do salonu", image: "assets/produkty/IMG_3990.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 19, name: "Serweta - Finezyjny WzÃÂ³r", description: "Serweta o unikatowym finezyjnym wzorze", image: "assets/produkty/IMG_3966.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 20, name: "Serweta - Klasyczna", description: "Elegancka klasyczna serweta koronkowa", image: "assets/produkty/IMG_3967.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 21, name: "Serweta - OkrÃÂgÃÂa", description: "Serweta o idealnym okrÃÂgÃÂym ksztaÃÂcie", image: "assets/produkty/IMG_3968.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 22, name: "Serweta - Kwadratowa", description: "Serweta kwadratowa na stolik kawowy", image: "assets/produkty/IMG_3969.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 23, name: "Serweta - MaÃÂa", description: "Komplet maÃÂych serwetek pod filiÃÂ¼anki", image: "assets/produkty/IMG_3964.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 24, name: "Serweta - Owalna", description: "Elegancka serweta na podÃÂuÃÂ¼ny stÃÂ³ÃÂ", image: "assets/produkty/IMG_3965.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 25, name: "Serweta - PÃÂatek ÃÂniegu", description: "Serweta z motywem zimowym", image: "assets/produkty/IMG_3958.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 26, name: "Wielkanocna Dekoracja", description: "Zestaw figurek ÃÂwiÃÂtecznych na Wielkanoc", image: "assets/produkty/IMG_3963.jpeg", status: "Na ZamÃÂ³wienie", category: "dekoracje" },
+    { id: 27, name: "Serweta - RÃÂkodzieÃÂo", description: "PiÃÂkna serweta z mojej kolekcji", image: "assets/produkty/IMG_3962.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 28, name: "AnioÃÂek - MaÃÂy", description: "Subtelny mniejszy anioÃÂek", image: "assets/produkty/IMG_3927.jpg", status: "Na ZamÃÂ³wienie", category: "aniolki" },
+    { id: 29, name: "Serweta Kwadrat", description: "Serweta kwadratowa pod wazon", image: "assets/produkty/IMG_3960.jpeg", status: "Na ZamÃÂ³wienie", category: "serwety" },
+    { id: 1765735595826, name: "rafal", description: "oddam za darmo (zaplace za przesylke)", image: "assets/produkty/IMG_1765735594453.jpg", status: "Na ZamÃ³wienie", category: "aniolki" },
+    { id: 1765825451966, name: "Szyszki", description: "Szyszki ", image: "assets/produkty/IMG_1765825449814.jpg", status: "Na Zamówienie", category: "dekoracje" }
+];;;
 
 document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
@@ -208,7 +209,7 @@ function initAdminPanel() {
                 sessionStorage.setItem('adminLoggedIn', 'true');
                 window.location.href = 'admin.html';
             } else {
-                errorMessage.textContent = 'â NieprawidÅowe hasÅo!';
+                errorMessage.textContent = 'Ã¢ÂÂ NieprawidÃÂowe hasÃÂo!';
                 setTimeout(() => { errorMessage.textContent = ''; }, 3000);
             }
         });
