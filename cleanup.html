@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleanup & Fix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #333; }
+        button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            width: 100%;
+        }
+        button:hover { background: #5568d3; }
+        .success { color: #4ade80; font-weight: bold; }
+        .error { color: #f87171; }
+        #log {
+            background: #f9fafb;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            font-family: monospace;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Data Cleanup Tool</h1>
+        <p>This will clear all bad data and load fresh products.</p>
+        
+        <button onclick="fullCleanup()">Clean Everything & Reload</button>
+        <button onclick="viewData()">View Current Data</button>
+        
+        <div id="log"></div>
+    </div>
+
+    <script>
+        function log(message) {
+            const logDiv = document.getElementById('log');
+            logDiv.innerHTML += message + '<br>';
+            logDiv.scrollTop = logDiv.scrollHeight;
+            console.log(message);
+        }
+
+        function fullCleanup() {
+            log('=== STARTING FULL CLEANUP ===');
+            
+            // Clear everything
+            log('Clearing localStorage...');
+            localStorage.clear();
+            
+            log('Clearing sessionStorage...');
+            sessionStorage.clear();
+            
+            // Load fresh data
+            log('Loading products-v2.json...');
+            
+            fetch('products-v2.json')
+                .then(r => r.json())
+                .then(data => {
+                    log('SUCCESS! Loaded ' + data.length + ' products');
+                    log('First product: ' + data[0].name);
+                    
+                    // Save to localStorage
+                    localStorage.setItem('products', JSON.stringify(data));
+                    localStorage.setItem('products_v2', JSON.stringify(data));
+                    
+                    log('<span class="success">Data saved successfully!</span>');
+                    log('Redirecting to homepage in 2 seconds...');
+                    
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 2000);
+                })
+                .catch(error => {
+                    log('<span class="error">ERROR: ' + error + '</span>');
+                });
+        }
+
+        function viewData() {
+            const logDiv = document.getElementById('log');
+            logDiv.innerHTML = '';
+            
+            log('=== CURRENT DATA ===');
+            
+            const products = localStorage.getItem('products');
+            if (products) {
+                try {
+                    const data = JSON.parse(products);
+                    log('Found ' + data.length + ' products');
+                    data.forEach((p, i) => {
+                        log((i+1) + '. ' + p.name + ' - ' + p.description);
+                    });
+                } catch (e) {
+                    log('<span class="error">Error parsing data: ' + e + '</span>');
+                }
+            } else {
+                log('No products in localStorage');
+            }
+        }
+    </script>
+</body>
+</html>
