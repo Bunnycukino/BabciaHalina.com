@@ -1,60 +1,55 @@
-// Force clear and reload products from products.json
+// FORCE RELOAD with new products file
 (function() {
-    console.log('=== INIT: Checking products ===');
+    console.log('=== INIT v2: Loading fresh products ===');
     
-    // FORCE CLEAR - always clear on first visit in this session
-    const sessionKey = 'products_v2_loaded';
-    const wasCleared = sessionStorage.getItem(sessionKey);
+    // Use NEW localStorage key to completely bypass old data
+    const NEW_KEY = 'products_v2';
+    const OLD_KEY = 'products';
     
-    if (!wasCleared) {
-        console.log('First load in session - clearing localStorage');
-        localStorage.removeItem('products');
-        sessionStorage.setItem(sessionKey, 'true');
+    // Remove old key
+    if (localStorage.getItem(OLD_KEY)) {
+        console.log('Removing old products data...');
+        localStorage.removeItem(OLD_KEY);
     }
     
-    const existingProducts = localStorage.getItem('products');
+    // Check if we have new products
+    const products = localStorage.getItem(NEW_KEY);
     
-    // Check if we need to load products
-    if (!existingProducts) {
-        console.log('Loading products from products.json...');
+    if (!products) {
+        console.log('Loading products from products-v2.json...');
         
-        fetch('products.json')
-            .then(response => response.json())
-            .then(products => {
-                console.log('Loaded', products.length, 'products');
-                console.log('First product:', products[0]);
-                localStorage.setItem('products', JSON.stringify(products));
+        fetch('products-v2.json')
+            .then(response => {
+                if (!response.ok) throw new Error('Failed to load');
+                return response.json();
+            })
+            .then(data => {
+                console.log('SUCCESS! Loaded', data.length, 'products');
+                console.log('First product:', data[0].name);
                 
-                // Reload page once to apply new products
-                if (!window.location.search.includes('loaded')) {
-                    window.location.href = window.location.pathname + '?loaded=1';
+                // Store in NEW key
+                localStorage.setItem(NEW_KEY, JSON.stringify(data));
+                
+                // Also set in old key for backward compatibility with script.js
+                localStorage.setItem(OLD_KEY, JSON.stringify(data));
+                
+                console.log('Products saved to localStorage');
+                
+                // Reload once
+                if (!window.location.search.includes('v2loaded')) {
+                    console.log('Reloading page with new products...');
+                    window.location.href = window.location.pathname + '?v2loaded=1';
                 }
             })
             .catch(error => {
-                console.error('Error loading products:', error);
+                console.error('ERROR loading products:', error);
             });
     } else {
-        console.log('Products exist in localStorage');
+        console.log('Products v2 already loaded');
         
-        // Verify products are correct (English)
-        try {
-            const products = JSON.parse(existingProducts);
-            const firstProduct = products[0];
-            console.log('Current first product:', firstProduct.name);
-            
-            // If product name is not English (doesn't contain "Angels" or "Baby"), clear it
-            const hasEnglishNames = firstProduct.name.includes('Angels') || 
-                                   firstProduct.name.includes('Baby') || 
-                                   firstProduct.name.includes('Angel');
-            
-            if (!hasEnglishNames) {
-                console.log('Products have wrong encoding! Clearing...');
-                localStorage.removeItem('products');
-                sessionStorage.removeItem(sessionKey);
-                window.location.reload();
-            }
-        } catch (e) {
-            console.error('Error checking products:', e);
+        // Make sure old key also has the data
+        if (!localStorage.getItem(OLD_KEY)) {
+            localStorage.setItem(OLD_KEY, products);
         }
     }
 })();
