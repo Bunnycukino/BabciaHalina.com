@@ -2,15 +2,12 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Babcia Halina | Rękodzieło Tworzone z Sercem</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <!-- Ładowanie produktów PRZED głównym skryptem -->
-    <script src="load-products.js"></script>
 </head>
 <body>
     <!-- Nawigacja -->
@@ -101,7 +98,7 @@
 
             <div class="contact-content">
                 <!-- NAPRAWIONY FORMULARZ - Używa FormSubmit.co -->
-                <form action="https://formsubmit.co/crox.and.crox@gmail.com" method="POST" class="contact-form" accept-charset="UTF-8">
+                <form action="https://formsubmit.co/crox.and.crox@gmail.com" method="POST" class="contact-form">
                     <!-- Ukryte pola konfiguracyjne FormSubmit -->
                     <input type="hidden" name="_subject" value="Nowe zamówienie z BabciaHalina.com">
                     <input type="hidden" name="_template" value="table">
@@ -189,7 +186,6 @@
         <div class="modal-caption" id="modalCaption"></div>
     </div>
 
-    <!-- Główny skrypt aplikacji - ładowany PO load-products.js -->
-    <script src="script.js" charset="utf-8"></script>
+    <script src="script.js"></script>
 </body>
 </html>
