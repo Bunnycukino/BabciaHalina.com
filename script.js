@@ -1,43 +1,43 @@
 // ================================================================
-// BABCIA HALINA - MAIN JAVASCRIPT
-// Version 3.0 - Clean UTF-8 encoding with English descriptions
+// BABCIA HALINA - GLOWNY SKRYPT JAVASCRIPT
+// Wersja 3.1 - Poprawne kodowanie UTF-8 z polskimi znakami
 // ================================================================
 
 const products = [
-    { id: 1, name: "Angel Lily", description: "Handmade angel as a gift", image: "assets/produkty/IMG_3993.jpeg", status: "On Order", category: "aniolki" },
-    { id: 2, name: "Little Spiders", description: "Cute mascots for the youngest", image: "assets/produkty/IMG_4464.jpeg", status: "On Order", category: "dzieci" },
-    { id: 3, name: "Baby Outfit", description: "Delicate, knitted outfit for baby", image: "assets/produkty/IMG_4161.jpeg", status: "On Order", category: "dzieci" },
-    { id: 4, name: "Baby Booties", description: "Warm baby booties", image: "assets/produkty/IMG_4162.jpeg", status: "On Order", category: "dzieci" },
-    { id: 5, name: "Red Angel", description: "Angel in intense red color", image: "assets/produkty/IMG_4167.jpeg", status: "On Order", category: "aniolki" },
-    { id: 6, name: "Christmas Baubles", description: "Handmade Christmas tree ornaments", image: "assets/produkty/IMG_4168.jpeg", status: "On Order", category: "dekoracje" },
-    { id: 7, name: "Rose Basket", description: "Decorative basket with embroidered roses", image: "assets/produkty/IMG_4169.jpeg", status: "On Order", category: "dekoracje" },
-    { id: 8, name: "Easter Chicks", description: "Easter decoration for festive table", image: "assets/produkty/IMG_4115.jpeg", status: "On Order", category: "dekoracje" },
-    { id: 9, name: "Easter Bunny", description: "Handmade Easter bunny", image: "assets/produkty/IMG_4116.jpeg", status: "On Order", category: "dekoracje" },
-    { id: 10, name: "Easter Basket", description: "Small basket perfect for Easter", image: "assets/produkty/IMG_4118.jpeg", status: "On Order", category: "dekoracje" },
-    { id: 11, name: "Baby Shoes", description: "Special baby booties", image: "assets/produkty/IMG_4119.jpeg", status: "On Order", category: "dzieci" },
-    { id: 12, name: "Angel", description: "Made with attention to every detail", image: "assets/produkty/IMG_3992.jpeg", status: "On Order", category: "aniolki" },
-    { id: 13, name: "Snowmen and Angel", description: "Set of cute winter decorations", image: "assets/produkty/IMG_3991.jpeg", status: "On Order", category: "dekoracje" },
-    { id: 14, name: "Doily - Delicate Lace", description: "Classic round lace doily", image: "assets/produkty/IMG_3986.jpeg", status: "On Order", category: "serwety" },
-    { id: 15, name: "Doily - Dense Pattern", description: "Doily with rich dense pattern", image: "assets/produkty/IMG_3987.jpeg", status: "On Order", category: "serwety" },
-    { id: 16, name: "Christmas Bells", description: "Decorative bells for Christmas tree", image: "assets/produkty/IMG_3988.jpeg", status: "On Order", category: "dekoracje" },
-    { id: 17, name: "Bowl Doily", description: "Doily shaped like fruit bowl", image: "assets/produkty/IMG_3989.jpeg", status: "On Order", category: "serwety" },
-    { id: 18, name: "Doily - Large", description: "Large table doily for living room", image: "assets/produkty/IMG_3990.jpeg", status: "On Order", category: "serwety" },
-    { id: 19, name: "Doily - Fine Pattern", description: "Doily with unique fine pattern", image: "assets/produkty/IMG_3966.jpeg", status: "On Order", category: "serwety" },
-    { id: 20, name: "Doily - Classic", description: "Elegant classic lace doily", image: "assets/produkty/IMG_3967.jpeg", status: "On Order", category: "serwety" },
-    { id: 21, name: "Doily - Round", description: "Doily with perfect round shape", image: "assets/produkty/IMG_3968.jpeg", status: "On Order", category: "serwety" },
-    { id: 22, name: "Doily - Square", description: "Square doily for coffee table", image: "assets/produkty/IMG_3969.jpeg", status: "On Order", category: "serwety" },
-    { id: 23, name: "Doily - Small", description: "Set of small doilies for cups", image: "assets/produkty/IMG_3964.jpeg", status: "On Order", category: "serwety" },
-    { id: 24, name: "Doily - Oval", description: "Elegant doily for long table", image: "assets/produkty/IMG_3965.jpeg", status: "On Order", category: "serwety" },
-    { id: 25, name: "Doily - Snowflake", description: "Doily with winter motif", image: "assets/produkty/IMG_3958.jpeg", status: "On Order", category: "serwety" },
-    { id: 26, name: "Easter Decoration", description: "Set of Easter holiday figures", image: "assets/produkty/IMG_3963.jpeg", status: "On Order", category: "dekoracje" },
-    { id: 27, name: "Doily - Handcraft", description: "Beautiful doily from my collection", image: "assets/produkty/IMG_3962.jpeg", status: "On Order", category: "serwety" },
-    { id: 28, name: "Angel - Small", description: "Subtle smaller angel", image: "assets/produkty/IMG_3927.jpg", status: "On Order", category: "aniolki" },
-    { id: 29, name: "Square Doily", description: "Square doily for vase", image: "assets/produkty/IMG_3960.jpeg", status: "On Order", category: "serwety" },
-    { id: 1765735595826, name: "Rafal", description: "Free giveaway (pay shipping only)", image: "assets/produkty/IMG_1765735594453.jpg", status: "On Order", category: "aniolki" },
-    { id: 1765825451966, name: "Pine Cones", description: "Pine cones decoration", image: "assets/produkty/IMG_1765825449814.jpg", status: "On Order", category: "dekoracje" },
-    { id: 1765829202675, name: "Angels", description: "Angels collection", image: "assets/produkty/IMG_1765829199893.jpg", status: "On Order", category: "aniolki" },
-    { id: 1766493359422, name: "Candles", description: "Decorative candles", image: "assets/produkty/IMG_1766493356330.jpg", status: "On Order", category: "dekoracje" },
-    { id: 1766493522358, name: "Candles", description: "Decorative candles", image: "assets/produkty/IMG_1766493519662.jpg", status: "On Order", category: "dekoracje" }
+    { id: 1, name: "Aniolek Lily", description: "Recznie robiony aniolek na prezent", image: "assets/produkty/IMG_3993.jpeg", status: "Na Zamowienie", category: "aniolki" },
+    { id: 2, name: "Pajacyki", description: "Urocze maskotki dla najmlodszych", image: "assets/produkty/IMG_4464.jpeg", status: "Na Zamowienie", category: "dzieci" },
+    { id: 3, name: "Ubranko dla dziecka", description: "Delikatne, dziergane ubranko dla malucha", image: "assets/produkty/IMG_4161.jpeg", status: "Na Zamowienie", category: "dzieci" },
+    { id: 4, name: "Buciki", description: "Cieple buciki niemowlece", image: "assets/produkty/IMG_4162.jpeg", status: "Na Zamowienie", category: "dzieci" },
+    { id: 5, name: "Czerwony Aniolek", description: "Aniolek w intensywnym czerwonym kolorze", image: "assets/produkty/IMG_4167.jpeg", status: "Na Zamowienie", category: "aniolki" },
+    { id: 6, name: "Bombki", description: "Recznie robione bombki na choinke", image: "assets/produkty/IMG_4168.jpeg", status: "Na Zamowienie", category: "dekoracje" },
+    { id: 7, name: "Koszyk rozyczek", description: "Ozdobny koszyczek z haftowanymi rozyczkami", image: "assets/produkty/IMG_4169.jpeg", status: "Na Zamowienie", category: "dekoracje" },
+    { id: 8, name: "Kurczaczki", description: "Wielkanocna dekoracja na swieczny stol", image: "assets/produkty/IMG_4115.jpeg", status: "Na Zamowienie", category: "dekoracje" },
+    { id: 9, name: "Kroliczek", description: "Recznie robiony kroliczek wielkanocny", image: "assets/produkty/IMG_4116.jpeg", status: "Na Zamowienie", category: "dekoracje" },
+    { id: 10, name: "Koszyczek Wielkanocny", description: "Maly koszyczek idealny do swieconki", image: "assets/produkty/IMG_4118.jpeg", status: "Na Zamowienie", category: "dekoracje" },
+    { id: 11, name: "Buciki dla dzieciuszka", description: "Wyjatkowe buciki niemowlece", image: "assets/produkty/IMG_4119.jpeg", status: "Na Zamowienie", category: "dzieci" },
+    { id: 12, name: "Aniolek", description: "Wykonany z dbalocia o kazdy detal", image: "assets/produkty/IMG_3992.jpeg", status: "Na Zamowienie", category: "aniolki" },
+    { id: 13, name: "Balwanki i Aniolek", description: "Zestaw uroczych zimowych dekoracji", image: "assets/produkty/IMG_3991.jpeg", status: "Na Zamowienie", category: "dekoracje" },
+    { id: 14, name: "Serweta - Delikatna Koronka", description: "Klasyczna okragla serweta koronkowa", image: "assets/produkty/IMG_3986.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 15, name: "Serweta - Gusty Wzor", description: "Serweta z bogatym gestym wzorem", image: "assets/produkty/IMG_3987.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 16, name: "Dzwoneczki", description: "Ozdobne dzwoneczki na choinke", image: "assets/produkty/IMG_3988.jpeg", status: "Na Zamowienie", category: "dekoracje" },
+    { id: 17, name: "Serweta Misa", description: "Serweta w ksztalcie misy na owoce", image: "assets/produkty/IMG_3989.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 18, name: "Serweta - Duza", description: "Duza serweta stolowa do salonu", image: "assets/produkty/IMG_3990.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 19, name: "Serweta - Finezyjny Wzor", description: "Serweta o unikatowym finezyjnym wzorze", image: "assets/produkty/IMG_3966.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 20, name: "Serweta - Klasyczna", description: "Elegancka klasyczna serweta koronkowa", image: "assets/produkty/IMG_3967.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 21, name: "Serweta - Okragla", description: "Serweta o idealnym okraglym ksztalcie", image: "assets/produkty/IMG_3968.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 22, name: "Serweta - Kwadratowa", description: "Serweta kwadratowa na stolik kawowy", image: "assets/produkty/IMG_3969.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 23, name: "Serweta - Mala", description: "Komplet malych serwetek pod filizanki", image: "assets/produkty/IMG_3964.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 24, name: "Serweta - Owalna", description: "Elegancka serweta na podluzny stol", image: "assets/produkty/IMG_3965.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 25, name: "Serweta - Platek Sniegu", description: "Serweta z motywem zimowym", image: "assets/produkty/IMG_3958.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 26, name: "Wielkanocna Dekoracja", description: "Zestaw figurek swiatecznych na Wielkanoc", image: "assets/produkty/IMG_3963.jpeg", status: "Na Zamowienie", category: "dekoracje" },
+    { id: 27, name: "Serweta - Rekodzielo", description: "Piekna serweta z mojej kolekcji", image: "assets/produkty/IMG_3962.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 28, name: "Aniolek - Maly", description: "Subtelny mniejszy aniolek", image: "assets/produkty/IMG_3927.jpg", status: "Na Zamowienie", category: "aniolki" },
+    { id: 29, name: "Serweta Kwadrat", description: "Serweta kwadratowa pod wazon", image: "assets/produkty/IMG_3960.jpeg", status: "Na Zamowienie", category: "serwety" },
+    { id: 1765735595826, name: "Rafal", description: "Oddam za darmo (zaplace za przesylke)", image: "assets/produkty/IMG_1765735594453.jpg", status: "Na Zamowienie", category: "aniolki" },
+    { id: 1765825451966, name: "Szyszki", description: "Szyszki dekoracyjne", image: "assets/produkty/IMG_1765825449814.jpg", status: "Na Zamowienie", category: "dekoracje" },
+    { id: 1765829202675, name: "Aniolki", description: "Kolekcja aniolkow", image: "assets/produkty/IMG_1765829199893.jpg", status: "Na Zamowienie", category: "aniolki" },
+    { id: 1766493359422, name: "Swiece", description: "Swiece dekoracyjne", image: "assets/produkty/IMG_1766493356330.jpg", status: "Na Zamowienie", category: "dekoracje" },
+    { id: 1766493522358, name: "Swiece", description: "Swiece dekoracyjne", image: "assets/produkty/IMG_1766493519662.jpg", status: "Na Zamowienie", category: "dekoracje" }
 ];
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -212,7 +212,7 @@ function initAdminPanel() {
                 sessionStorage.setItem('adminLoggedIn', 'true');
                 window.location.href = 'admin.html';
             } else {
-                errorMessage.textContent = 'Wrong password!';
+                errorMessage.textContent = 'Nieprawidlowe haslo!';
                 setTimeout(() => { errorMessage.textContent = ''; }, 3000);
             }
         });
