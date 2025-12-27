@@ -37,8 +37,9 @@ const products = [
     { id: 1765825451966, name: "Szyszki", description: "Szyszki dekoracyjne", image: "assets/produkty/IMG_1765825449814.jpg", status: "Na Zamowienie", category: "dekoracje" },
     { id: 1765829202675, name: "Aniolki", description: "Kolekcja aniolkow", image: "assets/produkty/IMG_1765829199893.jpg", status: "Na Zamowienie", category: "aniolki" },
     { id: 1766493359422, name: "Swiece", description: "Swiece dekoracyjne", image: "assets/produkty/IMG_1766493356330.jpg", status: "Na Zamowienie", category: "dekoracje" },
-    { id: 1766493522358, name: "Swiece", description: "Swiece dekoracyjne", image: "assets/produkty/IMG_1766493519662.jpg", status: "Na Zamowienie", category: "dekoracje" }
-];
+    { id: 1766493522358, name: "Swiece", description: "Swiece dekoracyjne", image: "assets/produkty/IMG_1766493519662.jpg", status: "Na Zamowienie", category: "dekoracje" },
+    { id: 1766801975755, name: "Choinki", description: "Choinka ", image: "assets/produkty/IMG_1766801974523.jpeg", status: "Na Zamówienie", category: "dzieci" }
+];;
 
 document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
