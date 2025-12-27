@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "Aniołki Babci Haliny",
+        "description": "Ręcznie robione aniołki idealne na prezent lub dekorację",
+        "category": "aniolki",
+        "image": "assets/produkty/IMG_3958.jpeg",
+        "available": true
+    },
+    {
+        "id": 2,
+        "name": "Pajączki",
+        "description": "Urocze maskotki dla najmłodszych",
+        "category": "dzieci",
+        "image": "assets/produkty/IMG_3960.jpeg",
+        "available": true
+    },
+    {
+        "id": 3,
+        "name": "Ubranko dla dziecka",
+        "description": "Delikatne, dziergane ubranko dla malucha",
+        "category": "dzieci",
+        "image": "assets/produkty/IMG_3962.jpeg",
+        "available": true
+    },
+    {
+        "id": 4,
+        "name": "Buciki",
+        "description": "Ciepłe buciki niemowlęce",
+        "category": "dzieci",
+        "image": "assets/produkty/IMG_3963.jpeg",
+        "available": true
+    },
+    {
+        "id": 5,
+        "name": "Aniołek Lily",
+        "description": "Ręcznie robiony aniołek na prezent",
+        "category": "aniolki",
+        "image": "assets/produkty/IMG_3927.jpg",
+        "available": true
+    },
+    {
+        "id": 6,
+        "name": "Serweta Świąteczna",
+        "description": "Piękna serweta szydełkowa",
+        "category": "serwety",
+        "image": "assets/produkty/IMG_3964.jpeg",
+        "available": true
+    },
+    {
+        "id": 7,
+        "name": "Dekoracje Świąteczne",
+        "description": "Różne dekoracje na święta",
+        "category": "dekoracje",
+        "image": "assets/produkty/IMG_3965.jpeg",
+        "available": true
+    },
+    {
+        "id": 8,
+        "name": "Szydełkowe ozdoby",
+        "description": "Unikalne ozdoby szydełkowe",
+        "category": "dekoracje",
+        "image": "assets/produkty/IMG_3966.jpeg",
+        "available": true
+    }
+]
