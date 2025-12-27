@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "Angels by Grandma Halina",
+        "description": "Handmade angels perfect for gifts or decoration",
+        "category": "aniolki",
+        "image": "assets/produkty/IMG_3958.jpeg",
+        "available": true
+    },
+    {
+        "id": 2,
+        "name": "Little Spiders",
+        "description": "Cute mascots for the youngest ones",
+        "category": "dzieci",
+        "image": "assets/produkty/IMG_3960.jpeg",
+        "available": true
+    },
+    {
+        "id": 3,
+        "name": "Baby Outfit",
+        "description": "Delicate, knitted outfit for baby",
+        "category": "dzieci",
+        "image": "assets/produkty/IMG_3962.jpeg",
+        "available": true
+    },
+    {
+        "id": 4,
+        "name": "Baby Booties",
+        "description": "Warm baby booties",
+        "category": "dzieci",
+        "image": "assets/produkty/IMG_3963.jpeg",
+        "available": true
+    },
+    {
+        "id": 5,
+        "name": "Angel Lily",
+        "description": "Handmade angel as a gift",
+        "category": "aniolki",
+        "image": "assets/produkty/IMG_3927.jpg",
+        "available": true
+    },
+    {
+        "id": 6,
+        "name": "Christmas Doily",
+        "description": "Beautiful crochet doily",
+        "category": "serwety",
+        "image": "assets/produkty/IMG_3964.jpeg",
+        "available": true
+    },
+    {
+        "id": 7,
+        "name": "Christmas Decorations",
+        "description": "Various decorations for holidays",
+        "category": "dekoracje",
+        "image": "assets/produkty/IMG_3965.jpeg",
+        "available": true
+    },
+    {
+        "id": 8,
+        "name": "Crochet Ornaments",
+        "description": "Unique crochet ornaments",
+        "category": "dekoracje",
+        "image": "assets/produkty/IMG_3966.jpeg",
+        "available": true
+    }
+]
