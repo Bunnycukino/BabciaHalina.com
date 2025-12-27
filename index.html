@@ -9,6 +9,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script>
+        // Załaduj produkty z products.json przy pierwszym uruchomieniu lub gdy localStorage jest pusty
+        async function loadProductsFromJSON() {
+            try {
+                const existingProducts = localStorage.getItem('products');
+                // Załaduj produkty tylko jeśli localStorage jest pusty lub zawiera złe dane
+                if (!existingProducts || existingProducts.includes('Ä') || existingProducts.includes('Å')) {
+                    const response = await fetch('products.json');
+                    const products = await response.json();
+                    localStorage.setItem('products', JSON.stringify(products));
+                    console.log('Produkty załadowane z products.json');
+                }
+            } catch (error) {
+                console.error('Błąd ładowania produktów:', error);
+            }
+        }
+        // Uruchom przy załadowaniu strony
+        loadProductsFromJSON();
+    </script>
 </head>
 <body>
     <!-- Nawigacja -->
