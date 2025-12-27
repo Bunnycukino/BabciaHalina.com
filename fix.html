@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naprawianie danych...</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+        }
+        h1 { font-size: 2.5em; margin-bottom: 20px; }
+        p { font-size: 1.2em; margin: 10px 0; }
+        .spinner {
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid white;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            animation: spin 1s linear infinite;
+            margin: 30px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        .success { color: #4ade80; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>&#128296; Naprawianie...</h1>
+        <div class="spinner"></div>
+        <p id="status">Czyszczenie starych danych...</p>
+    </div>
+
+    <script>
+        async function fixData() {
+            const status = document.getElementById('status');
+            
+            // Krok 1: Wyczy\u015b\u0107 localStorage
+            status.textContent = 'Usuwanie starych danych...';
+            await new Promise(resolve => setTimeout(resolve, 500));
+            localStorage.clear();
+            
+            // Krok 2: Za\u0142adowa\u0107 nowe dane
+            status.textContent = 'Ladowanie nowych danych...';
+            await new Promise(resolve => setTimeout(resolve, 500));
+            
+            try {
+                const response = await fetch('products.json');
+                const products = await response.json();
+                localStorage.setItem('products', JSON.stringify(products));
+                
+                // Krok 3: Sukces!
+                status.innerHTML = '<span class="success">\u2713 Gotowe! Przekierowywanie...</span>';
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Przekieruj do strony g\u0142\u00f3wnej
+                window.location.href = 'index.html';
+            } catch (error) {
+                status.textContent = 'Blad! Sprobuj ponownie.';
+                console.error('Error:', error);
+                setTimeout(() => window.location.href = 'index.html', 2000);
+            }
+        }
+        
+        // Uruchom napraw\u0119
+        fixData();
+    </script>
+</body>
+</html>
