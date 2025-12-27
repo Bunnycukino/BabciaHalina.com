@@ -4,7 +4,7 @@
 // ================================================================
 
 const products = [
-    { id: 1, name: "AnioÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂek Lily", description: "RÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂcznie robiony anioÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂek na prezent", image: "assets/produkty/IMG_3993.jpeg", status: "Na ZamÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³wienie", category: "aniolki" },
+    { id: 1, name: "Aniolek Lily", description: "Recznie robiony aniolek na prezent", image: "assets/produkty/IMG_3993.jpeg", status: "Na ZamÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³wienie", category: "aniolki" },
     { id: 2, name: "Pajacyki", description: "Urocze maskotki dla najmÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂodszych", image: "assets/produkty/IMG_4464.jpeg", status: "Na ZamÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³wienie", category: "dzieci" },
     { id: 3, name: "Ubranko dla dziecka", description: "Delikatne, dziergane ubranko dla malucha", image: "assets/produkty/IMG_4161.jpeg", status: "Na ZamÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³wienie", category: "dzieci" },
     { id: 4, name: "Buciki", description: "CiepÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂe buciki niemowlÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂce", image: "assets/produkty/IMG_4162.jpeg", status: "Na ZamÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³wienie", category: "dzieci" },
