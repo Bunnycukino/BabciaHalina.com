@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Babcia Halina | Rękodzieło Tworzone z Sercem</title>
+    <title>Babcia Halina | Rekodziel​o Tworzone z Sercem</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Laduj init.js PRZED script.js -->
+    <script src="init.js"></script>
 </head>
 <body>
     <!-- Nawigacja -->
@@ -35,9 +37,9 @@
     <section class="hero" id="hero">
         <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="hero-title">Rękodzieło Tworzone z Sercem</h1>
-            <p class="hero-subtitle">Unikalne prace ręczne, które przetrwają lata</p>
-            <a href="#galeria" class="hero-button">Zobacz Galerię</a>
+            <h1 class="hero-title">Rekodziel​o Tworzone z Sercem</h1>
+            <p class="hero-subtitle">Unikalne prace reczne, ktore przetrwaja lata</p>
+            <a href="#galeria" class="hero-button">Zobacz Galerie</a>
         </div>
     </section>
 
@@ -50,9 +52,9 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Witaj w świecie Babci Haliny, gdzie tradycja spotyka się z pasją do rękodzieła. Od lat tworzę unikalne tekstylia i dekoracje, dbając o jakość, która przetrwa lata. Moje produkty to inwestycja w piękno i rzemieślniczą staranność.</p>
-                    <p>Każdy egzemplarz, czy to serwetka, czy robótka na drutach, powstaje z najwyższej jakości materiałów i jest wyrazem mojej wieloletniej pasji. Nie kupujesz masowej produkcji – kupujesz unikalną historię.</p>
-                    <p>Specjalizuję się w tradycyjnym szydełkowaniu, dzierganiu oraz tworzeniu dekoracji świątecznych. Każdy projekt wykonuję z myślą o najdrobniejszych detalach, zapewniając niepowtarzalny charakter każdej pracy.</p>
+                    <p>Witaj w swiecie Babci Haliny, gdzie tradycja spotyka sie z pasja do rekodziela. Od lat tworze unikalne tekstylia i dekoracje, dbajac o jakosc, ktora przetrwa lata. Moje produkty to inwestycja w piekno i rzemieslnicza starannosc.</p>
+                    <p>Kazdy egzemplarz, czy to serwetka, czy robotka na drutach, powstaje z najwyzszej jakosci materialow i jest wyrazem mojej wieloletniej pasji. Nie kupujesz masowej produkcji - kupujesz unikalna historie.</p>
+                    <p>Specjalizuje sie w tradycyjnym szydelkowaniu, dzierganiu oraz tworzeniu dekoracji swiatecznych. Kazdy projekt wykonuje z mysla o najdrobniejszych detalach, zapewniajac niepowtarzalny charakter kazdej pracy.</p>
                 </div>
             </div>
         </div>
@@ -64,25 +66,25 @@
             <div class="section-header">
                 <h2 class="section-title">Galeria Prac</h2>
                 <div class="section-divider"></div>
-                <p class="section-description">Poniżej znajdziesz przykłady moich dotychczasowych projektów. Większość z nich jest dostępna wyłącznie na zamówienie, co gwarantuje Ci niepowtarzalność.</p>
+                <p class="section-description">Ponizej znajdziesz przyklady moich dotychczasowych projektow. Wiekszosc z nich jest dostepna wylacznie na zamowienie, co gwarantuje Ci niepowtarzalnosc.</p>
             </div>
 
             <!-- Filtry kategorii -->
             <div class="gallery-filters">
                 <button class="filter-btn active" data-filter="all">Wszystkie</button>
                 <button class="filter-btn" data-filter="serwety">Serwety</button>
-                <button class="filter-btn" data-filter="aniolki">Aniołki</button>
+                <button class="filter-btn" data-filter="aniolki">Aniolki</button>
                 <button class="filter-btn" data-filter="dekoracje">Dekoracje</button>
                 <button class="filter-btn" data-filter="dzieci">Dla Dzieci</button>
             </div>
 
             <!-- Siatka galerii -->
             <div id="product-grid" class="gallery-grid">
-                <!-- Produkty załadowane przez JavaScript -->
+                <!-- Produkty zaladowane przez JavaScript -->
             </div>
 
             <div class="cta-section">
-                <a href="#kontakt" class="cta-button">Zapytaj o Zamówienie</a>
+                <a href="#kontakt" class="cta-button">Zapytaj o Zamowienie</a>
             </div>
         </div>
     </section>
@@ -91,22 +93,22 @@
     <section id="kontakt" class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Skontaktuj Się Ze Mną</h2>
+                <h2 class="section-title">Skontaktuj Sie Ze Mna</h2>
                 <div class="section-divider"></div>
-                <p class="section-description">Masz pomysł na unikalny prezent? Chcesz zamówić spersonalizowany produkt? Napisz do mnie!</p>
+                <p class="section-description">Masz pomysl na unikalny prezent? Chcesz zamowic spersonalizowany produkt? Napisz do mnie!</p>
             </div>
 
             <div class="contact-content">
-                <!-- NAPRAWIONY FORMULARZ - Używa FormSubmit.co -->
+                <!-- NAPRAWIONY FORMULARZ - Uzywa FormSubmit.co -->
                 <form action="https://formsubmit.co/crox.and.crox@gmail.com" method="POST" class="contact-form">
                     <!-- Ukryte pola konfiguracyjne FormSubmit -->
-                    <input type="hidden" name="_subject" value="Nowe zamówienie z BabciaHalina.com">
+                    <input type="hidden" name="_subject" value="Nowe zamowienie z BabciaHalina.com">
                     <input type="hidden" name="_template" value="table">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="text" name="_honey" style="display:none">
                     
                     <div class="form-group">
-                        <label for="name">Imię *</label>
+                        <label for="name">Imie *</label>
                         <input type="text" id="name" name="name" required>
                     </div>
                     <div class="form-group">
@@ -118,17 +120,17 @@
                         <input type="tel" id="phone" name="phone">
                     </div>
                     <div class="form-group full-width">
-                        <label for="message">Wiadomość *</label>
+                        <label for="message">Wiadomosc *</label>
                         <textarea id="message" name="message" required rows="6"></textarea>
                     </div>
-                    <button type="submit" class="submit-button">📧 Wyślij Wiadomość</button>
+                    <button type="submit" class="submit-button">Wyslij Wiadomosc</button>
                 </form>
                 
                 <!-- Alternatywna opcja kontaktu -->
                 <div style="margin-top: 2rem; text-align: center; padding: 1.5rem; background: var(--color-background-alt); border-radius: 12px;">
-                    <p style="margin-bottom: 1rem; color: var(--color-text-light);">Możesz również skontaktować się bezpośrednio:</p>
+                    <p style="margin-bottom: 1rem; color: var(--color-text-light);">Mozesz rowniez skontaktowac sie bezposrednio:</p>
                     <a href="mailto:crox.and.crox@gmail.com" style="display: inline-block; padding: 0.8rem 2rem; background: var(--color-accent); color: white; border-radius: 25px; font-weight: 600; transition: all 0.3s;">
-                        📧 crox.and.crox@gmail.com
+                        crox.and.crox@gmail.com
                     </a>
                 </div>
             </div>
@@ -141,7 +143,7 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Babcia Halina</h3>
-                    <p>Rękodzieło tworzone z sercem i pasją od lat</p>
+                    <p>Rekodziel​o tworzone z sercem i pasja od lat</p>
                 </div>
                 <div class="footer-section">
                     <h4>Nawigacja</h4>
@@ -153,12 +155,12 @@
                 </div>
                 <div class="footer-section">
                     <h4>Informacje</h4>
-                    <p>Każdy produkt jest wykonywany ręcznie na zamówienie</p>
+                    <p>Kazdy produkt jest wykonywany recznie na zamowienie</p>
                     <p>Czas realizacji: 2-4 tygodnie</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Babcia Halina | Wszelkie prawa zastrzeżone</p>
+                <p>&copy; 2025 Babcia Halina | Wszelkie prawa zastrzezone</p>
             </div>
         </div>
     </footer>
@@ -170,7 +172,7 @@
             <h2>Panel Administratora</h2>
             <form id="adminLoginForm">
                 <div class="form-group">
-                    <label for="adminPassword">Hasło:</label>
+                    <label for="adminPassword">Haslo:</label>
                     <input type="password" id="adminPassword" name="adminPassword" required>
                 </div>
                 <button type="submit" class="submit-button">Zaloguj</button>
@@ -179,7 +181,7 @@
         </div>
     </div>
 
-    <!-- Modal podglądu zdjęcia -->
+    <!-- Modal podgladu zdjecia -->
     <div id="imageModal" class="modal">
         <span class="modal-close">&times;</span>
         <img class="modal-image" id="modalImage" src="" alt="">
