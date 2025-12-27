@@ -1,64 +1,64 @@
 [
     {
         "id": 1,
-        "name": "Anio&#322;ki Babci Haliny",
-        "description": "R&#281;cznie robione anio&#322;ki idealne na prezent lub dekoracj&#281;",
+        "name": "Angels by Grandma Halina",
+        "description": "Handmade angels perfect for gifts or decoration",
         "category": "aniolki",
         "image": "assets/produkty/IMG_3958.jpeg",
         "available": true
     },
     {
         "id": 2,
-        "name": "Paj&#261;czki",
-        "description": "Urocze maskotki dla najm&#322;odszych",
+        "name": "Little Spiders",
+        "description": "Cute mascots for the youngest ones",
         "category": "dzieci",
         "image": "assets/produkty/IMG_3960.jpeg",
         "available": true
     },
     {
         "id": 3,
-        "name": "Ubranko dla dziecka",
-        "description": "Delikatne, dziergane ubranko dla malucha",
+        "name": "Baby Outfit",
+        "description": "Delicate, knitted outfit for baby",
         "category": "dzieci",
         "image": "assets/produkty/IMG_3962.jpeg",
         "available": true
     },
     {
         "id": 4,
-        "name": "Buciki",
-        "description": "Ciep&#322;e buciki niemowl&#281;ce",
+        "name": "Baby Booties",
+        "description": "Warm baby booties",
         "category": "dzieci",
         "image": "assets/produkty/IMG_3963.jpeg",
         "available": true
     },
     {
         "id": 5,
-        "name": "Anio&#322;ek Lily",
-        "description": "R&#281;cznie robiony anio&#322;ek na prezent",
+        "name": "Angel Lily",
+        "description": "Handmade angel as a gift",
         "category": "aniolki",
         "image": "assets/produkty/IMG_3927.jpg",
         "available": true
     },
     {
         "id": 6,
-        "name": "Serweta &#347;wi&#261;teczna",
-        "description": "Pi&#281;kna serweta szyde&#322;kowa",
+        "name": "Christmas Doily",
+        "description": "Beautiful crochet doily",
         "category": "serwety",
         "image": "assets/produkty/IMG_3964.jpeg",
         "available": true
     },
     {
         "id": 7,
-        "name": "Dekoracje &#347;wi&#261;teczne",
-        "description": "R&#243;&#380;ne dekoracje na &#347;wi&#281;ta",
+        "name": "Christmas Decorations",
+        "description": "Various decorations for holidays",
         "category": "dekoracje",
         "image": "assets/produkty/IMG_3965.jpeg",
         "available": true
     },
     {
         "id": 8,
-        "name": "Szyde&#322;kowe ozdoby",
-        "description": "Unikalne ozdoby szyde&#322;kowe",
+        "name": "Crochet Ornaments",
+        "description": "Unique crochet ornaments",
         "category": "dekoracje",
         "image": "assets/produkty/IMG_3966.jpeg",
         "available": true
