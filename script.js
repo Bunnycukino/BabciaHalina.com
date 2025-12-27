@@ -38,12 +38,13 @@ const products = [
     { id: 1765829202675, name: "Aniolki", description: "Kolekcja aniolkow", image: "assets/produkty/IMG_1765829199893.jpg", status: "Na Zamowienie", category: "aniolki" },
     { id: 1766493359422, name: "Swiece", description: "Swiece dekoracyjne", image: "assets/produkty/IMG_1766493356330.jpg", status: "Na Zamowienie", category: "dekoracje" },
     { id: 1766493522358, name: "Swiece", description: "Swiece dekoracyjne", image: "assets/produkty/IMG_1766493519662.jpg", status: "Na Zamowienie", category: "dekoracje" },
-    { id: 1766801975755, name: "Choinki", description: "Choinka ", image: "assets/produkty/IMG_1766801974523.jpeg", status: "Na ZamÃÂÃÂÃÂÃÂ³wienie", category: "dzieci" },
-    { id: 1766802932762, name: "Choinki", description: "Lampki", image: "assets/produkty/IMG_1766802931432.jpeg", status: "Na ZamÃÂÃÂ³wienie", category: "dekoracje" },
-    { id: 1766803661343, name: "Ludziki ÃÂwiÃÂteczne", description: "Ludziki ", image: "assets/produkty/IMG_1766803660128.jpeg", status: "Na ZamÃÂ³wienie", category: "dzieci" },
-    { id: 1766803839930, name: "Pacynka", description: "Czerwona", image: "assets/produkty/IMG_1766803838455.jpeg", status: "Na ZamÃ³wienie", category: "dzieci" },
-    { id: 1766803885089, name: "Pacynka", description: "Niebieska", image: "assets/produkty/IMG_1766803883662.jpeg", status: "Na Zamówienie", category: "dzieci" }
-];;;;;;
+    { id: 1766801975755, name: "Choinki", description: "Choinka ", image: "assets/produkty/IMG_1766801974523.jpeg", status: "Na ZamÃÂÃÂÃÂÃÂÃÂÃÂÃÂÃÂ³wienie", category: "dzieci" },
+    { id: 1766802932762, name: "Choinki", description: "Lampki", image: "assets/produkty/IMG_1766802931432.jpeg", status: "Na ZamÃÂÃÂÃÂÃÂ³wienie", category: "dekoracje" },
+    { id: 1766803661343, name: "Ludziki ÃÂÃÂwiÃÂÃÂteczne", description: "Ludziki ", image: "assets/produkty/IMG_1766803660128.jpeg", status: "Na ZamÃÂÃÂ³wienie", category: "dzieci" },
+    { id: 1766803839930, name: "Pacynka", description: "Czerwona", image: "assets/produkty/IMG_1766803838455.jpeg", status: "Na ZamÃÂ³wienie", category: "dzieci" },
+    { id: 1766803885089, name: "Pacynka", description: "Niebieska", image: "assets/produkty/IMG_1766803883662.jpeg", status: "Na ZamÃ³wienie", category: "dzieci" },
+    { id: 1766803952676, name: "Skrzaty ", description: "Kingsize ", image: "assets/produkty/IMG_1766803951241.jpeg", status: "Na Zamówienie", category: "dzieci" }
+];;;;;;;
 
 document.addEventListener('DOMContentLoaded', function() {
     initNavigation();
